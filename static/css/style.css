@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat&display=swap');
+
+/** --- Text --- **/
+
+.headings-light {
+    font-family: "Cinzel", sans-serif;
+    color: #fff;
+}
+
+.headings-dark {
+    font-family: "Cinzel", sans-serif;
+    color: #101010;
+}
+
+/** --- Text Ends --- **/
+
+/** --- Backgrounds --- **/
+
+.dark-background {
+    background-color: #101010;
+}
+
+/** --- Backgrounds Ends--- **/
+
+/** --- Logo --- */
+
+#fastara-logo {
+    height: 60px;
+    width: 180px;
+    margin-top: 2px;
+    object-fit: cover;
+}
+
+.nav-items-left {
+    margin-left: 20px;
+}
+
+.nav-items-right {
+    margin-right: 20px;
+}
+
+.sidenav-logo {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.sidenav li>a {
+    color: #fff;
+}
+
+/** --- Logo Ends ---**/
+
+/** --- Media Queries ---**/
+
+@media screen and (max-width: 600px) {
+    #fastara-logo {
+        height: 52px;
+        width: 156px;
+    }
+}
+

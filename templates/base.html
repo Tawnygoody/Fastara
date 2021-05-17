@@ -12,6 +12,38 @@
     <title>Fastara</title>
 </head>
 <body>
+
+    <header>
+        <!--Top Navbar-->
+        <nav class="nav-extended headings-light">
+            <div class="row dark-background">
+                <div class="col l5 hide-on-med-and-down">
+                    <ul class="right nav-items-left">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="#">Recipes</a></li>
+                </ul>
+                </div>
+                <div class="col s12 l2">
+                    <a href="{{ url_for('home') }}" class="brand-logo center"><img src="/static/images/logo.png" id="fastara-logo" alt="Fastara logo"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                </div>
+                <div class="col l5 hide-on-med-and-down">
+                    <ul class="left nav-items-right">
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Mobile Side Navbar-->
+        <ul class="sidenav right headings-light dark-background" id="mobile-demo">
+            <li class="center-align"><img src="/static/images/logo.png" class="sidenav-logo" id="fastara-logo" alt="Fastara logo"></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </header>
     {% block content %}
     {% endblock %}
 
