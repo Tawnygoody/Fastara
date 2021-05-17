@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastara</title>
+</head>
+<body>
+    {% for recipe in recipes %}
+        {{ recipe.title }}<br>
+        {{ recipe.cuisine }}<br>
+        {{ recipe.servings }}<br>
+        {{ recipe.calories }}<br>
+    {% endfor %}
+</body>
+</html>
