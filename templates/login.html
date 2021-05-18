@@ -3,21 +3,13 @@
 
     <div class="reg-background-image">
         <div class="row">
-            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
                 <div class="card-panel">
-                    <!--Firstname-->
-                    <div class="row">
-                        <h3 class="center headings-light">Register</h3>
-                        <div class="input-field col s10 offset-s1">
-                            <i class="fas fa-user prefix icons"></i>
-                            <input id="firstname" name="firstname" type="text" pattern="^[a-zA-Z]{5,20}$" min-length="2" max-length="20" class="validate content-light" required>
-                            <label class="content-light" for="firstname">First Name</label>
-                        </div>
-                    </div>
                     <!--Username-->
                     <div class="row">
+                        <h3 class="center headings-light">Log In</h3>
                         <div class="input-field col s10 offset-s1">
-                            <i class="fas fa-user-plus prefix icons"></i>
+                            <i class="fas fa-user-cog prefix icons"></i>
                             <input id="username" name="username" type="text" pattern="^[a-zA-Z0-9]{5,20}$" min-length="5" max-length="20" class="validate content-light" required>
                             <label class="content-light" for="username">Username</label>
                         </div>
@@ -30,21 +22,22 @@
                             <label class="content-light" for="password">Password</label>
                         </div>
                     </div>
-                    <!--Register Button-->
+                    <!--Log In Button-->
                     <div class="row">
                         <button type="submit" class="col s4 offset-s4 btn-large yellow lighten-1 content-dark">
-                            Register <i class="fas fa-sign-in-alt"></i>
+                            Log In <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>
                     <div class="row">
                         <div class="col s12">
                             <p class="center-align content-light">
-                                Already Registered? <a href="{{ url_for('login') }}" class="content-color">Log In</a>
+                                New Here? <a href="{{ url_for('register') }}" class="content-color">Register Account</a>
                             </p>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
+    </div>
 
 {% endblock %}

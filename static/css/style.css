@@ -16,6 +16,11 @@
     color: #101010;
 }
 
+.headings-color {
+    font-family: "Cinzel", sans-serif;
+    color: #ffe400;
+}
+
 .content-light {
     font-family: "Montserrat", sans-serif;
     color: #EAE7DC;
@@ -34,6 +39,11 @@
 .flashes h4 {
     line-height: 2;
     margin-top: 0;
+    margin-bottom: 0;
+}
+
+.flashes {
+    margin-bottom: 0;
 }
 
 
