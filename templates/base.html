@@ -16,7 +16,7 @@
     <header>
         <!--Top Navbar-->
         <nav class="nav-extended headings-light">
-            <div class="row dark-background">
+            <div class="row dark-background remove-margin">
                 <div class="col l5 hide-on-med-and-down">
                     <ul class="right nav-items-left">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -49,8 +49,23 @@
         </ul>
     </header>
 
+    <section>
+        <!--Flash Message-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="headings-dark center-align yellow lighten-3">{{message}}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    <main class="container">
     {% block content %}
     {% endblock %}
+    </main>
 
     <footer class="dark-background">
         <div class="row">
