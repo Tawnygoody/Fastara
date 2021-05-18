@@ -4,6 +4,10 @@ body {
     min-height: 100vh;
 }
 
+.center-align {
+    text-align: center;
+}
+
 /** --- Text --- **/
 
 .headings-light {
