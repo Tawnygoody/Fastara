@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat&display=swap');
 
-body {
-    min-height: 100vh;
-}
-
-.center-align {
-    text-align: center;
+.page-height {
+    min-height: 80vh;
 }
 
 /** --- Text --- **/
@@ -108,12 +104,30 @@ nav ul a {
     font-size: 1.75rem;
 }
 
+footer {
+    left: 0;
+    bottom: 0;
+}
+
 /** --- Footer Ends ---**/
 
 /** --- Registration ---**/
 
 .card-panel {
     margin-top: 30px;
+    background-color: rgba(16,16,16,0.90);
+}
+
+.icons {
+    color: #ffe400;
+}
+
+.reg-background-image {
+    min-height: 80vh;
+    width: 100vw;
+    margin: 0;
+    background-image: url(/static/images/background.png);
+    background-size: cover;
 }
 
 /** --- Registration Ends ---**/
