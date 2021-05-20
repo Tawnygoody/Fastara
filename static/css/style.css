@@ -129,6 +129,46 @@ footer {
 
 /** --- Footer Ends ---**/
 
+/** --- Home ---**/
+
+.overlay {
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.carousel-item {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-container {
+    margin-top: 20px;
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.carousel {
+    height: 50vh;
+    margin-top: 20px;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 150px;
+    left: 10%;
+    right: 10%;
+}
+
+.carousel.carousel-slider .carousel-item h2 {
+    font-size: 2rem;
+}
+
+.carousel.carousel-slider .carousel-fixed-item {
+    bottom: 70px;
+}
+
+/** --- Home Ends ---**/
+
 /** --- Registration ---**/
 
 .card-panel {
@@ -170,6 +210,14 @@ footer {
     #fastara-logo {
         height: 52px;
         width: 156px;
+    }
+}
+
+@media screen and (max-width: 1640px) {
+    .carousel-container {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
