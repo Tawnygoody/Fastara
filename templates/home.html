@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!--Carousel-->
     <div class="container-fluid carousel-container">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
@@ -12,6 +13,32 @@
                 <h2 class="carousel-text headings-light">{{ recipe.title }}</h2>
             </div>
             {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 push-m6">
+                <h4 class="headings-dark text-margin">What is Fastara?</h4>
+                <hr class="headings-underline left">
+                <br>
+                <p class="content-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sed fugit fuga ut earum odio veritatis expedita hic alias quasi, et voluptates obcaecati doloribus? Aliquam quibusdam officiis eligendi veniam vel.</p>
+            </div>
+            <div class="col s12 m6 pull-m6 center">
+                <img src="static/images/home-page-image1.png" alt="" class="circle home-image-circle">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col s12 m6">
+                <h4 class="headings-dark text-margin">The 5:2 Diet</h4>
+                <hr class="headings-underline left">
+                <br>
+                <p class="content-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sed fugit fuga ut earum odio veritatis expedita hic alias quasi, et voluptates obcaecati doloribus? Aliquam quibusdam officiis eligendi veniam vel.</p>
+            </div>
+            <div class="col s12 m6 center hide-on-small-only">
+                <img src="static/images/home-page-image1.png" alt="" class="circle home-image-circle">
+            </div>
         </div>
     </div>
 

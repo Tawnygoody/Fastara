@@ -50,6 +50,18 @@
     text-transform: capitalize;
 }
 
+.headings-underline {
+    width: 100px;
+    height: 5px;
+    background-color: #ffe400;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.text-margin {
+    margin: 0;
+}
+
 
 /** --- Text Ends --- **/
 
@@ -145,6 +157,7 @@ footer {
     margin-top: 20px;
     margin-left: 160px;
     margin-right: 160px;
+    margin-bottom: 50px;
 }
 
 .carousel {
@@ -167,6 +180,14 @@ footer {
 
 .carousel.carousel-slider .carousel-fixed-item {
     bottom: 70px;
+}
+
+.home-image-circle {
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /** --- Home Ends ---**/
@@ -220,6 +241,15 @@ footer {
         margin-top: 20px;
         margin-left: 20px;
         margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .home-image-circle {
+        height: 240px;
+        width: 240px;
+        object-fit: cover;
+        margin-bottom: 20px;
     }
 }
 
