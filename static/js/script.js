@@ -5,6 +5,7 @@ $(document).ready(function(){
         fullWidth: true,
         indicators: true
     }, setTimeout(autoplay, 4000));
+    AOS.init();
   });
 
   function autoplay() { // Help with autoplay for carousel taken from https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
