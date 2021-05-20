@@ -150,13 +150,15 @@ footer {
 .carousel {
     height: 50vh;
     margin-top: 20px;
+    
 }
 
 .carousel-text {
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 10%;
     right: 10%;
+    text-transform: capitalize;
 }
 
 .carousel.carousel-slider .carousel-item h2 {
