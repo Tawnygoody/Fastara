@@ -58,8 +58,20 @@
     margin-bottom: 10px;
 }
 
+.headings-underline-dark {
+    width: 100px;
+    height: 5px;
+    background-color: #101010;
+    border: none;
+    margin-bottom: 10px;
+}
+
 .text-margin {
     margin: 0;
+}
+
+.books-header {
+    margin-top: 30px;
 }
 
 
@@ -188,6 +200,20 @@ footer {
     object-fit: cover;
     margin-bottom: 20px;
     margin-top: 20px;
+}
+
+.feature-container {
+    background-color: #ffe400;
+}
+
+.book-feature {
+    height: 300px;
+    width: 210px;
+    object-fit: cover;
+}
+
+.book-button {
+    margin-bottom: 30px;
 }
 
 /** --- Home Ends ---**/
