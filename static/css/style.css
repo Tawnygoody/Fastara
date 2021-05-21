@@ -218,6 +218,47 @@ footer {
 
 /** --- Home Ends ---**/
 
+/** --- Recipes ---**/
+
+.card .card-image img {
+    height: 225px;
+    object-fit: cover;
+}
+
+.card-overlay { /*-- Thanks to https://www.w3schools.com/howto/howto_css_image_overlay_title.asp for this code --*/
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.6); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 50px;
+  text-align: center;
+  height: 100%;
+}
+
+.card-image:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-icons {
+    font-size: 2.5rem;
+}
+
+.card {
+    height: 500px;
+}
+
+.card-content-description {
+    height: 130px;
+}
+
+/** --- Recipes Ends ---**/
+
 /** --- Registration ---**/
 
 .card-panel {
@@ -276,6 +317,12 @@ footer {
         width: 240px;
         object-fit: cover;
         margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .card-content-description {
+        height: 150px;
     }
 }
 
