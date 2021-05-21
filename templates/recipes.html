@@ -9,10 +9,11 @@
                         <div class="card-image">
                             <img src="{{recipe.recipe_image}}">
                             <div class="card-overlay">
-                                <h5 class="headings-light">{{ recipe.title }}</h5>
+                                <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
                             </div>
                         </div>
                         <div class="card-content">
+                            <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
                             <hr class="headings-underline center">
                             <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
                             <ul class="list-inline">
@@ -33,10 +34,5 @@
             {% endfor %}
         </div>
     </div>
-    {% for recipe in recipes %}
-        {{ recipe.title }}<br>
-        {{ recipe.cuisine }}<br>
-        {{ recipe.servings }}<br>
-        {{ recipe.calories }}<br>
-    {% endfor %}
+    
 {% endblock %}

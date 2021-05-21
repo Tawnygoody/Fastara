@@ -324,5 +324,9 @@ footer {
     .card-content-description {
         height: 150px;
     }
+
+    .card {
+    height: 520px;
+}
 }
 
