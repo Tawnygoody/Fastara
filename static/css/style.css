@@ -92,6 +92,10 @@
     background-color: rgba(16,16,16,0.90);
 }
 
+.row {
+    margin-bottom: 0;
+}
+
 /** --- Backgrounds Ends--- **/
 
 /** --- Logo & Navbar --- */
@@ -283,8 +287,9 @@ footer {
 /** --- Add Recipe ---**/
 
 .add-recipe-card-panel {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
 }
 
 .switch-text {
@@ -306,6 +311,13 @@ footer {
 .select-wrapper input.select-dropdown {
     color: #EAE7DC;
     font-family: "Montserrat", sans-serif;
+}
+
+.input-field {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /** --- Add Recipe Ends ---**/
@@ -352,9 +364,16 @@ footer {
 
 @media screen and (max-width: 500px) {
     .add-recipe-card-panel {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
+
+    .input-field {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
 }
 
 @media screen and (max-width: 325px) {
