@@ -7,6 +7,7 @@ $(document).ready(function(){
     }, setTimeout(autoplay, 4000));
     AOS.init(); // Initilizes on-scroll library
     $('.tooltipped').tooltip();
+    $('select').formSelect();
   });
 
   function autoplay() { // Help with autoplay for carousel taken from https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay

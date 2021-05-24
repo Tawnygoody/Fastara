@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def home():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("home.html", recipes=recipes)
 
 
@@ -98,8 +98,14 @@ def logout():
 
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/add_recipe")
+def add_recipe():
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", categories=categories)
 
 
 if __name__ == "__main__":

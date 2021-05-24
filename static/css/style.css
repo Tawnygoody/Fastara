@@ -157,7 +157,7 @@ footer {
 
 .overlay {
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.6);
 }
 
 .carousel-item {
@@ -280,6 +280,36 @@ footer {
 
 /** --- Registration Ends ---**/
 
+/** --- Add Recipe ---**/
+
+.add-recipe-card-panel {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.switch-text {
+    margin-left: 3rem;
+}
+
+.switch-text-selector {
+    font-size: 15px;
+}
+
+.vegan-label {
+    margin-right: 2.25rem;
+}
+
+.input-field>label {
+    color: #EAE7DC;
+}
+
+.select-wrapper input.select-dropdown {
+    color: #EAE7DC;
+    font-family: "Montserrat", sans-serif;
+}
+
+/** --- Add Recipe Ends ---**/
+
 /** --- Profile ---**/
 
 
@@ -317,6 +347,13 @@ footer {
         width: 240px;
         object-fit: cover;
         margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .add-recipe-card-panel {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
