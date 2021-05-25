@@ -20,7 +20,7 @@ $("#add-ingredient").on("click", function() {
     new_ingredient = 
     `<div class="input-field new-item">
         <i class="fas fa-trash prefix trash-icon"></i>
-        <textarea id="ingredients" name="ingredients" min-length="10" max-length="80" class="materialize-textarea validate" placeholder="New Ingredient" required></textarea>
+        <textarea id="ingredients" name="ingredients" min-length="10" max-length="80" class="materialize-textarea validate content-light" placeholder="New Ingredient" required></textarea>
     </div>`;
 
     $("#ingredients-container").append(new_ingredient);
@@ -35,7 +35,7 @@ $("#add-step").on("click", function() {
     new_step = 
     `<div class="input-field new-item">
         <i class="fas fa-trash prefix trash-icon"></i>
-        <textarea id="recipe_method" name="recipe_method" min-length="10" max-length="80" class="materialize-textarea validate" placeholder="New Step" required></textarea>
+        <textarea id="recipe_method" name="recipe_method" min-length="10" max-length="80" class="materialize-textarea validate content-light" placeholder="New Step" required></textarea>
     </div>`;
 
     $("#method-container").append(new_step);

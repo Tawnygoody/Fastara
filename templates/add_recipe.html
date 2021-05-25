@@ -10,14 +10,14 @@
                         <!--Recipe Name-->
                         <div class="input-field">
                             <i class="fas fa-pencil-alt prefix icons"></i>
-                            <input id="title" name="title" min-length="5" max-length="50" type="text" class="validate" required>
-                            <label class="content-light label-margin" for="title">Recipe Name</label>
+                            <input id="title" name="title" min-length="5" max-length="50" type="text" class="validate content-light" required>
+                            <label class="headings-light label-margin" for="title">Recipe Name</label>
                         </div>
                         <!--Recipe Description-->
                         <div class="input-field">
                             <i class="fas fa-file-alt prefix icons"></i>
-                            <textarea id="description" name="description" min-length="10" max-length="80" class="materialize-textarea validate" required></textarea>
-                            <label class="content-light label-margin" for="description">Recipe Description</label>
+                            <textarea id="description" name="description" min-length="10" max-length="180" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="Between 10-180 characters" required></textarea>
+                            <label class="headings-light label-margin" for="description">Recipe Description</label>
                         </div>
                         <!--Category Name-->
                         <div class="input-field">
@@ -28,19 +28,19 @@
                                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                                 {% endfor %}
                             </select>
-                            <label class="content-light label-margin" for="category_name">Meal Type</label>
+                            <label class="headings-light label-margin" for="category_name">Meal Type</label>
                         </div>
                         <!--Recipe Origin-->
                         <div class="input-field">
                             <i class="fas fa-globe-europe prefix icons"></i>
-                            <input id="cuisine" name="cuisine" type="text" class="validate">
-                            <label class="content-light label-margin" for="cuisine">Country of Origin</label>
+                            <input id="cuisine" name="cuisine" type="text" pattern="^[a-zA-Z]{2,25}$" min-length="2" max-length="25" class="validate content-light tooltipped" data-position="bottom" data-tooltip="e.g Spanish" required>
+                            <label class="headings-light label-margin" for="cuisine">Country of Origin</label>
                         </div>
                         <!--Vegetarian Switch-->
                         <div class="input-field">
                             <div class="switch">
                                 <i class="fas fa-carrot prefix icons"></i>
-                                <span class="switch-text content-light">Vegetarian</span>
+                                <span class="switch-text headings-light">Vegetarian</span>
                                 <label for="vegetarian" class="label-margin">
                                     <span class="switch-text-selector content-light">No</span>
                                     <input type="checkbox" id="vegetarian" name="vegetarian">
@@ -53,7 +53,7 @@
                         <div class="input-field">
                             <div class="switch">
                                 <i class="fas fa-seedling prefix icons"></i>
-                                <span class="switch-text content-light vegan-label">Vegan</span>
+                                <span class="switch-text headings-light vegan-label">Vegan</span>
                                 <label for="vegan" class="label-margin">
                                     <span class="switch-text-selector content-light">No</span>
                                     <input type="checkbox" id="vegan" name="vegan">
@@ -67,32 +67,32 @@
                         <!--Recipe Servings-->
                         <div class="input-field">
                             <i class="fas fa-users prefix icons"></i>
-                            <input id="servings" name="servings" min-length="5" max-length="50" type="text" class="validate" required>
-                            <label class="content-light label-margin" for="servings">Servings</label>
+                            <input id="servings" name="servings" min="1" max="20" type="number" class="validate content-light tooltipped" data-position="bottom" data-tooltip="Between 1-20 (e.g: 6)" required>
+                            <label class="headings-light label-margin" for="servings">Servings</label>
                         </div>
                         <!--Recipe Calories-->
                         <div class="input-field">
                             <i class="fas fa-fire prefix icons"></i>
-                            <input id="calories" name="calories" min-length="5" max-length="50" type="text" class="validate" required>
-                            <label class="content-light label-margin" for="calories">Calories</label>
+                            <input id="calories" name="calories" min="1" max="9999" type="number" class="validate content-light tooltipped" data-position="bottom" data-tooltip="Between 1-9999 (e.g: 345)" required>
+                            <label class="headings-light label-margin" for="calories">Calories</label>
                         </div>
                         <!--Recipe Prep Time-->
                         <div class="input-field">
                             <i class="fas fa-stopwatch prefix icons"></i>
-                            <input id="prep_time" name="prep_time" min-length="5" max-length="50" type="text" class="validate" required>
-                            <label class="content-light label-margin" for="prep_time">Preparation Time <small>(mins)</small></label>
+                            <input id="prep_time" name="prep_time" min="1" max="999" type="number" class="validate content-light tooltipped" data-position="bottom" data-tooltip="Between 1-999 (e.g: 90)" required>
+                            <label class="headings-light label-margin" for="prep_time">Preparation Time <small>(mins)</small></label>
                         </div>
                         <!--Recipe Cook Time-->
                         <div class="input-field">
                             <i class="far fa-hourglass prefix icons"></i>
-                            <input id="cook_time" name="cook_time" min-length="5" max-length="50" type="text" class="validate" required>
-                            <label class="content-light label-margin" for="cook_time">Cooking Time <small>(mins)</small></label>
+                            <input id="cook_time" name="cook_time" min="1" max="999" type="number" class="validate content-light tooltipped" data-position="bottom" data-tooltip="Between 1-999 (e.g: 90)" required>
+                            <label class="headings-light label-margin" for="cook_time">Cooking Time <small>(mins)</small></label>
                         </div>
                         <!--Recipe Image-->
                         <div class="input-field">
                             <i class="fas fa-camera prefix icons"></i>
-                            <input id="recipe_image" name="recipe_image" min-length="5" max-length="50" type="text" class="validate" required>
-                            <label class="content-light label-margin" for="recipe_image">Image URL</label>
+                            <input id="recipe_image" name="recipe_image" min-length="5" type="text" class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
+                            <label class="headings-light label-margin" for="recipe_image">Image URL</label>
                         </div>
                     </div>
                     <div class="col s12 l4">
@@ -100,8 +100,8 @@
                         <div class="row" id="ingredients-container">
                             <div class="input-field first-item">
                                 <i class="fas fa-list-ul prefix icons"></i>
-                                <textarea id="ingredients" name="ingredients" min-length="10" max-length="80" class="materialize-textarea validate" required></textarea>
-                                <label class="content-light label-margin" for="ingredients">Ingredients</label>
+                                <textarea id="ingredients" name="ingredients" min-length="2" max-length="80" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="e.g: 500g Chicken Breast" required></textarea>
+                                <label class="headings-light label-margin" for="ingredients">Ingredients</label>
                             </div>
                         </div>
                         <div class="row">
@@ -114,8 +114,8 @@
                         <div class="row" id="method-container">
                             <div class="input-field first-item">
                                 <i class="fas fa-list-ol prefix icons"></i>
-                                <textarea id="recipe_method" name="recipe_method" min-length="10" max-length="80" class="materialize-textarea validate" required></textarea>
-                                <label class="content-light label-margin" for="recipe_method">Method</label>
+                                <textarea id="recipe_method" name="recipe_method" min-length="10" max-length="500" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="Click 'Add Step' button for each step" required></textarea>
+                                <label class="headings-light label-margin" for="recipe_method">Method</label>
                             </div>
                         </div>
                         <div class="row">
@@ -127,7 +127,7 @@
                     </div>
                     <!--Recipe Submit Button-->
                     <div class="col s12 center-align">
-                        <button type="submit" class="btn btn-large yellow lighten-1 content-dark">Add Recipe <i class="fas fa-plus-circle right"></i></button>
+                        <button type="submit" id="recipe-submit" class="btn btn-large yellow lighten-1 content-dark">Add Recipe <i class="fas fa-plus-circle right"></i></button>
                     </div>
                 </div>
             </form>
