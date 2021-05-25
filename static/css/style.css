@@ -132,6 +132,11 @@ nav ul a {
     color: #EAE7DC;
 }
 
+nav ul a:hover {
+    background-color: #ffee58 !important;
+    color: #101010;
+}
+
 /** --- Logo & Navbar Ends ---**/
 
 /** --- Footer ---**/
@@ -314,10 +319,30 @@ footer {
 }
 
 .input-field {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.first-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.new-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.label-margin {
+    margin-left: 70px !important;
+}
+
+.trash-icon {
+    font-size: 1rem;
+    color: #ef5350;
 }
 
 /** --- Add Recipe Ends ---**/
@@ -369,11 +394,11 @@ footer {
     }
 
     .input-field {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-    margin-left: 0;
-    margin-right: 0;
-}
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 @media screen and (max-width: 325px) {
