@@ -9,6 +9,7 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
     $('select').formSelect();
     validateMaterializeSelect();
+    setInterval(changeLinkToButton, 500);
 
 });
 
@@ -72,4 +73,9 @@ function validateMaterializeSelect() {
             });
         }
     });
+}
+
+function changeLinkToButton() {
+    href = $(".carousel-item.active a").attr("href");
+    $("#carousel-button").attr("href", href);
 }

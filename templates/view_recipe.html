@@ -8,26 +8,57 @@
                 <hr class="headings-underline left">
             </div>
         </div>
-        <div class="row card">
+        <div class="row card hoverable">
             <div class="col s12 m6 l7">
                 <img class="recipe-image" src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
             </div>
             <div class="col s12 m6 l5">
                 <h5 class="headings-dark center">Recipe Information</h5>
                 <hr class="headings-underline center">
+                <table class="content-dark centered">
+                    <tr>
+                        <td><i class="fas fa-users recipe-icons"></i></td>
+                        <td>Servings: </td>
+                        <td>{{ recipe.servings }}</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-stopwatch recipe-icons"></i></td>
+                        <td>Prep time: </td>
+                        <td>{{ recipe.prep_time }} mins</td>
+                    </tr>
+                    <tr>
+                        <td><i class="far fa-hourglass recipe-icons"></i></td>
+                        <td>Cook time: </td>
+                        <td>{{ recipe.cook_time }} mins</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-fire recipe-icons"></i></td>
+                        <td>Calories: </td>
+                        <td>{{ recipe.calories }} kcal</td>
+                    </tr>
+                </table>
+                <div class="col s12 center content-color">
+                    {% if recipe.vegetarian == "on" %}
+                        <div class="highlight-pill">Vegetarian</div>
+                    {% endif %}
+                    {% if recipe.vegan =="on" %}
+                        <div class="highlight-pill">Vegan</div>
+                    {% endif %}
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col s12 right-align">
                 <h6 class="content-dark">Created By: <em>{{ recipe.created_by }}</em></h6>
+                <hr class="headings-underline-dark right">
             </div>
         </div>
         <div class="row">
-            <div class="col s12">
+            <div class="col s12 color-background recipe-description">
                 <h5 class="content-dark"><em>"{{ recipe.description }}"</em></h5>
             </div>
         </div>
-        <div class="row">
+        <div class="row instructions">
             <div class="col s12 m5 dark-background">
                 <h5 class="headings-light center">Recipe Ingredients</h5>
                 <hr class="headings-underline center">
@@ -45,6 +76,13 @@
                         <li>{{ step }}</li>
                     {% endfor %}
                 </ol>
+            </div>
+        </div>
+        <div class="row center recipe-buttons-row">
+            <div class="col s12">
+                <a href="{{ url_for('get_recipes') }}" class="btn btn-large yellow lighten-1 content-dark recipe-buttons">Recipes</a>
+                <a class="btn btn-large blue-grey darken-3 content-light recipe-buttons">Save</a>
+                <a class="btn btn-large deep-orange darken-4 recipe-buttons">Delete</a>
             </div>
         </div>
     </div>

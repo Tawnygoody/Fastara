@@ -5,13 +5,14 @@
     <div class="container-fluid carousel-container">
         <div class="carousel carousel-slider center">
             <div class="carousel-fixed-item center">
-                <a class="btn btn-large yellow lighten-1 content-dark">View Recipe</a>
+                <a class="btn btn-large yellow lighten-1 content-dark" id="carousel-button">View Recipe</a>
             </div>
             {% for recipe in recipes %}
-            <div class="carousel-item" style="background-image: url( {{recipe.recipe_image}} );">
-                <div class="overlay"></div>
-                <h2 class="carousel-text headings-light">{{ recipe.title }}</h2>
-            </div>
+                <div class="carousel-item" style="background-image: url( {{recipe.recipe_image}} );">
+                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"></a>
+                    <div class="overlay"></div>
+                    <h2 class="carousel-text headings-light">{{ recipe.title }}</h2>
+                </div>    
             {% endfor %}
         </div>
     </div>
