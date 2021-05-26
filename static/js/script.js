@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
     $('select').formSelect();
     validateMaterializeSelect();
-    setInterval(changeLinkToButton, 500);
+    setInterval(changeLink, 100);
 
 });
 
@@ -75,7 +75,7 @@ function validateMaterializeSelect() {
     });
 }
 
-function changeLinkToButton() {
-    href = $(".carousel-item.active a").attr("href");
-    $("#carousel-button").attr("href", href);
+function changeLink() { // thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
+    link = $(".carousel-item.active a").prop("href");
+    $("#carousel-button").prop("href", link);
 }
