@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="headings-dark capitalize">{{ recipe.title }}</h4>
+                <hr class="headings-underline left">
+            </div>
+        </div>
+        <div class="row card">
+            <div class="col s12 m6 l7">
+                <img class="recipe-image" src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+            </div>
+            <div class="col s12 m6 l5">
+                <h5 class="headings-dark center">Recipe Information</h5>
+                <hr class="headings-underline center">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 right-align">
+                <h6 class="content-dark">Created By: <em>{{ recipe.created_by }}</em></h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <h5 class="content-dark"><em>"{{ recipe.description }}"</em></h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m5 dark-background">
+                <h5 class="headings-light center">Recipe Ingredients</h5>
+                <hr class="headings-underline center">
+                <ul class="content-light ingredient-list">
+                    {% for ingredient in recipe.ingredients %}
+                        <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col s12 m7">
+                <h5 class="headings-dark center">Recipe Method</h5>
+                <hr class="headings-underline center">
+                <ol class="method-list">
+                    {% for step in recipe.recipe_method %}
+                        <li>{{ step }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
