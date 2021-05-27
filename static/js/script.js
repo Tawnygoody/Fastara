@@ -33,6 +33,10 @@ $("#add-ingredient").on("click", function() {
     
 });
 
+$(".trash-icon").on("click", function() { // needs to be outside the add-ingredient function and add step function as when editing it means something needs to be added before it can be deleted.
+    $(this).parent().remove();
+});
+
 $("#add-step").on("click", function() {
     new_step = 
     `<div class="input-field new-item">
@@ -74,6 +78,7 @@ function validateMaterializeSelect() {
         }
     });
 }
+
 
 function changeLink() { // thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
     link = $(".carousel-item.active a").prop("href");

@@ -23,11 +23,13 @@
                                         <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
                                     </a>
                                 </li>
+                                {% if session.user %}
                                 <li>
                                     <a href="#">
                                         <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
