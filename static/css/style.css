@@ -270,6 +270,16 @@ footer {
     height: 130px;
 }
 
+.search-label {
+    color: #101010 !important;
+}
+
+.search-buttons {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
 /** --- Recipes Ends ---**/
 
 /** --- Registration ---**/
