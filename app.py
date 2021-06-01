@@ -19,17 +19,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-def get_recipes_paginate(page, offset=0, per_page=10):
-    per_page = 6
-    offset = ((page - 1) * per_page)
+def get_recipes_paginate(offset=0, per_page=10):
     recipes = list(mongo.db.recipes.find())
     return recipes[offset: offset + per_page]
 
 
 @app.route("/")
 def home():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("home.html", recipes=recipes)
+    admin_recipes = list(mongo.db.recipes.find({"created_by": "admin"}))
+    return render_template("home.html", admin_recipes=admin_recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -109,9 +107,10 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
+    per_page = 6
     total = len(recipes)
     pagination_recipes = get_recipes_paginate(
-        page=page, offset=page*per_page-per_page, per_page=per_page)
+        offset=page*per_page-per_page, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total)
     return render_template(
         "recipes.html",
