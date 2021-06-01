@@ -233,9 +233,18 @@ footer {
 
 /** --- Recipes ---**/
 
+.card-image {
+    overflow: hidden;
+}
+
 .card .card-image img {
     height: 225px;
     object-fit: cover;
+    transition: transform 2s ease;
+}
+
+.card-image:hover img { /*-- Thanks to https://w3bits.com/css-image-hover-zoom/ for this code --*/
+  transform: scale(1.2);
 }
 
 .card-overlay { /*-- Thanks to https://www.w3schools.com/howto/howto_css_image_overlay_title.asp for this code --*/

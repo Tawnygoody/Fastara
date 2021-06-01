@@ -128,9 +128,12 @@ def categories(category):
         recipes = list(mongo.db.recipes.find({"category_name": "Breakfast"}))
     elif category == "Lunch":
         recipes = list(mongo.db.recipes.find({"category_name": "Lunch"}))
-    elif category == "Dinner":
+    else:
         recipes = list(mongo.db.recipes.find({"category_name": "Dinner"}))
-    return render_template("filter.html", category=category, recipes=recipes)
+    return render_template(
+        "filter.html",
+        category=category,
+        recipes=recipes)
 
 
 @app.route("/search", methods=["GET", "POST"])
