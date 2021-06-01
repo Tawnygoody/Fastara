@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 
 def get_recipes_paginate(page, offset=0, per_page=10):
     per_page = 6
-    offset = ((page - 1)*per_page)
+    offset = ((page - 1) * per_page)
     recipes = list(mongo.db.recipes.find())
     return recipes[offset: offset + per_page]
 
@@ -67,7 +67,7 @@ def login():
         if existing_user:
             # Ensure hashed password matches user input
             if check_password_hash(
-            existing_user["password"], request.form.get("password")):
+                existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
                     return redirect(url_for(
@@ -111,22 +111,25 @@ def get_recipes():
         page_parameter='page', per_page_parameter='per_page')
     total = len(recipes)
     pagination_recipes = get_recipes_paginate(
-        page=page, offset=offset, per_page=per_page)
+        page=page, offset=page*per_page-per_page, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total)
     return render_template(
         "recipes.html",
         recipes=pagination_recipes,
         page=page,
         per_page=per_page,
-        pagination=pagination)
+        pagination=pagination,
+        )
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("recipes.html", recipes=recipes)
-
+    return render_template(
+        "search.html",
+        recipes=recipes,
+        )
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
