@@ -19,7 +19,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-def get_recipes_paginate(offset=0, per_page=10):
+def get_recipes_paginate(page, offset=0, per_page=10):
+    per_page = 6
+    offset = ((page - 1)*per_page)
     recipes = list(mongo.db.recipes.find())
     return recipes[offset: offset + per_page]
 
@@ -107,9 +109,9 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
-    per_page = 10
     total = len(recipes)
-    pagination_recipes = get_recipes_paginate(offset=offset, per_page=per_page)
+    pagination_recipes = get_recipes_paginate(
+        page=page, offset=offset, per_page=per_page)
     pagination = Pagination(page=page, per_page=per_page, total=total)
     return render_template(
         "recipes.html",
