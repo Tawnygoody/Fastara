@@ -122,6 +122,17 @@ def get_recipes():
         )
 
 
+@app.route("/get_recipes/<category>")
+def categories(category):
+    if category == "Breakfast":
+        recipes = list(mongo.db.recipes.find({"category_name": "Breakfast"}))
+    elif category == "Lunch":
+        recipes = list(mongo.db.recipes.find({"category_name": "Lunch"}))
+    elif category == "Dinner":
+        recipes = list(mongo.db.recipes.find({"category_name": "Dinner"}))
+    return render_template("filter.html", category=category, recipes=recipes)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
