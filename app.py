@@ -82,12 +82,11 @@ def login():
 
         if existing_user:
             # Ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+            if check_password_hash(existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # Invalid Password Match
                 flash("Incorrect Username and/or Password")
@@ -104,10 +103,14 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["firstname"]
+        {"username": session["user"]})
+    recipes = list(mongo.db.recipes.find({"created_by": session['user']}))
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html",
+            username=username,
+            recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -235,7 +238,8 @@ def delete_recipe(recipe_id):
 def view_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template(
-        "view_recipe.html", recipe=recipe)
+        "view_recipe.html",
+        recipe=recipe)
 
 
 if __name__ == "__main__":

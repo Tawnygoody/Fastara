@@ -474,7 +474,9 @@ table {
 
 /** --- Profile ---**/
 
-
+.profile-table {
+    margin-bottom: 40px;
+}
 
 /** --- Profile Ends ---**/
 
