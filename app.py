@@ -1,4 +1,5 @@
 import os
+import random
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -26,8 +27,25 @@ def get_recipes_paginate(offset=0, per_page=10):
 
 @app.route("/")
 def home():
-    admin_recipes = list(mongo.db.recipes.find({"created_by": "admin"}))
-    return render_template("home.html", admin_recipes=admin_recipes)
+    admin_recipes = list(
+        mongo.db.recipes.find({"created_by": "admin"}))
+    random.shuffle(admin_recipes)
+    breakfast_recipes = list(
+        mongo.db.recipes.find({"category_name": "Breakfast"}))
+    random.shuffle(breakfast_recipes)
+    lunch_recipes = list(
+        mongo.db.recipes.find({"category_name": "Lunch"}))
+    random.shuffle(lunch_recipes)
+    dinner_recipes = list(
+        mongo.db.recipes.find({"category_name": "Dinner"}))
+    random.shuffle(dinner_recipes)
+    return render_template(
+        "home.html",
+        admin_recipes=admin_recipes,
+        breakfast_recipes=breakfast_recipes,
+        lunch_recipes=lunch_recipes,
+        dinner_recipes=dinner_recipes
+        )
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -111,6 +129,7 @@ def get_recipes():
     total = len(recipes)
     pagination_recipes = get_recipes_paginate(
         offset=page*per_page-per_page, per_page=per_page)
+    random.shuffle(pagination_recipes)
     pagination = Pagination(page=page, per_page=per_page, total=total)
     return render_template(
         "recipes.html",

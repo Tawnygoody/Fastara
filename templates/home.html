@@ -8,11 +8,13 @@
                 <a class="btn btn-large yellow lighten-1 content-dark" id="carousel-button">View Recipe</a>
             </div>
             {% for recipe in admin_recipes %}
+            {% if loop.index <= 6 %}
                 <div class="carousel-item" style="background-image: url( {{recipe.recipe_image}} );">
                     <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"></a>
                     <div class="overlay"></div>
                     <h2 class="carousel-text headings-light">{{ recipe.title }}</h2>
-                </div>    
+                </div>
+            {% endif %}    
             {% endfor %}
         </div>
     </div>
@@ -61,6 +63,148 @@
             </div>
         </div>
     </div>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h4 class="headings-dark capitalize">Breakfast</h4>
+            <hr class="headings-underline left">
+            <br>
+            <p class="content-dark">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius eligendi nemo ratione, perspiciatis fuga ut beatae optio tempora repellendus vitae quo rerum molestias atque non adipisci quae illum alias similique!</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for recipe in breakfast_recipes %}
+        {% if loop.index <= 3 %}
+        <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card hoverable recipe-card">
+                <div class="card-image">
+                    <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                    <div class="card-overlay">
+                        <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
+                    <hr class="headings-underline center">
+                    <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped"
+                                    data-position="left" data-tooltip="View Recipe"></i>
+                            </a>
+                        </li>
+                        {% if session.user %}
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped"
+                                    data-position="right" data-tooltip="Save Recipe"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <a href="{{ url_for('categories', category='Breakfast') }}" class="btn dark-background content-color recipe-buttons right">More B'fast</a>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col s12">
+            <h4 class="headings-dark capitalize">Lunch</h4>
+            <hr class="headings-underline left">
+            <br>
+            <p class="content-dark">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius eligendi nemo ratione, perspiciatis fuga ut beatae optio tempora repellendus vitae quo rerum molestias atque non adipisci quae illum alias similique!</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for recipe in lunch_recipes %}
+        {% if loop.index <= 3 %}
+        <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card hoverable recipe-card">
+                <div class="card-image">
+                    <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                    <div class="card-overlay">
+                        <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
+                    <hr class="headings-underline center">
+                    <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped"
+                                    data-position="left" data-tooltip="View Recipe"></i>
+                            </a>
+                        </li>
+                        {% if session.user %}
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped"
+                                    data-position="right" data-tooltip="Save Recipe"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <a href="{{ url_for('categories', category='Lunch') }}" class="btn dark-background content-color recipe-buttons right">More Lunch</a>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col s12">
+            <h4 class="headings-dark capitalize">Dinner</h4>
+            <hr class="headings-underline left">
+            <br>
+            <p class="content-dark">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius eligendi nemo ratione, perspiciatis fuga ut beatae optio tempora repellendus vitae quo rerum molestias atque non adipisci quae illum alias similique!</p>
+        </div>
+    </div>
+    <div class="row">
+        {% for recipe in dinner_recipes %}
+        {% if loop.index <= 3 %}
+        <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="card hoverable recipe-card">
+                <div class="card-image">
+                    <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                    <div class="card-overlay">
+                        <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
+                    <hr class="headings-underline center">
+                    <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped"
+                                    data-position="left" data-tooltip="View Recipe"></i>
+                            </a>
+                        </li>
+                        {% if session.user %}
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped"
+                                    data-position="right" data-tooltip="Save Recipe"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <a href="{{ url_for('categories', category='Dinner') }}" class="btn dark-background content-color recipe-buttons right">More Dinner</a>
+    </div>
+</div>
 
 
 {% endblock %}
