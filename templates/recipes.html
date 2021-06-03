@@ -57,9 +57,11 @@
                                 </li>
                                 {% if session.user %}
                                 <li>
-                                    <a href="#">
+                                    <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
+                                    <button class="save-button">
                                         <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
-                                    </a>
+                                    </button>
+                                    </form>
                                 </li>
                                 {% endif %}
                             </ul>

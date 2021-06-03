@@ -105,12 +105,19 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})
     recipes = list(mongo.db.recipes.find({"created_by": session['user']}))
+    saved = username["saved_recipes"]
+    saved_recipe = []
+
+    for recipe_id in saved:
+        recipe_id = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        saved_recipe.append(recipe_id)
 
     if session["user"]:
         return render_template(
             "profile.html",
             username=username,
-            recipes=recipes)
+            recipes=recipes,
+            saved_recipe=saved_recipe)
 
     return redirect(url_for("login"))
 
@@ -240,6 +247,29 @@ def view_recipe(recipe_id):
     return render_template(
         "view_recipe.html",
         recipe=recipe)
+
+
+@app.route("/save/<recipe_id>", methods=["POST"])
+def save_recipe(recipe_id):
+    username = mongo.db.users.find_one({"username": session["user"]})
+    saved = username["saved_recipes"]
+
+    if ObjectId(recipe_id) in saved:
+        flash("Recipe Already Saved to Profile")
+        return redirect(request.referrer)
+    mongo.db.users.update_one(
+        username, {"$push": {"saved_recipes": ObjectId(recipe_id)}})
+    flash("Recipe Saved to Profile")
+    return redirect(request.referrer)
+
+
+@app.route("/remove/<recipe_id>", methods=["POST"])
+def delete_saved_recipe(recipe_id):
+    username = mongo.db.users.find_one({"username": session["user"]})
+    mongo.db.users.update_one(
+        username, {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
+    flash("Recipe Removed from Profile")
+    return redirect(request.referrer)
 
 
 if __name__ == "__main__":
