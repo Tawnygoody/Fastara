@@ -75,6 +75,7 @@
                 <hr class="headings-underline left">
             </div>
         </div>
+        {% if saved_recipe|length > 0 %}
         <div class="row">
             {% for recipe in saved_recipe %}
             <div class="col s12 m6 xl4 center">
@@ -110,6 +111,9 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+            <h4 class="headings-dark capitalize center">No Saved recipes</h4>
+        {% endif %}
         </div>
 
     <div id="logout-modal" class="modal dark-background">
