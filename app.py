@@ -273,6 +273,11 @@ def delete_saved_recipe(recipe_id):
     return redirect(request.referrer)
 
 
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+
 @app.errorhandler(404)
 def resource_not_found(error):
     '''
