@@ -83,7 +83,7 @@ def login():
 
         if existing_user:
             # Ensure hashed password matches user input
-            if check_password_hash(existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user["password"],request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for(
@@ -279,6 +279,14 @@ def resource_not_found(error):
     thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
     '''
     return render_template("404.html")
+
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    '''
+    thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+    '''
+    return render_template("500.html")
 
 
 if __name__ == "__main__":
