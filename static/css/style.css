@@ -474,6 +474,10 @@ table {
     color: #101010;
 }
 
+.form-recipe-button {
+    display: inline-block;
+}
+
 
 /** --- View Recipe Ends ---**/
 
@@ -492,6 +496,20 @@ table {
 }
 
 /** --- Modals Ends ---**/
+
+/** --- Error Pages ---**/
+
+.error-row {
+    min-height: 100vh;
+}
+
+.error-image {
+    object-fit: cover;
+    width: 500px;
+    align-items: center;
+}
+
+/** --- Error Pages Ends ---**/
 
 /** --- Media Queries ---**/
 
@@ -517,6 +535,10 @@ table {
         object-fit: cover;
         margin-bottom: 20px;
     }
+
+    .error-image {
+        width: 300px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -530,6 +552,21 @@ table {
         padding-bottom: 2.5rem;
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+@media screen and (max-height: 375px) {
+    .error-image {
+        margin-top: 20px;
+    }
+    .error-button {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .error-image {
+        width: 200px;
     }
 }
 

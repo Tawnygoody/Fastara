@@ -62,7 +62,8 @@ def register():
         register = {
             "firstname": request.form.get("firstname").lower(),
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "saved_recipes": []
         }
         mongo.db.users.insert_one(register)
 
@@ -270,6 +271,14 @@ def delete_saved_recipe(recipe_id):
         username, {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
     flash("Recipe Removed from Profile")
     return redirect(request.referrer)
+
+
+@app.errorhandler(404)
+def resource_not_found(error):
+    '''
+    thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+    '''
+    return render_template("404.html")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@
 {% block content %}
 
     <div class="container">
+        <!--Profile Card -->
         <div class="row card hoverable">
             <div class="col s12 m4">
                 <img class="recipe-image" src="/static/images/home-page-image1.png" alt="">
@@ -23,7 +24,7 @@
                     <tr>
                         <td><i class="fas fa-save recipe-icons"></i></td>
                         <td>Recipes Saved: </td>
-                        <td>0</td>
+                        <td>{{ saved_recipe|length }}</td>
                     </tr>
                 </table>
                 <div class="center">
@@ -32,90 +33,97 @@
                 </div>
             </div>
         </div>
+
+        <!--User's Recipes -->
         <div class="row">
             <div class="col s12">
                 <h4 class="headings-dark capitalize">{{ username.firstname}}'s Recipes</h4>
                 <hr class="headings-underline left">
             </div>
         </div>
-        
         {% if recipes|length > 0 %}
-        <div class="row">
-            {% for recipe in recipes %}
-                <div class="col s12 m6 xl4 center">
-                    <div class="card hoverable recipe-card">
-                        <div class="card-image">
-                            <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
-                            <div class="card-overlay">
-                                <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+            <div class="row">
+                {% for recipe in recipes %}
+                    <div class="col s12 m6 xl4 center">
+                        <div class="card hoverable recipe-card">
+                            <div class="card-image">
+                                <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                                <div class="card-overlay">
+                                    <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
+                                <hr class="headings-underline center">
+                                <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                            <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="card-content">
-                            <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
-                            <hr class="headings-underline center">
-                            <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                        <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-        {% else %}
-            <h4 class="headings-dark capitalize center">No results found</h4>
-        {% endif %}
-        <div class="row">
-            <div class="col s12">
-                <h4 class="headings-dark capitalize">Saved Recipes</h4>
-                <hr class="headings-underline left">
+                {% endfor %}
             </div>
-        </div>
-        {% if saved_recipe|length > 0 %}
-        <div class="row">
-            {% for recipe in saved_recipe %}
-            <div class="col s12 m6 xl4 center">
-                <div class="card hoverable recipe-card">
-                    <div class="card-image">
-                        <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
-                        <div class="card-overlay">
-                            <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
-                        <hr class="headings-underline center">
-                        <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                    <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left"
-                                        data-tooltip="View Recipe"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <form method="POST" action="{{ url_for('delete_saved_recipe', recipe_id=recipe._id) }}">
-                                    <button class="save-button">
-                                        <i class="fas fa-minus-circle card-icons red-text tooltipped" data-position="right"
-                                            data-tooltip="Remove from profile"></i>
-                                    </button>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
+        {% else %}
+            <div class="row recipe-buttons-row">
+                <div class="col s12 center">
+                    <h5 class="headings-dark capitalize">Upload your own recipes</h5>
+                    <a href="{{ url_for('add_recipe') }}" class="btn btn-large yellow lighten-1 content-dark">Add Recipe <i class="fas fa-upload right"></i></a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        {% else %}
-            <h4 class="headings-dark capitalize center">No Saved recipes</h4>
         {% endif %}
-        </div>
 
+        <!--User's Saved Recipes -->
+        {% if saved_recipe|length > 0 %}
+            <div class="row">
+                <div class="col s12">
+                    <h4 class="headings-dark capitalize">Saved Recipes</h4>
+                    <hr class="headings-underline left">
+                </div>
+            </div>
+            <div class="row">
+                {% for recipe in saved_recipe %}
+                    <div class="col s12 m6 xl4 center">
+                        <div class="card hoverable recipe-card">
+                            <div class="card-image">
+                                <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                                <div class="card-overlay">
+                                    <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
+                                <hr class="headings-underline center">
+                                <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                            <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left"
+                                                data-tooltip="View Recipe"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <form method="POST" action="{{ url_for('delete_saved_recipe', recipe_id=recipe._id) }}">
+                                            <button class="save-button">
+                                                <i class="fas fa-minus-circle card-icons red-text tooltipped" data-position="right"
+                                                    data-tooltip="Remove from profile"></i>
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!--Log Out Modal -->
     <div id="logout-modal" class="modal dark-background">
         <div class="modal-content center-align headings-light">
             <h4>Are you sure you wish to Log Out?</h4>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!--Recipe Cards-->
+    <!--Title -->
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -9,6 +9,7 @@
                 <hr class="headings-underline left">
             </div>
         </div>
+        <!--Search Bar -->
         <div class="row">
             <form action="{{ url_for('search') }}" method="POST" class="col s12 m8 offset-m2 card hoverable">
                 <div class="row valign-wrapper center-align">
@@ -24,58 +25,62 @@
                 </div>
             </form>
         </div>
+
+        <!--Filter Buttons -->
         {% if recipes|length > 0 %}
-        <div class="row">
-            <div class="col s12 center">
-                <h5 class="content-dark">Filter By:</h5>
-                <a href="{{ url_for('categories', category='Breakfast') }}" class="btn dark-background content-color recipe-buttons">Breakfast</a>
-                <a href="{{ url_for('categories', category='Lunch') }}" class="btn dark-background content-color recipe-buttons">Lunch</a>
-                <a href="{{ url_for('categories', category='Dinner') }}" class="btn dark-background content-color recipe-buttons">Dinner</a>
+            <div class="row">
+                <div class="col s12 center">
+                    <h5 class="content-dark">Filter By:</h5>
+                    <a href="{{ url_for('categories', category='Breakfast') }}" class="btn dark-background content-color recipe-buttons">Breakfast</a>
+                    <a href="{{ url_for('categories', category='Lunch') }}" class="btn dark-background content-color recipe-buttons">Lunch</a>
+                    <a href="{{ url_for('categories', category='Dinner') }}" class="btn dark-background content-color recipe-buttons">Dinner</a>
+                </div>
             </div>
-        </div>
         {% endif %}
+
+        <!--Recipe Cards-->
         {% if recipes|length > 0 %}
-        <div class="row">
-            {% for recipe in recipes %}
-                <div class="col s12 m6 xl4 center">
-                    <div class="card hoverable recipe-card">
-                        <div class="card-image">
-                            <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
-                            <div class="card-overlay">
-                                <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+            <div class="row">
+                {% for recipe in recipes %}
+                    <div class="col s12 m6 xl4 center">
+                        <div class="card hoverable recipe-card">
+                            <div class="card-image">
+                                <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                                <div class="card-overlay">
+                                    <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
+                                <hr class="headings-underline center">
+                                <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                            <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
+                                        </a>
+                                    </li>
+                                    {% if session.user %}
+                                        {% if session.user|lower == recipe.created_by|lower %}
+                                        {% else %}
+                                            <li>
+                                                <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
+                                                    <button class="save-button">
+                                                        <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
+                                                    </button>
+                                                </form>
+                                            </li>
+                                        {% endif %}
+                                    {% endif %}
+                                </ul>
                             </div>
                         </div>
-                        <div class="card-content">
-                            <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
-                            <hr class="headings-underline center">
-                            <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
-                            <ul class="list-inline">
-                                <li>
-                                    <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                        <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
-                                    </a>
-                                </li>
-                                {% if session.user %}
-                                    {% if session.user|lower == recipe.created_by|lower %}
-                                    {% else %}
-                                        <li>
-                                            <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
-                                            <button class="save-button">
-                                                <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
-                                            </button>
-                                            </form>
-                                        </li>
-                                    {% endif %}
-                                {% endif %}
-                            </ul>
-                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="row center-align">
-            {{ pagination.links }}
-        </div>
+                {% endfor %}
+            </div>
+            <div class="row center-align">
+                {{ pagination.links }}
+            </div>
         {% else %}
             <h4 class="headings-dark capitalize center">No results found</h4>
         {% endif %}
