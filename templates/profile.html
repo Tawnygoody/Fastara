@@ -5,7 +5,7 @@
         <!--Profile Card -->
         <div class="row card hoverable">
             <div class="col s12 m4">
-                <img class="recipe-image" src="/static/images/home-page-image1.png" alt="">
+                <img class="recipe-image" src="{{ username.profile_image }}" alt="Profile Image">
             </div>
             <div class="col s12 m8">
                 <h4 class="headings-dark center capitalize">{{ username.firstname }}'s Profile</h4>
@@ -28,8 +28,9 @@
                     </tr>
                 </table>
                 <div class="center">
-                    <a href="" class="btn dark-background content-color recipe-buttons">Edit</a>
-                    <a href="#logout-modal"" class="btn dark-background content-color recipe-buttons modal-trigger">Log Out</a>
+                    <a href="" class="btn dark-background content-color recipe-buttons">Edit Profile</a>
+                    <a href="#logout-modal" class="btn dark-background content-color recipe-buttons modal-trigger">Log Out</a>
+                    <a href="#delete-profile" class="btn dark-background content-color recipe-buttons modal-trigger">Delete</a>
                 </div>
             </div>
         </div>
@@ -135,6 +136,25 @@
                 </div>
                 <div class="col s6 left-align">
                     <a href="{{ url_for('logout') }}" class="btn red darken-4 content-light">Log Out</a>
+                </div>
+            </div>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+    <!--Delete Profile Modal -->
+    <div id="delete-profile" class="modal dark-background">
+        <div class="modal-content center-align headings-light">
+            <h4>Are you sure you wish to delete your profile?</h4>
+            <p><small>Please note any recipes you've uploaded will not be removed.</small></p>
+        </div>
+        <div class="modal-footer dark-background">
+            <div class="row">
+                <div class="col s6 right-align">
+                    <a class="btn yellow lighten-1 content-dark modal-close">Close</a>
+                </div>
+                <div class="col s6 left-align">
+                    <a href="{{ url_for('remove_profile') }}" class="btn red darken-4 content-light">Delete</a>
                 </div>
             </div>
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>

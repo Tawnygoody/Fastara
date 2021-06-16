@@ -72,7 +72,8 @@ def register():
             "firstname": request.form.get("firstname").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "saved_recipes": []
+            "saved_recipes": [],
+            "profile_image": "https://images.unsplash.com/photo-1528216142275-f64d7a59d8d5"
         }
         mongo.db.users.insert_one(register)
 
@@ -130,6 +131,14 @@ def profile(username):
             saved_recipe=saved_recipe)
 
     return redirect(url_for("login"))
+
+
+@app.route("/remove_profile")
+def remove_profile():
+    mongo.db.users.remove({"username": session["user"]})
+    session.pop("user")
+    flash("Your profile has been succesfully deleted!")
+    return redirect(url_for("register"))
 
 
 @app.route("/logout")
