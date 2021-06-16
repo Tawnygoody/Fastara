@@ -4,6 +4,10 @@
     min-height: 80vh;
 }
 
+html,body{ /** thanks to https://stackoverflow.com/questions/46012482/unwanted-white-space-on-right-side-in-mobile-view **/
+    overflow-x: hidden;
+}
+
 /** --- Text --- **/
 
 .headings-light {
@@ -492,7 +496,7 @@ table {
 /** --- Dashboard ---**/
 
 .charts {
-    background: #EAE7DC;
+    background: #f1f1f1;
     border-radius: 5px;
     height: 450px;
     width: 100%;

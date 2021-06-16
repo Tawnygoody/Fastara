@@ -78,6 +78,9 @@
                     </div>
                 {% endfor %}
             </div>
+            <div class="row center-align">
+                {{ pagination.links }}
+            </div>
         {% else %}
             <h4 class="headings-dark capitalize center">No results found</h4>
         {% endif %}

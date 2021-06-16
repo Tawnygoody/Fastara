@@ -10,7 +10,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -22,6 +21,16 @@ mongo = PyMongo(app)
 
 def get_recipes_paginate(offset=0, per_page=10):
     recipes = list(mongo.db.recipes.find())
+    return recipes[offset: offset + per_page]
+
+
+def filter_recipes_paginate(category, offset=0, per_page=10):
+    if category == "Breakfast":
+        recipes = list(mongo.db.recipes.find({"category_name": "Breakfast"}))
+    elif category == "Lunch":
+        recipes = list(mongo.db.recipes.find({"category_name": "Lunch"}))
+    else:
+        recipes = list(mongo.db.recipes.find({"category_name": "Dinner"}))
     return recipes[offset: offset + per_page]
 
 
@@ -159,10 +168,22 @@ def categories(category):
         recipes = list(mongo.db.recipes.find({"category_name": "Lunch"}))
     else:
         recipes = list(mongo.db.recipes.find({"category_name": "Dinner"}))
+
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    per_page = 6
+    total = len(recipes)
+    pagination_recipes = filter_recipes_paginate(
+        category, offset=page*per_page-per_page, per_page=per_page)
+    random.shuffle(pagination_recipes)
+    pagination = Pagination(page=page, per_page=per_page, total=total)
     return render_template(
         "filter.html",
-        category=category,
-        recipes=recipes)
+        recipes=pagination_recipes,
+        page=page,
+        per_page=per_page,
+        pagination=pagination,
+        )
 
 
 @app.route("/search", methods=["GET", "POST"])
