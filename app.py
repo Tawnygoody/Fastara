@@ -73,7 +73,8 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "saved_recipes": [],
-            "profile_image": "https://images.unsplash.com/photo-1528216142275-f64d7a59d8d5"
+            "profile_image": 
+            "https://images.unsplash.com/photo-1528216142275-f64d7a59d8d5"
         }
         mongo.db.users.insert_one(register)
 
@@ -93,11 +94,12 @@ def login():
 
         if existing_user:
             # Ensure hashed password matches user input
-            if check_password_hash(existing_user["password"],request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for(
-                    "profile", username=session["user"]))
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+                    return redirect(url_for(
+                        "profile", username=session["user"]))
             else:
                 # Invalid Password Match
                 flash("Incorrect Username and/or Password")
