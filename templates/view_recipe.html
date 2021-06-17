@@ -48,45 +48,60 @@
                 </div>
             </div>
         </div>
-
-        <!--Created By-->
-        <div class="row">
-            <div class="col s12 right-align">
-                <h6 class="content-dark">Created By: <em>{{ recipe.created_by }}</em></h6>
-                <hr class="headings-underline-dark right">
+        {% if session.user %}
+            <!--Created By-->
+            <div class="row">
+                <div class="col s12 right-align">
+                    <h6 class="content-dark">Created By: <em>{{ recipe.created_by }}</em></h6>
+                    <hr class="headings-underline-dark right">
+                </div>
             </div>
-        </div>
 
-        <!--Recipe Description-->
-        <div class="row">
-            <div class="col s12 color-background recipe-description">
-                <h5 class="content-dark"><em>"{{ recipe.description }}"</em></h5>
+            <!--Recipe Description-->
+            <div class="row">
+                <div class="col s12 color-background recipe-description">
+                    <h5 class="content-dark"><em>"{{ recipe.description }}"</em></h5>
+                </div>
             </div>
-        </div>
-
-        <div class="row instructions">
-            <!--Recipe Ingredients-->
-            <div class="col s12 m5 dark-background">
-                <h5 class="headings-light center">Recipe Ingredients</h5>
-                <hr class="headings-underline center">
-                <ul class="content-light ingredient-list">
-                    {% for ingredient in recipe.ingredients %}
-                        <li>{{ ingredient }}</li>
-                    {% endfor %}
-                </ul>
+        
+            <div class="row instructions">
+                <!--Recipe Ingredients-->
+                <div class="col s12 m5 dark-background">
+                    <h5 class="headings-light center">Recipe Ingredients</h5>
+                    <hr class="headings-underline center">
+                    <ul class="content-light ingredient-list">
+                        {% for ingredient in recipe.ingredients %}
+                            <li>{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!--Recipe Method-->
+                <div class="col s12 m7">
+                    <h5 class="headings-dark center">Recipe Method</h5>
+                    <hr class="headings-underline center">
+                    <ol class="method-list">
+                        {% for step in recipe.recipe_method %}
+                            <li>{{ step }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
             </div>
-            <!--Recipe Method-->
-            <div class="col s12 m7">
-                <h5 class="headings-dark center">Recipe Method</h5>
-                <hr class="headings-underline center">
-                <ol class="method-list">
-                    {% for step in recipe.recipe_method %}
-                        <li>{{ step }}</li>
-                    {% endfor %}
-                </ol>
+        {% else %}
+            <div class="row center">
+                <div class="col s12 m8 offset-m2">
+                    <h4 class="headings-dark">Want to know what you'll need and how to make this recipe?</h4>
+                    <br>
+                    <h5 class="center-align headings-dark">
+                        <a href="{{ url_for('register') }}" class="headings-dark">Register Account <i class="fas fa-sign-in-alt"></i></a>
+                    </h5>
+                    <p class="content-dark">or</p>
+                    <h5 class="center-align content-dark">
+                        <a href="{{ url_for('login') }}" class="headings-dark">Log In <i class="fas fa-sign-in-alt"></i></a>
+                    </h5>
+                    <br>
+                </div>
             </div>
-        </div>
-
+        {% endif %}
         <!--Recipe Buttons-->
         <div class="row center recipe-buttons-row">
             <div class="col s12">
