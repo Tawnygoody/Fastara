@@ -114,4 +114,67 @@ For site admin:
 
 ## Structure
 
+### Existing Features
+
+- Base Page:
+    - Navbar (Desktop) - The navbar has a centralised Fastara Logo. Links to the 
+    pages are then aligned either side of the logo. I feel this gives the site a 
+    contemporary feel, and works well having even number of links either side when 
+    a user is either logged in or logged out. The dark background contrasts well with 
+    the logo color. Links have been given an off-white color, as to not detract from
+    the logo.
+    - Navbar (Mobile) - A simple collapsible side nav replaces the links either side 
+    of the logo when viewing the site on smaller screen sizes. This is triggered by the 
+    hamburger icon, and has the the same dark background as the navbar. An additional logo
+    can be seen at the top of the collapsible navbar. 
+    - Flash Messages - Imported from Flask, the "flash" feature provides helpful user feedback
+    after interaction with the site. 
+    - Footer - Footer contains social media links and a github link which open in seperate
+    tabs allowing the user to remain on Fastara. Email information for the company is also available
+    should a user have any query. 
+
+- Home Page: 
+    - A carousel image display with autoplay featuring recipes which have been uploaded by admin. 
+    Images are randomised and will show 6 recipes all of which have buttons to take them to that 
+    recipe page. 
+    - A section briefly explaining what Fastara offers, what intermittent fasting
+    involves and its relevance to the site. These fade in on scrolling providing a nice
+    user interaction to keep the user's attention. 
+    - A book promotion section providing a deeper insight into intermittent fasting, which opens
+    in a separate link. 
+    - A category section displaying a few recipes for each of the different meal types, with links 
+    to take the user to view more of the same category. These recipes are randonmised so the 
+    same recipes do not appear on the home page every time it is refreshed/visited. The recipe cards 
+    scale in on scroll, which is particularly satisfying on smaller devices. 
+- Log In Page
+    - A striking yet simple background image can be seen to keep the user interested. 
+    - A simple dark background form, which is partially opaque, allows the background
+    image to be seen whilst the content is still clearly visible. 
+    - Fontawesome icons have been used to provide futher user engagement, with a large 
+    login button. 
+    - If a user does not already have an account, a link below the login button will take
+    them to the register page. 
+- Register Page
+    - This has mostly the same features as the login page with some minor differences:
+        - First name field rather than email or fullname, gives a informal tone, 
+        - If a user already has an account, a link below the register button will take them 
+        to the login page. 
+- Recipes Page
+    - At the top of the page there is a search bar, allowing the user to search for recipes using 
+    keywords of their choice. This will filter results from the Recipe Title, Description & ingredients,
+    and display only recipes matching that criteria. If no results are returned then a message stating
+    No results found displays. The reset button allows the user to display a list of all the recipes. 
+    - Filter buttons below the search bar allows the user to filter the recipes they see 
+    by meal type. 
+    - Recipe cards display an image of the recipe, which when hovered over, or clicked on smaller devices, 
+    scale in and show an overlay with the name of the recipe. This is a subtle interaction to entice the user. 
+    A calorie count a brief description is also provided on the cards. The orange eye allows the user to view
+    the entire recipe. This has been tooltipped to provide helpful guidance to the user. 
+    - When a user is logged in a tooltipped plus icon will be visible on the cards, which allows the user 
+    to save the recipe to their profile. This icon does not appear when the recipe was uploaded by the session
+    user as this will already appear on their profile under uploaded recipes. 
+    - The recipe cards have been paginated so that only 6 results display per page, so a user does not need to 
+    do large amounts of scrolling to get to the bottom / top of the page. 
+- View Recipe Page (When not logged in / registered)
+    - 
 
