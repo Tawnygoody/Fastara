@@ -311,34 +311,58 @@ The wireframes have been created using Balsamiq, and show for desktop, iPad and 
 
 ### Design 
 
-- Colour Scheme
-    - I have taken inspiration from [Canva's](https://www.canva.com/learn/website-color-schemes/)
-    professional and modern colour scheme and [Assiko's Fireworks](https://www.awwwards.com/sites/assiko), described
-    by [Visme](https://visme.co/blog/website-color-schemes/) as Innovative and audacious, seen below. Both 
-    color schemes have dark greys, yellows, and lighter grays which were the main colorsI have chosen to include 
-    in my site. 
+#### Colour Scheme 
 
-    #### Assiko Colour Scheme
+- I have taken inspiration from [Canva's](https://www.canva.com/learn/website-color-schemes/)
+professional and modern colour scheme and [Assiko's Fireworks](https://www.awwwards.com/sites/assiko), described
+by [Visme](https://visme.co/blog/website-color-schemes/) as Innovative and audacious, seen below. Both 
+color schemes have dark greys, yellows, and lighter grays which were the main colorsI have chosen to include 
+in my site. 
 
-    ![Assiko Color Scheme](documentation/color-schemes/color-scheme-idea1.png)
+##### Assiko Colour Scheme
 
-    #### Canva Professional & Modern Colour scheme
+![Assiko Color Scheme](documentation/color-schemes/color-scheme-idea1.png)
 
-    ![Canva Colour Scheme](documentation/color-schemes/color-scheme-idea2.png)
+##### Canva Professional & Modern Colour scheme
 
-    #### Chosen Colour scheme
+![Canva Colour Scheme](documentation/color-schemes/color-scheme-idea2.png)
 
-    ![Chosen Colour Scheme](documentation/color-schemes/color-scheme.png)
+##### Chosen Colour scheme
 
-    - Very dark Grey (#101010) has been used for the navbar and the footer, and dark text. 
-    - Bright Yellow (#ffe400) has been used for headings underlines, in the logo, and to provide 
-    text contrast against dark buttons / links. 
-    - Ligher yellow (#ffee58), has been used to highlight nav links, and on buttons to take the user 
-    to different pages on the site. 
-    - Very light grey (#eae7dc) has been used for the nav links, so they do not detract from the Logo 
-    text, as this is White, and light text on dark backgrounds.
-    - Off white (#f1f1f1) has been used for overlay text to provide more contrast with the images behind 
-    than the very light grey would offer. 
+![Chosen Colour Scheme](documentation/color-schemes/color-scheme.png)
+
+- Very dark Grey (#101010) has been used for the navbar and the footer, and dark text.     
+- Bright Yellow (#ffe400) has been used for headings underlines, in the logo, and to provide 
+text contrast against dark buttons / links. 
+- Ligher yellow (#ffee58), has been used to highlight nav links, and on buttons to take the user 
+to different pages on the site. 
+- Very light grey (#eae7dc) has been used for the nav links, so they do not detract from the Logo 
+text, as this is White, and light text on dark backgrounds.
+- Off white (#f1f1f1) has been used for overlay text to provide more contrast with the images behind 
+than the very light grey would offer. 
 
 - Additional colors have been used to signify, saving recipes, editing recipes, and any deletion's/
 Log out. 
+
+#### Typography 
+
+- Typography is just as crucial design aspect as other design aspects. I wanted the main 
+font to be elegant, such that you would find on a high end restaurant website. I wanted to steer 
+clear of script fonts, which are sometimes considered elegant, however can reduce readability. 
+
+    - After playing around on Canva designing the logo, and experimenting with different fonts, I 
+    settled on "Cinzel" as the main font. I like that the font works with capital letters, which is 
+    ideal for titles, headings and subheadings. The font also feels contemporary which is 
+    in-keeping with the websites colour scheme. 
+
+    ![Cinzel](documentation/color-schemes/cinzel.png)
+
+    - "Montserrat" was recommended as a good pair for "Cinzel" on [Google Fonts](https://fonts.google.com/).
+    I have used this font for the page content, which has solid readability and is in-keeping with the 
+    theme of the website. 
+
+    ![Montserrat](documentation/color-schemes/montserrat-font.png)
+
+# Database Schema 
+
+
