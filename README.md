@@ -176,5 +176,90 @@ For site admin:
     - The recipe cards have been paginated so that only 6 results display per page, so a user does not need to 
     do large amounts of scrolling to get to the bottom / top of the page. 
 - View Recipe Page (When not logged in / registered)
-    - 
+    - Below the title of the recipe is a card with an image of the recipe with some information 
+    relating to the recipe (calories, cook time, prep time, servings and whether it is vegetarian/
+    vegan). Image of the recipe is crucial - saying goes "people eat with their eyes" - this is definately
+    relevant when coming to recipe websites. The images are styled so they do not stretch, and should 
+    look appealing on all device sizes. 
+    - Below the recipe card is section to encourage the user to register / log in. If the ingredients / methods
+    fields were shown to an un-registered user, there may be no incentive for a user to register. Un-regisered users
+    have the basic information they need to determine whether recipes appeal to them. 
+    - At the bottom of the page is a button to take the user back to the recipes page. 
+- View Recipe Page (When user is logged in)
+    - Title and image card remain the same when the user is logged in. 
+    - Below the recipe card, shows who created the recipe and shows the recipe description
+    in italics, with a yellow background. This is to further engage the user. 
+    - The ingredients and method columns are split unevenly, with the method column being wider 
+    on larger devices, as this tends to have more content than the ingredients column. The dark 
+    background of the ingredients column provides a nice contrast and clearly separates the 
+    ingredients from the method. 
+    - At the bottom of the page is a variety of buttons. Which buttons are shown varies according 
+    to the user and which user uploaded the recipe:
+        - A user who uploaded the recipe, will be shown a recipes button to take the user back to 
+        the recipes page, an edit button to enable the user to edit the recipe and a delete button 
+        to allow the user to delete the recipe if they wish. The delete button triggers a modal to
+        confirm the user wishes to delete the recipe, to reduce the chance of unwanted deletions. 
+        - A user who did not upload the recipe will be shown the recipes button to take the user back 
+        to the recipes page and a save button to save the recipe to their profile. 
+        - The admin user will be shown, the recipe button, edit button, and delete button, as this user 
+        has authority to edit and delete any recipe. The save button will only show on recipes not 
+        uploaded by admin. 
+- Profile Page
+    - The profile page will only be displayed to users that are logged in. 
+    - The card at the top of the page is similar in appearance to the card on the view recipes page, with the 
+    main difference in appearance that the profile image is a smaller on larger devices. Profile information 
+    such as username, recipes created and recipes saved can be viewed here. Below this the user can choose to
+    edit their profile image, log out, and delete their profile. The log out button and delete profile 
+    buttons will trigger modals, to reduce the chance of unwanted deletion / logging out. 
+    - When a user has not uploaded any recipes an upload recipe button will be shown to encourage the user
+    to upload their own recipes. 
+    - When a user has uploaded there own recipes, the upload recipe button will be removed, and the recipe card
+    will be displayed here. These will appear as they do on the recipes page. Again the plus icon will not show 
+    as the recipe has been uploaded by the user and already appears on the users profile, therefore there is no 
+    requirement to save the recipe to their profile. 
+    - If a user has saved no recipes to there profile then no section will display below the created recipes section. 
+    Once a user has saved a recipe, the saved recipes title will show, with the recipe cards shown in this section. 
+    Next to the eye icon to view the recipe, a tooltipped minus icon will display should the user wish to remove the 
+    recipe from the saved recipes section. 
+- Dashboard 
+    - By utilising MongoDB Charts this provides a visualization of the data stored in MongoDB. This can provide, useful
+    information to the user and actionable insight. 
+    - Whilst I could choose to do a whole variety of charts, this could be deemed tedious to a user. I have therefore chosen 
+    4 charts which provides the most relevant information to the user: 
+        - A heat map showing where the recipes come from around the globe. 
+        - A chart showing which user has uploaded the most recipes. 
+        - A chart showing which recipes take the least amount of time to prep and cook. 
+        - A chart showing which recipes have the lowest amount of calories. 
+    - The first 2 charts are just for the general interest of the user. The second 2 charts 
+    provide the user with actionable insight. Most people after a full days work want dinner to 
+    be full of flavour and take the least amount of time. The chart showing recipes with the least 
+    calories is especially helpful to users who are on an intermittent fasting diet plan, as they have 
+    a restrictive amount of calories they can consume on fast days. 
+    - Charts are set to refresh every 30mins. 
+- Add Recipe Page
+    - The same background image as the log in page and register page has been used. 
+    - There are various fields for the use to fill in. Relevant fields have been tooltipped 
+    to provide users with the requirements they need in order to create the recipe. A dropdown 
+    field has been used to select the recipe category, and switches have been used to indicate 
+    whether a recipe is vegan or vegetarian. 
+    - Ingredients and method fields have an add ingredient/method button, allowing the user to 
+    seperate each ingredient / method. When each new step is added, a red bin appears allowing the user 
+    to delete an ingredient / method. 
+    - The add recipe button at the bottom will add the recipe to the database and display the recipe 
+    card on recipes and the users profile. Only when the required fields have been completed, and meet the 
+    stated criteria will this be achievable. 
+- Edit Recipe Page 
+    - The edit recipe page can be accessed from the "View Recipe" page, which are available on the recipes 
+    page and the users profile page. 
+    - The edit recipe is much the same as the add recipe page, however the page is pre-populated 
+    with the recipe data. 
+    - At the bottom of the page there is cancel button which will cancel any changes made and take the user 
+    back to the recipes page and an edit button which update the changes in the database and take the user 
+    back to the recipes page. 
 
+### Future Features
+
+- An option for a user to build a meal plan for a day. For those who are on the 5:2 diet plan, 
+as they have a limited number of calories for the day, it would be useful to the user, to be able 
+to build a meal plan, that keeps all the 3 meal types (Breakfast, Lunch & Dinner) under their 
+daily allowance. 
