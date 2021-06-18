@@ -263,3 +263,46 @@ For site admin:
 as they have a limited number of calories for the day, it would be useful to the user, to be able 
 to build a meal plan, that keeps all the 3 meal types (Breakfast, Lunch & Dinner) under their 
 daily allowance. 
+
+
+## Skeleton 
+
+Below you can find links for my wireframes, showing how I would like the pages to be strcutured, 
+and how the site would appear on different device sizes. 
+
+### Wireframes 
+
+The wireframes have been created using Balsamiq, and show for desktop, iPad and iPhone. 
+
+- Home Page
+    - [Desktop](documentation/wireframes/home-desktop.png)
+    - [iPad](documentation/wireframes/home-ipad.png)
+    - [iPhone](documentation/wireframes/home-iphone.png)
+- Recipes Page
+    - [Desktop](documentation/wireframes/recipes-desktop.png)
+    - [iPad](documentation/wireframes/recipes-ipad.png)
+    - [iPhone](documentation/wireframes/recipes-iphone.png)
+- Log In Page
+    - [Desktop](documentation/wireframes/login-desktop.png)
+    - [iPad](documentation/wireframes/login-ipad.png)
+    - [iPhone](documentation/wireframes/login-iphone.png)
+- Register Page
+    - [Desktop](documentation/wireframes/register-desktop.png)
+    - [iPad](documentation/wireframes/register-ipad.png)
+    - [iPhone](documentation/wireframes/register-iphone.png)
+- Profile Page 
+    - [Desktop](documentation/wireframes/profile-desktop.png)
+    - [iPad](documentation/wireframes/profile-ipad.png)
+    - [iPhone](documentation/wireframes/profile-iphone.png)
+- Add / Edit Recipe 
+    - [Desktop](documentation/wireframes/add-desktop.png)
+    - [iPad](documentation/wireframes/add-ipad.png)
+    - [iPhone](documentation/wireframes/add-iphone.png)
+- View Recipe Page 
+    - [Desktop]()
+    - [iPad]()
+    - [iPhone]()
+- Dashboard Page 
+    - [Desktop]()
+    - [iPad]()
+    - [iPhone]()
