@@ -363,6 +363,16 @@ clear of script fonts, which are sometimes considered elegant, however can reduc
 
     ![Montserrat](documentation/color-schemes/montserrat-font.png)
 
+#### Imagery 
+
+The majority of the imagery for the site comes from the recipe uploads. I have chosen 
+2 stock photos for the home page which show clean, colourful, healthy food in keeping 
+with the theme of the site. 
+
+On the Log In, Register, Add Recipe and Edit Recipe pages, I have used a subtle healthy 
+food related image. This is a a nice aesthetic making the page more interesting, whilst not 
+distracting from the main purpose of each of the pages. 
+
 # Database Schema 
 
 
