@@ -375,4 +375,38 @@ distracting from the main purpose of each of the pages.
 
 # Database Schema 
 
+# Technologies used
+
+## Languages Used 
+
+- [HTML](https://en.wikipedia.org/wiki/HTML5)
+- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) 
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](https://www.python.org/)
+
+## Libraries & Integrations 
+
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+    - Used as a Python micro web framework and relies on jinja.
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+    - Used as a templating engine to render the document. 
+- [Materialize CSS](https://materializecss.com/)
+    - Used as a framework for styling and to make the website responsive. 
+- [Fontawesome](https://fontawesome.com/)
+    - Fontawesome has been used for icons across the website.
+- [AOS](https://michalsnik.github.io/aos/)
+    - Animate on Scroll library has been used on the home page to aid with user interaction. 
+- [Google Fonts](https://fonts.google.com/)
+    - Google Fonts has been used to import "Cinzel" & "Montserrat" fonts used across the website. 
+- [jQuery](https://jquery.com/)
+    - Has been used to ease DOM manipulation. 
+
+## Database system
+
+- [MongoDB Atlas](https://www.mongodb.com/)
+    - NoSQL database to store recipe, category and user information.
+- [MongoDB Charts](https://www.mongodb.com/)
+    - Used to create charts for the websites dashboard. 
+
+
 
