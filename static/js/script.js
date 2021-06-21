@@ -1,23 +1,45 @@
 $(document).ready(function(){
+
+    /* Initializes Collapsible side nav */
     $(".sidenav").sidenav({edge:"right"});
+
+    /* Initializes Modal */
     $('.modal').modal();
+
+    /* Initializes Carousel & calls autoplay function */
     $('.carousel.carousel-slider').carousel({
         fullWidth: true,
         indicators: true
-    }, setTimeout(autoplay, 4000));
-    AOS.init(); // Initilizes on-scroll library
+    }, setTimeout(autoplay, 5000));
+
+    /* Initializes the AOS on scroll library */
+    AOS.init();
+
+    /* Initializes Tooltips */
     $('.tooltipped').tooltip();
+
+    /* Initialization for materialize css Select element */
     $('select').formSelect();
+
+    /* calls validateMaterializeSelect function*/
     validateMaterializeSelect();
+
+    /* Sets an interval for the changeLink function */
     setInterval(changeLink, 100);
 
 });
 
-function autoplay() { // Help with autoplay for carousel taken from https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
+// Help with autoplay for carousel taken from https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
+/* Autoplay function means carousel items rotate
+at 5 second intervals */
+function autoplay() {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 5000);
 }
 
+/* Adds a new ingredient field whenever add ingredient
+button is clicked. Clicking the trash icon removes any 
+unwanted ingredient field */
 $("#add-ingredient").on("click", function() {
     new_ingredient = 
     `<div class="input-field new-item">
@@ -33,10 +55,16 @@ $("#add-ingredient").on("click", function() {
     
 });
 
-$(".trash-icon").on("click", function() { // needs to be outside the add-ingredient function and add step function as when editing it means something needs to be added before it can be deleted.
+/* Needs to be outside the add-ingredient function and 
+add step function as when editing it means something needs 
+to be added before it can be deleted. */
+$(".trash-icon").on("click", function() {
     $(this).parent().remove();
 });
 
+/* Adds a new step field whenever add step
+button is clicked. Clicking the trash icon removes any 
+unwanted step field */
 $("#add-step").on("click", function() {
     new_step = 
     `<div class="input-field new-item">
@@ -52,6 +80,7 @@ $("#add-step").on("click", function() {
     
 });
 
+/* Taken from Code Institute Task Manager App */
 function validateMaterializeSelect() {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
     let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
@@ -79,8 +108,11 @@ function validateMaterializeSelect() {
     });
 }
 
-
-function changeLink() { // thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
+// thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
+/* Changes the link to the carousel button so 
+that the user is taken to the correct recipe when 
+clicking the carousel's view recipe button */
+function changeLink() { 
     link = $(".carousel-item.active a").prop("href");
     $("#carousel-button").prop("href", link);
 }
