@@ -34,6 +34,7 @@ def filter_recipes_paginate(category, offset=0, per_page=10):
     return recipes[offset: offset + per_page]
 
 
+# ---------- Home Page ----------
 @app.route("/")
 def home():
     admin_recipes = list(
@@ -57,9 +58,11 @@ def home():
         )
 
 
+# ---------- Register Page ----------
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        
         # check if the username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -85,10 +88,12 @@ def register():
     return render_template("register.html")
 
 
+# ---------- Login Page ----------
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        # Check is username exists in the db
+
+        # Check if username exists in the db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -113,6 +118,7 @@ def login():
     return render_template("login.html")
 
 
+# ---------- Profile Page ----------
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
@@ -135,6 +141,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# ---------- Delete Profile ----------
 @app.route("/remove_profile")
 def remove_profile():
     mongo.db.users.remove({"username": session["user"]})
@@ -143,6 +150,7 @@ def remove_profile():
     return redirect(url_for("register"))
 
 
+# ---------- Log Out ----------
 @app.route("/logout")
 def logout():
     # Remove user from session cookies
@@ -151,6 +159,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# ---------- Get all Recipes ----------
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
@@ -171,6 +180,7 @@ def get_recipes():
         )
 
 
+# ---------- Filter Buttons ----------
 @app.route("/get_recipes/<category>")
 def categories(category):
     if category == "Breakfast":
@@ -197,6 +207,7 @@ def categories(category):
         )
 
 
+# ---------- Recipes Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -207,6 +218,7 @@ def search():
         )
 
 
+# ---------- Add a new Recipe ----------
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -236,6 +248,7 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+# ---------- Edit an existing recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -267,6 +280,7 @@ def edit_recipe(recipe_id):
         "edit_recipe.html", recipe=recipe, categories=categories)
 
 
+# ---------- Delete an Existing Recipe ----------
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -274,6 +288,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for("get_recipes"))
 
 
+# ---------- View individual Recipes ----------
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
@@ -282,6 +297,7 @@ def view_recipe(recipe_id):
         recipe=recipe)
 
 
+# ---------- Save a recipe to profile ----------
 @app.route("/save/<recipe_id>", methods=["POST"])
 def save_recipe(recipe_id):
     username = mongo.db.users.find_one({"username": session["user"]})
@@ -296,6 +312,7 @@ def save_recipe(recipe_id):
     return redirect(request.referrer)
 
 
+# ---------- Remove a saved recipe from profile ----------
 @app.route("/remove/<recipe_id>", methods=["POST"])
 def delete_saved_recipe(recipe_id):
     username = mongo.db.users.find_one({"username": session["user"]})
@@ -305,11 +322,13 @@ def delete_saved_recipe(recipe_id):
     return redirect(request.referrer)
 
 
+# ---------- Dashboard Page ----------
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
 
 
+# ---------- Error Handing Pages ----------
 @app.errorhandler(404)
 def resource_not_found(error):
     '''
@@ -326,6 +345,7 @@ def internal_server_error(error):
     return render_template("500.html")
 
 
+# The correct running of the app file
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
