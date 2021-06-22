@@ -375,6 +375,31 @@ distracting from the main purpose of each of the pages.
 
 # Database Schema 
 
+Fastara used MongoDB Atlas to store and retrieve all of the user input data. 
+The schema for Fastara is straightforward and can be seen in the illustration
+below.
+
+![Database Schema](documentation/database-schema/schema.png)
+
+The collection contains 3 collections which in turn hold multiple documents:
+
+- Users: This collection stores the user data. When the user registers, the firstname, username 
+and password are populated from the register form. An empty saved recipes array is created, which is 
+populated with individual recipe id's when a user save's recipes to their profile. The profile_image is 
+set with a default image. When the user is logged in they can choose to edit this image and upload their 
+own image URL. 
+
+- Recipes: The recipes contains the largest documents in the database. With the exception of the 
+created_by field all fields are populated by the user on the Add Recipe form. After researching 
+other recipe sites I have selected fields which I deem necessary to provide the user with the 
+essential information they require in order to make each recipe. Recipe iongredients and method are formatted 
+into an array using "request.form.getlist". This can then be looped through using Jinja templating to display 
+each ingredient / method to the user. 
+
+- Categories: The categories collection contains small documents for each meal type 
+(category_name), in this case Breakfast, Lunch & Dinner, and allows the user to select 
+which category the recipe falls under. 
+
 # Technologies used
 
 ## Languages Used 
@@ -406,7 +431,11 @@ distracting from the main purpose of each of the pages.
 - [MongoDB Atlas](https://www.mongodb.com/)
     - NoSQL database to store recipe, category and user information.
 - [MongoDB Charts](https://www.mongodb.com/)
-    - Used to create charts for the websites dashboard. 
+    - Used to create charts for the websites dashboard.
+
+## Other Programmes
+- [Dbdiagram](https://dbdiagram.io/home) 
+    - Used to create the database schema illustration. 
 
 
 
