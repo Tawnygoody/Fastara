@@ -82,10 +82,12 @@
                     <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
-                                <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
-                                <div class="card-overlay">
-                                    <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
-                                </div>
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                    <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                                    <div class="card-overlay">
+                                        <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                                    </div>
+                                </a>
                             </div>
                             <div class="card-content">
                                 <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
@@ -138,10 +140,12 @@
                     <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
-                                <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
-                                <div class="card-overlay">
-                                    <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
-                                </div>
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                    <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                                    <div class="card-overlay">
+                                        <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                                    </div>
+                                </a>
                             </div>
                             <div class="card-content">
                                 <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>
@@ -194,10 +198,12 @@
                     <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
-                                <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
-                                <div class="card-overlay">
-                                    <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
-                                </div>
+                                <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                    <img src="{{recipe.recipe_image}}" alt="{{recipe.title}}">
+                                    <div class="card-overlay">
+                                        <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
+                                    </div>
+                                </a>
                             </div>
                             <div class="card-content">
                                 <p class="right-align"><strong>{{ recipe.calories }}</strong>kcal</p>

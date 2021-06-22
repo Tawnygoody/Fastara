@@ -263,6 +263,10 @@ For site admin:
 as they have a limited number of calories for the day, it would be useful to the user, to be able 
 to build a meal plan, that keeps all the 3 meal types (Breakfast, Lunch & Dinner) under their 
 daily allowance. 
+- A feature I would like the implement in the future would be a sort function, so that the user 
+could sort all recipes by calorie count for example. I have included charts on the dashboard to illustrate 
+recipes with the lowest calorie count and quickest cook time, however a dropdown to sort recipes would 
+be more beneficial to the user. 
 
 
 ## Skeleton 
@@ -389,10 +393,10 @@ populated with individual recipe id's when a user save's recipes to their profil
 set with a default image. When the user is logged in they can choose to edit this image and upload their 
 own image URL. 
 
-- Recipes: The recipes contains the largest documents in the database. With the exception of the 
+- Recipes: The recipes collection contains the largest documents in the database. With the exception of the 
 created_by field all fields are populated by the user on the Add Recipe form. After researching 
 other recipe sites I have selected fields which I deem necessary to provide the user with the 
-essential information they require in order to make each recipe. Recipe iongredients and method are formatted 
+essential information they require in order to make each recipe. Recipe ingredients and method are formatted 
 into an array using "request.form.getlist". This can then be looped through using Jinja templating to display 
 each ingredient / method to the user. 
 
@@ -434,8 +438,20 @@ which category the recipe falls under.
     - Used to create charts for the websites dashboard.
 
 ## Other Programmes
+- [Github](https://github.com/)
+    - GitHub is used to store the project code after being pushed from Git.
+- [Git](https://git-scm.com/) 
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [Heroku](https://id.heroku.com/login)
+    - This has been used to deploy the live website.
+- [Balsamiq](https://balsamiq.com/)
+    - This has been used to create the wireframes for the project. 
+- [Canva](https://www.canva.com/)
+    - Canva has been used to design the websites logo.
 - [Dbdiagram](https://dbdiagram.io/home) 
-    - Used to create the database schema illustration. 
+    - Used to create the database schema illustration.
+- [Google Developer Tools](https://developers.google.com/web/tools)
+    - Google developer tools have been used to fix bugs, and test responsiveness and website performance. 
 
 
 
