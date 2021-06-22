@@ -199,7 +199,7 @@ def categories(category):
     random.shuffle(pagination_recipes)
     pagination = Pagination(page=page, per_page=per_page, total=total)
     return render_template(
-        "filter.html",
+        "recipes.html",
         recipes=pagination_recipes,
         page=page,
         per_page=per_page,
@@ -214,8 +214,7 @@ def search():
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template(
         "search.html",
-        recipes=recipes,
-        )
+        recipes=recipes)
 
 
 # ---------- Add a new Recipe ----------
