@@ -321,7 +321,7 @@ def delete_saved_recipe(recipe_id):
     return redirect(request.referrer)
 
 
-@app.route("/profile/profile_image", methods=["POST"])
+@app.route("/profile_image", methods=["POST"])
 def profile_image():
     username = mongo.db.users.find_one({"username": session["user"]})
     mongo.db.users.update_one(
