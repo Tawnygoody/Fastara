@@ -46,7 +46,7 @@ encouraged to upload and share their own creations with the community.
     I wish to register, to see full recipes. 
     3. As a first time visitor, I want to be able to click through different meal types
     at the touch of a button.
-    4. As a returning visitor, I want to be able to register an account easily, without
+    4. As a first time visitor, I want to be able to register an account easily, without
     providing much personal information. 
 
 - Returning Visitor Goals
@@ -58,8 +58,8 @@ encouraged to upload and share their own creations with the community.
     for easy viewing on future visits to the site. 
     6. As a returning visitor, I want to be able to remove saved recipe's from my profile should
     I no longer require them. 
-    7. As a returning visitor, I want to to be able to access recipe information such as 
-    calories, prep time and cook time to see whether the recipe is suitable for my needs.
+    7. As a returning visitor, I want to to be able to access recipe information such as the ingedients 
+    and method.
 
 - Frequent User Goals
     1. As a frequent visitor, I want to be able to upload recipes to the website, and have access to 
@@ -452,6 +452,12 @@ which category the recipe falls under.
     - Used to create the database schema illustration.
 - [Google Developer Tools](https://developers.google.com/web/tools)
     - Google developer tools have been used to fix bugs, and test responsiveness and website performance. 
+
+# Testing 
+
+All testing carried out on the website can be found in the following file: 
+
+## [TESTING.md](TESTING.md)
 
 
 
