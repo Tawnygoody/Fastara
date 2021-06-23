@@ -200,3 +200,7 @@ available, and are common enough devices to merit review.
 3. [Log In Page: Responsinator](http://www.responsinator.com/?url=fastara.herokuapp.com%2Flogin)
 4. [Register Page: Responsinator](http://www.responsinator.com/?url=http%3A%2F%2Ffastara.herokuapp.com%2Fregister)
 5. [Profile Page: Google Dev](documentation/testing/responsiveness/profile.png)
+6. [Recipes Page: Google Dev](documentation/testing/responsiveness/recipes.png)
+7. [View Recipe Page: Google Dev](documentation/testing/responsiveness/view-recipe.png)
+8. [Add / Edit Recipe Page: Google Dev](documentation/testing/responsiveness/view-recipe.png)
+9. [Dashboard Page: Google Dev](documentation/testing/responsiveness/dashboard.png)
