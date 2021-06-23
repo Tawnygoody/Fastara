@@ -162,3 +162,41 @@ that are not deemed suitable for the website.
     - When the user's username is "admin", then at the bottom of every recipe, the edit 
     and delete buttons will show. This is achieved using Jinja templating, and as there 
     can only be one "admin" username, this means only the admin user has access to this. 
+
+
+# Code Validation 
+
+# Functionality Testing
+
+# Browser Compatibility
+
+# Responsive Design 
+
+Responsinator and Google Developer tools have been used to test the responsiveness. This tools have 
+been utilised throughout the development of the project.
+
+Responsinator examples only shown for pages, which do not require user log in. 
+
+Responsinator provides landscape and portrait views for: 
+- iPhone X
+- Android (Pixel 2)
+- iPhone 6-8
+- iPad
+
+I have added views from Google Dev Tools for: 
+- Galaxy Fold 
+- Iphone 4
+- iPhone X - (When user logged in)
+- Android (Pixel 2) - (When user logged in)
+- iPhone 6-8 - (When user logged in)
+- iPad - (When user logged in)
+
+I have added Galaxy Fold & iPhone 4 as they are the smallest devices in height and width 
+available, and are common enough devices to merit review. 
+
+
+1. [Home Page: Responsinator](https://www.responsinator.com/?url=https%3A%2F%2Ffastara.herokuapp.com%2F)
+2. [Recipes Page: Responsinator](https://www.responsinator.com/?url=https%3A%2F%2Ffastara.herokuapp.com%2Fget_recipes)
+3. [Log In Page: Responsinator](http://www.responsinator.com/?url=fastara.herokuapp.com%2Flogin)
+4. [Register Page: Responsinator](http://www.responsinator.com/?url=http%3A%2F%2Ffastara.herokuapp.com%2Fregister)
+5. [Profile Page: Google Dev](documentation/testing/responsiveness/profile.png)
