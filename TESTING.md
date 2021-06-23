@@ -5,6 +5,7 @@
     - [First Time User](first-time-user)
     - [Returning User](returning-user)
     - [Frequent User](frequent-user)
+    - [Admin Goals](admin-goals)
 2. [Code Validation](code-validation)
 3. [Functionality Testing](funcitonality-testing)
     - [Navigation](navigation)
@@ -28,7 +29,7 @@
 
 # Testing User Stories
 
-## First Time User 
+## First Time User
 
 1. As a first time visitor, I want to understand the purpose of the site at first 
 glance, to establish whether I want to explore the site further.
@@ -113,3 +114,51 @@ and method.
     a message asking whether they wish to log in or register to view the full recipe, the ingredients 
     and method are shown in two clear setions to the user, so they have all the information they need 
     to make the recipe. 
+
+
+## Frequent User
+
+1. As a frequent visitor, I want to be able to upload recipes to the website, and have access to 
+any recipes I have uploaded on my profile. 
+    - When a user is yet to upload any of their own recipes, a button on their profile will show 
+    encouraging the user to upload their own recipes. 
+    - A user can upload their own recipes using the add recipe link in the navbar, which will take 
+    the user to a straightforward pre-defined form to fill in. 
+
+
+2. As a frequent visitor, I want to be able to edit and recipe I have created. 
+    - When viewing uploaded recipes on a user's profile then an edit icon will show on the recipe card, 
+    which takes the user to the edit recipe form. This is pre-populated with all the recipe data, and is the same 
+    format as the add recipe form. 
+    - When viewing individual recipes, if the recipe has been uploaded by the user, then an edit 
+    recipe button will show at the bottom of the page, which will take the user to the same 
+    edit recipe form. 
+
+
+3. As a frequent visitor, I want to be able to delete any recipe I have created.
+    - When a user views a recipe that they have created a delete button will show at the bottom 
+    of the recipe. This will trigger a modal to confirm whether they wish to delete the recipe or not. 
+    - Note: A delete icon could have been added to the recipe card, but I decided against this, as I 
+    feel this would have made the recipe cards to cluttered. 
+
+
+4. As a frequent visitor, I want to be able to search recipes containing certain 
+ingredients, or by a recipe name. 
+    - On the recipes page there is a search function available to the user. Recipes will return 
+    providing what the user searches for matches words in the Recipe Title, Description, or Ingredients. 
+
+
+5. As a frequent visitor, I would like some information, showing which recipes contain 
+the least calories and which recipes take the least amount of time. 
+    - When a user is logged in a dashboard link is available in the navbar. The charts here 
+    show the user which recipes have the lowest caloies, and which recipes are the quickest to 
+    prepare and cook. 
+
+
+## Admin Goals
+
+1. As an admin user, I need to ensure some access control, to allow me to edit and delete recipes 
+that are not deemed suitable for the website. 
+    - When the user's username is "admin", then at the bottom of every recipe, the edit 
+    and delete buttons will show. This is achieved using Jinja templating, and as there 
+    can only be one "admin" username, this means only the admin user has access to this. 
