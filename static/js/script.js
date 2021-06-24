@@ -94,13 +94,7 @@ $("#recipe-submit").click(function() {
 // thanks to https://stackoverflow.com/questions/35786433/how-to-listen-on-select-change-events-in-materialize-css
 $("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
-    let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
-    let category_name = document.getElementById("category_name").value;
-    if (category_name == "Choose your meal") {
-        $(".select-wrapper").children("input").css(classInvalid);
-    } else {
-        $(".select-wrapper").children("input").css(classValid);
-    }
+    $(".select-wrapper").children("input").css(classValid);
 })
 
 

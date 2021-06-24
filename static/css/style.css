@@ -585,10 +585,22 @@ table {
     }
 }
 
+@media screen and (max-width: 400px) {
+    .vegan-label {
+        padding-right: 10rem;
+    }
+    .veg-label {
+        padding-right: 10rem;
+    }
+}
+
 @media screen and (max-width: 350px) {
     .error-image {
         width: 200px;
     }
+    .vegan-label {
+    padding-right: 10rem;
+}
 }
 
 @media screen and (max-width: 325px) {
