@@ -196,11 +196,17 @@ available, and are common enough devices to merit review.
 
 
 1. [Home Page: Responsinator](https://www.responsinator.com/?url=https%3A%2F%2Ffastara.herokuapp.com%2F)
+    - [Home Page: Google Dev](documentation/testing/responsiveness/home.png)
 2. [Recipes Page: Responsinator](https://www.responsinator.com/?url=https%3A%2F%2Ffastara.herokuapp.com%2Fget_recipes)
+    - [Recipes Page: Google Dev](documentation/testing/responsiveness/recipes.png)
 3. [Log In Page: Responsinator](http://www.responsinator.com/?url=fastara.herokuapp.com%2Flogin)
+    - [Log In Page: Google Dev](documentation/testing/responsiveness/login.png)
 4. [Register Page: Responsinator](http://www.responsinator.com/?url=http%3A%2F%2Ffastara.herokuapp.com%2Fregister)
+    - Register page has the same styling as the log in page for Galaxy Fold & iphone4 views. 
 5. [Profile Page: Google Dev](documentation/testing/responsiveness/profile.png)
-6. [Recipes Page: Google Dev](documentation/testing/responsiveness/recipes.png)
-7. [View Recipe Page: Google Dev](documentation/testing/responsiveness/view-recipe.png)
-8. [Add / Edit Recipe Page: Google Dev](documentation/testing/responsiveness/view-recipe.png)
-9. [Dashboard Page: Google Dev](documentation/testing/responsiveness/dashboard.png)
+6. [View Recipe Page: Google Dev](documentation/testing/responsiveness/view-recipe.png)
+7. [Add / Edit Recipe Page: Google Dev](documentation/testing/responsiveness/add-recipe.png)
+    - Add and edit recipe pages are nearly identical. The only differences between the two 
+    are that the recipes fields will be auto-populated on the edit-recipe page, and there 
+    is a cancel, and edit recipe buttons at the bottom of the page. 
+8. [Dashboard Page: Google Dev](documentation/testing/responsiveness/dashboard.png)
