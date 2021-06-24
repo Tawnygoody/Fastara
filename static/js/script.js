@@ -21,9 +21,6 @@ $(document).ready(function(){
     /* Initialization for materialize css Select element */
     $('select').formSelect();
 
-    /* calls validateMaterializeSelect function*/
-    validateMaterializeSelect();
-
     /* Sets an interval for the changeLink function */
     setInterval(changeLink, 100);
 
@@ -80,33 +77,33 @@ $("#add-step").on("click", function() {
     
 });
 
-/* Taken from Code Institute Task Manager App */
-function validateMaterializeSelect() {
+
+$("#recipe-submit").click(function() {
+    let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
+    let category_name = document.getElementById("category_name").value;
+
+    if (category_name == "Choose your meal") {
+        alert("Please select a category for your recipe.");
+        $(".select-wrapper").children("input").css(classInvalid);
+        return false;
+    };
+
+    return true
+})
+
+// thanks to https://stackoverflow.com/questions/35786433/how-to-listen-on-select-change-events-in-materialize-css
+$("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
     let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
-    if ($("select.validate").prop("required")) {
-        $("select.validate").css({ "display": "block", "height": "0", "padding": "0", "width": "0", "position": "absolute" });
+    let category_name = document.getElementById("category_name").value;
+    if (category_name == "Choose your meal") {
+        $(".select-wrapper").children("input").css(classInvalid);
+    } else {
+        $(".select-wrapper").children("input").css(classValid);
     }
-    $(".select-wrapper input.select-dropdown").on("focusin", function () {
-        $(this).parent(".select-wrapper").on("change", function () {
-            if ($(this).children("ul").children("li.selected:not(.disabled)").on("click", function () { })) {
-                $(this).children("input").css(classValid);
-            }
-        });
-    }).on("click", function () {
-        if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(0, 0, 0, 0.03)") {
-            $(this).parent(".select-wrapper").children("input").css(classValid);
-        } else {
-            $(".select-wrapper input.select-dropdown").on("focusout", function () {
-                if ($(this).parent(".select-wrapper").children("select").prop("required")) {
-                    if ($(this).css("border-bottom") != "1px solid rgb(76, 175, 80)") {
-                        $(this).parent(".select-wrapper").children("input").css(classInvalid);
-                    }
-                }
-            });
-        }
-    });
-}
+})
+
+
 
 // thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
 /* Changes the link to the carousel button so 
