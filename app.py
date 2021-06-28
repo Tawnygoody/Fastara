@@ -327,6 +327,7 @@ def profile_image():
     mongo.db.users.update_one(
         username, {"$set": {
             "profile_image": request.form.get("profile_image")}})
+    flash("Profile picture sucessfully updated")
     return redirect(request.referrer)
 
 

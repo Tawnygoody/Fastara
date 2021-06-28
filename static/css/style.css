@@ -516,6 +516,10 @@ table {
     padding-bottom: 20px;
 }
 
+.modal-close {
+    margin-right: 10px !important;
+}
+
 /** --- Modals Ends ---**/
 
 /** --- Error Pages ---**/
@@ -611,5 +615,11 @@ table {
     .recipe-card {
     height: 520px;
 }
+}
+
+@media screen and (max-width: 305px) {
+    .modal-close {
+        margin-right: 0;
+    }
 }
 

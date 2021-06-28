@@ -113,14 +113,14 @@
                         <div class="row" id="ingredients-container">
                             <div class="input-field first-item">
                                 <i class="fas fa-list-ul prefix icons"></i>
-                                <textarea id="ingredients" name="ingredients" minlength="2" maxlength="80" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="e.g: 500g Chicken Breast" required>{{ recipe.ingredients[0] }}</textarea>
+                                <textarea id="ingredients" name="ingredients" minlength="2" maxlength="100" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="e.g: 500g Chicken Breast" required>{{ recipe.ingredients[0] }}</textarea>
                                 <label class="headings-light label-margin" for="ingredients">Ingredients</label>
                             </div>
                             {% for ingredient in recipe.ingredients %}
                                 {% if loop.index > 1 %}
                                     <div class="input-field new-item">
                                         <i class="fas fa-trash prefix trash-icon"></i>
-                                        <textarea id="ingredients" name="ingredients" minlength="10" maxlength="80"
+                                        <textarea id="ingredients" name="ingredients" minlength="2" maxlength="100"
                                             class="materialize-textarea validate content-light" placeholder="New Ingredient" required>{{ ingredient }}</textarea>
                                     </div>
                                 {% endif %}
@@ -143,7 +143,7 @@
                                 {% if loop.index > 1 %}
                                     <div class="input-field new-item">
                                         <i class="fas fa-trash prefix trash-icon"></i>
-                                        <textarea id="recipe_method" name="recipe_method" minlength="10" maxlength="80"
+                                        <textarea id="recipe_method" name="recipe_method" minlength="10" maxlength="500"
                                             class="materialize-textarea validate content-light" placeholder="New Step" required>{{ step }}</textarea>
                                     </div>
                                 {% endif %}

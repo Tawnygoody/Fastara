@@ -186,7 +186,7 @@ compatibility section.
 | 06 | Add Recipe link in navbar (when user logged in) | Takes user to the add recipe page form | Pass |
 | 07 | Profile link in navbar (when user logged in) | Takes user to their profile page | Pass |
 | 08 | Dashboard link in navbar (when user logged in) | Takes user to the dashboard page | Pass |
-| 09 | Log out link in navbar (when user logged in) | Opens a modal confirming whether the user wishes to log out - confirming logs user out.  | Pass |
+| 09 | Log out link in navbar (when user logged in) | Opens a modal confirming whether the user wishes to log out - confirming logs user out, and redirects them to the login page  | Pass |
 | 10 | GitHub icon in footer | Opens github repository in a new tab | Pass |
 | 11 | LinkedIn icon in footer | Opens developers linkedIn pafe in a new tab | Pass |
 | 12 | Pinterest icon in footer | Open pinterest in a new tab | Pass |
@@ -252,6 +252,30 @@ a red underline if they are invalid. If valid a green underline will be displaye
 | 04 | Dropdown Selection | Ensure that the default option ("Choose Your Meal")is NOT clickable on dropdown field | Pass |
 | 05 | Cancel Edit |  Clicking the cancel button redirects the user to the recipes page | Pass |
 | 06 | Edit Recipe Button | Clicking the edit recipe button updates the recipe information in the database, and a flash message displays to inform the user that the recipe has been sucessfully updated | Pass |
+
+## Deleting A Recipe 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Delete Button | Delete button is only available when the user has uploaded the recipe and to the admin user. Delete button on the recipe page will trigger a modal | Pass |
+| 02 | Delete Modal Close button | Clicking outside the modal or the close button will close the modal avoiding unwanted deletions | Pass |
+| 03 | Delete Modal Delete button | Clicking the delete modal button will remove the recipe from the database and a flash message displays to inform the user the recipe has been sucessfully deleted | Pass |
+
+## User Profile 
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Profile Information | First Name (profile), profile image, Recipes created & recipes saved display at the top of the page | Pass |
+| 02 | Edit Profile Button | Triggers Edit Profile Modal | Pass |
+| 03 | Edit Profile Modal | User can update there image URL by entering the URL into the field provided and clicking update. Clicking close will close the edit profile modal | Pass |
+| 04 | Log Out Button | Triggers the log out modal seen in navigaion section | Pass |
+| 05 | Delete Profile Button | Triggers the delete profile modal | Pass |
+| 06 | Delete Profile Modal | User is asked to confirm whether they wish to delete there profile, and a warning to let the user know any recipes they have uploaded will not be deleted along with their profile is displayed. Clicking delete will remove the user from the database | Pass |
+| 07 | Add Recipe Button | When a user has not uploaded any recipes, a button prompting the user to upload their own recipes redirects the user to the add a recipe page | Pass |
+| 08 | User's/Saved Recipe Cards (View Recipe) | Clicking the recipe image or eye icon takes the user to that recipe page | Pass |
+| 09 | User's Recipe Cards (Edit Recipe) | Clicking the edit icon will redirect the user to the edit recipe page for that recipe | Pass |
+| 10 | Saved Recipe Cards | When a user has saved recipes to their profile they will display under the user's recipes. Clicking the minus icon will remove the recipe from their saved recipes and a flash message will display to confirm it has been removed from their profile | Pass |
+
+
 
 # Responsive Design 
 
