@@ -17,10 +17,8 @@
     - [Deleting A Recipe](deleting-a-recipe)
     - [User Profile](user-profile)
     - [Save Recipe to Profile](save-recipe-to-profile)
-    - [Remove Recipe from Profile](remove-recipe-from-profile)
-    - [Edit Profile Image](edit-profile-image)
-    - [Recipes Search](recipes-search)
-    - [Recipes Filter](recipes-filter)
+    - [Recipes Search & View](recipes-search-and-view)
+    - [Recipe Page](recipe-page)
     - [Log Out](log-out)
 5. [Responsive Design](responsive-design)
 6. [Security Testing](security-testing)
@@ -274,6 +272,26 @@ a red underline if they are invalid. If valid a green underline will be displaye
 | 08 | User's/Saved Recipe Cards (View Recipe) | Clicking the recipe image or eye icon takes the user to that recipe page | Pass |
 | 09 | User's Recipe Cards (Edit Recipe) | Clicking the edit icon will redirect the user to the edit recipe page for that recipe | Pass |
 | 10 | Saved Recipe Cards | When a user has saved recipes to their profile they will display under the user's recipes. Clicking the minus icon will remove the recipe from their saved recipes and a flash message will display to confirm it has been removed from their profile | Pass |
+
+## Saving a recipe to profile 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Plus Icon on Recipes Cards | For recipes which have not been uploaded by the session user a plus icon will appear on all recipe cards. Clicking this will save the recipe to the user's profile and a flash message appears to confirm it has been saved to the user's profile | Pass |
+| 02 | Recipes already saved to user profile | For recipes which have already been saved to the users profile, a flash message displays informing the user the recipe is already saved to the users profile, when the plus icon is clicked | Pass |
+| 03 | Save Button on recipe page | Saves the recipe to the users profile, provided it is not already saved. Only displays on recipes not uploaded by the user, and when the user is logged in | Pass |
+
+Removing saved recipes from a user's profile already covered in profile functionality. 
+
+## Recipes Search & View
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Recipe Shuffle | Recipes are shuffled everytime each time the page is re-loaded | Pass |
+| 02 | Recipe Filter | The recipe filter buttons will return recipes which match the category selected | Pass |
+| 03 | Recipe Search | Returns recipes based on the user text input | Pass |
+| 04 | Pagination Display | Recipes are limited to 6 recipes per page when viewing all recipes or using the filter buttons. This has not been implemented with search functionality, as the number of recipes returned with specific queries will likely be quite low to begin with. As more recipes are added this may need to be implemented | Pass |
+| 05 | Pagination Links | Next and previous arrows take the user to the next/previous page. Clicking the page numbers takes the user to the correct corresponding page | Pass |
 
 
 
