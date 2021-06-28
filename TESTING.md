@@ -223,6 +223,35 @@ compatibility section.
 
 |  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
 |:---:|-----------------| ---------------- |:-----:|
+| 01 | Recipe Name Field | Recipe name must be between 5-50 characters. Feedback provided if criteria not met | Pass |
+| 02 | Recipe Description Field | Recipe description must be between 10-180 characters. Tooltipped to aid the user | Pass |
+| 03 | Meal Type dropdown | User has option to select between 3 meal types. If none are selected an alert will display when the add recipe button is clicked | Pass |
+| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user. 
+| 05 | Vegan / Vegetarian Switches | User can choose whether a recipe is vegetarian only or vegetarian & vegan by setting the switches to "yes" | Pass |
+| 06 | Servings Field | User can use the arrows to click up and down to select servings or type the number of servings. Only numbers can be accepted between 1-20 | Pass |
+| 07 | Calories Field | Calories field will only accept numbers between 1-9999 | Pass |
+| 08 | Preparation Time field | Prep time field will only accept numbers between 1-999 | Pass |
+| 09 | Cooking time field | Cooking time field will only accept numbers between 1-999 | Pass |
+| 10 | Image URL | Image URL must have a minimum length of 5 | Pass |
+| 11 | Ingredients Field | Recipe ingredients must be between 2-100 characters. Tooltipped to aid the user of format wanted | Pass |
+| 12 | Method Field | Method field must be between 10-500 characters | Pass |
+| 13 | Add Ingredient / Step buttons | Add an additional ingredient / method input for separate ingredients / method steps | Pass |
+| 14 | Remove Ingredient / step icon | Clicking the red trash icon will remove that ingredient / step | Pass |
+| 15 | Add Recipe Button | Provided all fields meet the correct format, when submitted the user will be redirected to the recipes page and a flash message will display informing the user their recipe has been sucessfully added | Pass | 
+
+All input fields, with the exception of the vegetarian / vegan switches, will display 
+a red underline if they are invalid. If valid a green underline will be displayed. 
+
+## Edit A Recipe 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Edit Recipe Form | Edit recipe form should has the same fields available as the add a recipe form | Pass |
+| 02 | Pre-populated fields | Each field should be pre-populated with the information already stored in the database | Pass |
+| 03 | Field Editing | Any field that is edited displays with a green underline for valid inputs, and red for invalid inputs | Pass |
+| 04 | Dropdown Selection | Ensure that the default option ("Choose Your Meal")is NOT clickable on dropdown field | Pass |
+| 05 | Cancel Edit |  Clicking the cancel button redirects the user to the recipes page | Pass |
+| 06 | Edit Recipe Button | Clicking the edit recipe button updates the recipe information in the database, and a flash message displays to inform the user that the recipe has been sucessfully updated | Pass |
 
 # Responsive Design 
 

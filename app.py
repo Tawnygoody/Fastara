@@ -146,7 +146,7 @@ def profile(username):
 def remove_profile():
     mongo.db.users.remove({"username": session["user"]})
     session.pop("user")
-    flash("Your profile has been succesfully deleted!")
+    flash("Your profile has been succesfully deleted")
     return redirect(url_for("register"))
 
 
