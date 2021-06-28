@@ -210,7 +210,14 @@ compatibility section.
 
 |  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
 |:---:|-----------------| ---------------- |:-----:|
-
+| 01 | Log In link | Yellow log in link under the register button redirects the user to the log in page | Pass |
+| 02 | First Name validation | First name (a-z, A-Z, between 2-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | Pass |
+| 03 | User Name validation | User name (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | Pass |
+| 04 | Password validation | Password (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | Pass |
+| 05 | Username Duplicates | Flash message indicates to the user than the username already exists, and redirects them to the register page | Pass |
+| 06 | Sucessful Registration | Flash message indicates to the user that their registration has been sucessful and redirects them to the user's profile page | Pass |
+| 07 | Incorrect Username / Password | Flash message indicates to the user that their username or password is incorrect and redirects them to the log in page | Pass |
+| 08 | Sucessful Log In | Flash message welcomes the user and the user is redirected to their profile page | Pass |
 
 # Responsive Design 
 
