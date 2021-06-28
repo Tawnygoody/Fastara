@@ -10,13 +10,13 @@
                         <!--Recipe Name-->
                         <div class="input-field">
                             <i class="fas fa-pencil-alt prefix icons"></i>
-                            <input id="title" name="title" min-length="5" max-length="50" type="text" value="{{ recipe.title }}" class="validate content-light" required>
+                            <input id="title" name="title" minlength="5" maxlength="50" type="text" value="{{ recipe.title }}" class="validate content-light" required>
                             <label class="headings-light label-margin" for="title">Recipe Name</label>
                         </div>
                         <!--Recipe Description-->
                         <div class="input-field">
                             <i class="fas fa-file-alt prefix icons"></i>
-                            <textarea id="description" name="description" min-length="10" max-length="180" class="materialize-textarea validate content-light tooltipped" 
+                            <textarea id="description" name="description" minlength="10" maxlength="180" class="materialize-textarea validate content-light tooltipped" 
                                 data-position="bottom" data-tooltip="Between 10-180 characters" required>{{- recipe.description -}}</textarea>
                             <label class="headings-light label-margin" for="description">Recipe Description</label>
                         </div>
@@ -38,7 +38,7 @@
                         <!--Recipe Origin-->
                         <div class="input-field">
                             <i class="fas fa-globe-europe prefix icons"></i>
-                            <input id="cuisine" name="cuisine" type="text" pattern="^[a-zA-Z]{2,25}$" min-length="2" max-length="25" value="{{ recipe.cuisine }}" class="validate content-light tooltipped" data-position="bottom" data-tooltip="e.g Spanish" required>
+                            <input id="cuisine" name="cuisine" type="text" pattern="^[a-zA-Z]{2,25}$" minlength="2" maxlength="25" value="{{ recipe.cuisine }}" class="validate content-light tooltipped" data-position="bottom" data-tooltip="e.g Spanish" required>
                             <label class="headings-light label-margin" for="cuisine">Country of Origin</label>
                         </div>
                         <!--Vegetarian Switch-->
@@ -104,7 +104,7 @@
                         <!--Recipe Image-->
                         <div class="input-field">
                             <i class="fas fa-camera prefix icons"></i>
-                            <input id="recipe_image" name="recipe_image" min-length="5" type="text" value="{{ recipe.recipe_image }}"class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
+                            <input id="recipe_image" name="recipe_image" minlength="5" type="text" value="{{ recipe.recipe_image }}"class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
                             <label class="headings-light label-margin" for="recipe_image">Image URL</label>
                         </div>
                     </div>
@@ -113,14 +113,14 @@
                         <div class="row" id="ingredients-container">
                             <div class="input-field first-item">
                                 <i class="fas fa-list-ul prefix icons"></i>
-                                <textarea id="ingredients" name="ingredients" min-length="2" max-length="80" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="e.g: 500g Chicken Breast" required>{{ recipe.ingredients[0] }}</textarea>
+                                <textarea id="ingredients" name="ingredients" minlength="2" maxlength="80" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="e.g: 500g Chicken Breast" required>{{ recipe.ingredients[0] }}</textarea>
                                 <label class="headings-light label-margin" for="ingredients">Ingredients</label>
                             </div>
                             {% for ingredient in recipe.ingredients %}
                                 {% if loop.index > 1 %}
                                     <div class="input-field new-item">
                                         <i class="fas fa-trash prefix trash-icon"></i>
-                                        <textarea id="ingredients" name="ingredients" min-length="10" max-length="80"
+                                        <textarea id="ingredients" name="ingredients" minlength="10" maxlength="80"
                                             class="materialize-textarea validate content-light" placeholder="New Ingredient" required>{{ ingredient }}</textarea>
                                     </div>
                                 {% endif %}
@@ -136,14 +136,14 @@
                         <div class="row" id="method-container">
                             <div class="input-field first-item">
                                 <i class="fas fa-list-ol prefix icons"></i>
-                                <textarea id="recipe_method" name="recipe_method" min-length="10" max-length="500" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="Click 'Add Step' button for each step" required>{{ recipe.recipe_method[0] }}</textarea>
+                                <textarea id="recipe_method" name="recipe_method" minlength="10" maxlength="500" class="materialize-textarea validate content-light tooltipped" data-position="bottom" data-tooltip="Click 'Add Step' button for each step" required>{{ recipe.recipe_method[0] }}</textarea>
                                 <label class="headings-light label-margin" for="recipe_method">Method</label>
                             </div>
                             {% for step in recipe.recipe_method %}
                                 {% if loop.index > 1 %}
                                     <div class="input-field new-item">
                                         <i class="fas fa-trash prefix trash-icon"></i>
-                                        <textarea id="recipe_method" name="recipe_method" min-length="10" max-length="80"
+                                        <textarea id="recipe_method" name="recipe_method" minlength="10" maxlength="80"
                                             class="materialize-textarea validate content-light" placeholder="New Step" required>{{ step }}</textarea>
                                     </div>
                                 {% endif %}

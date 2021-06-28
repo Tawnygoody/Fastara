@@ -219,6 +219,11 @@ compatibility section.
 | 07 | Incorrect Username / Password | Flash message indicates to the user that their username or password is incorrect and redirects them to the log in page | Pass |
 | 08 | Sucessful Log In | Flash message welcomes the user and the user is redirected to their profile page | Pass |
 
+## Adding a recipe 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+
 # Responsive Design 
 
 Responsinator and Google Developer tools have been used to test the responsiveness. This tools have 
