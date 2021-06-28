@@ -7,8 +7,10 @@
     - [Frequent User](frequent-user)
     - [Admin Goals](admin-goals)
 2. [Code Validation](code-validation)
-3. [Functionality Testing](funcitonality-testing)
+3. [Browser Compatibility](browser-compatibility)
+4. [Functionality Testing](funcitonality-testing)
     - [Navigation](navigation)
+    - [Home Page](home-page)
     - [Registration & Log In](registration-and-log-in)
     - [Adding A Recipe](adding-a-recipe)
     - [Editing A Recipe](editing-a-recipe)
@@ -20,7 +22,6 @@
     - [Recipes Search](recipes-search)
     - [Recipes Filter](recipes-filter)
     - [Log Out](log-out)
-4. [Browser Compatibility](browser-compatibility)
 5. [Responsive Design](responsive-design)
 6. [Security Testing](security-testing)
 7. [Solved Bugs](solved-bugs)
@@ -166,9 +167,50 @@ that are not deemed suitable for the website.
 
 # Code Validation 
 
+# Browser Compatibility
+
 # Functionality Testing
 
-# Browser Compatibility
+Functionality testing has been carried out on all browsers listed in the browser 
+compatibility section. 
+
+## Navigation 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Home link in navbar | Takes the user to the home page | Pass |
+| 02 | Logo in navbar | When clicked takes the user to the home page| Pass |
+| 03 | Recipes link in navbar | Takes user to the recipes page | Pass |
+| 04 | Log In link in navbar | Takes user to the log in page form | Pass |
+| 05 | Register link in navbar | Takes user to the register page form | Pass |
+| 06 | Add Recipe link in navbar (when user logged in) | Takes user to the add recipe page form | Pass |
+| 07 | Profile link in navbar (when user logged in) | Takes user to their profile page | Pass |
+| 08 | Dashboard link in navbar (when user logged in) | Takes user to the dashboard page | Pass |
+| 09 | Log out link in navbar (when user logged in) | Opens a modal confirming whether the user wishes to log out - confirming logs user out.  | Pass |
+| 10 | GitHub icon in footer | Opens github repository in a new tab | Pass |
+| 11 | LinkedIn icon in footer | Opens developers linkedIn pafe in a new tab | Pass |
+| 12 | Pinterest icon in footer | Open pinterest in a new tab | Pass |
+| 13 | Twitter icon in footer | Opens twitter in a new tab | Pass |
+
+## Home Page
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Carousel Autoplay | Carousel should display six random recipes uploaded by admin and should automatically move to the next recipe after five seconds | Pass |
+| 02 | Carousel Recipe link | View recipe button takes the user to the recipe page of the image shown | Pass |
+| 03 | Animations on scroll | When a user scrolls down a page different sections fade in / flip up | Pass |
+| 04 | Find out more button | The find out more button opens a link in a seperate tab, offering the user the option to purchase the book feature | Pass |
+| 05 | More Breakfast Button | Takes the user to the recipes page and filters the recipes for breakfast recipes | Pass |
+| 06 | More Lunch Button | Takes the user to the recipes page and filters the recipes for lunch recipes | Pass |
+| 07 | More Dinner Button | Takes the user to the recipes page and filters the recipes for dinner recipes | Pass |
+| 08 | Recipe Cards | Clicking the recipe image or the eye icon takes the user to that recipe page | Pass |
+| 09 | Recipe Cards (when logged in) | Clicking the plus icon (when not uploaded by the session user) saves the recipe to their profile | Pass |
+
+## Registration and Log In 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+
 
 # Responsive Design 
 

@@ -87,7 +87,6 @@ $("#recipe-submit").click(function() {
         $(".select-wrapper").children("input").css(classInvalid);
         return false;
     };
-
     return true
 })
 
@@ -96,7 +95,6 @@ $("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
     $(".select-wrapper").children("input").css(classValid);
 })
-
 
 
 // thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
