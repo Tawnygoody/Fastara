@@ -90,6 +90,7 @@ $("#recipe-submit").click(function() {
     return true
 })
 
+
 // thanks to https://stackoverflow.com/questions/35786433/how-to-listen-on-select-change-events-in-materialize-css
 $("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
