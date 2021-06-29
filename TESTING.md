@@ -19,7 +19,7 @@
     - [Save Recipe to Profile](save-recipe-to-profile)
     - [Recipes Search & View](recipes-search-and-view)
     - [Recipe Page](recipe-page)
-    - [Log Out](log-out)
+    - [Dashboard](dashboard)
 5. [Responsive Design](responsive-design)
 6. [Security Testing](security-testing)
 7. [Solved Bugs](solved-bugs)
@@ -290,9 +290,27 @@ Removing saved recipes from a user's profile already covered in profile function
 | 01 | Recipe Shuffle | Recipes are shuffled everytime each time the page is re-loaded | Pass |
 | 02 | Recipe Filter | The recipe filter buttons will return recipes which match the category selected | Pass |
 | 03 | Recipe Search | Returns recipes based on the user text input | Pass |
-| 04 | Pagination Display | Recipes are limited to 6 recipes per page when viewing all recipes or using the filter buttons. This has not been implemented with search functionality, as the number of recipes returned with specific queries will likely be quite low to begin with. As more recipes are added this may need to be implemented | Pass |
-| 05 | Pagination Links | Next and previous arrows take the user to the next/previous page. Clicking the page numbers takes the user to the correct corresponding page | Pass |
+| 04 | Search Reset | Clears any filters or searches based on user text input and displays all recipes to the user | Pass |
+| 05 | Pagination Display | Recipes are limited to 6 recipes per page when viewing all recipes or using the filter buttons. This has not been implemented with search functionality, as the number of recipes returned with specific queries will likely be quite low to begin with. As more recipes are added this may need to be implemented | Pass |
+| 06 | Pagination Links | Next and previous arrows take the user to the next/previous page. Clicking the page numbers takes the user to the correct corresponding page | Pass |
 
+## Recipe Page 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Recipe information (Not logged in / registered) | Basic recipe information displays to the user (Recipe image, servings, prep-time, cook-time & calories) | Pass |
+| 02 | Register / Log In Links (Not logged in / registered) | Register account and log in links redirect the user to the respective pages | Pass |
+| 03 | Recipe information (Logged in) | Remaining recipe information is displayed to the user (ingredients, method, description, created by) | Pass |
+| 04 | Recipes button | Displays to all users which redirects the user back to all recipes | Pass |
+| 05 | Save Button | See saving a recipe to profile | Pass |
+| 06 | Edit Button | Edit button will only be displayed to users who have uploaded the recipe and to the admin user, and will redirect the user to the edit recipe page | Pass |
+| 07 | Delete Button | Edit button will only be displayed to users who have uploaded the recipe and to the admin user, and open the delete recipe modal | Pass |
+
+## Dashboard 
+
+|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|:---:|-----------------| ---------------- |:-----:|
+| 01 | Charts & Maps | Various recipe / user information renders correctly from MongoDB Charts | Pass |
 
 
 # Responsive Design 
