@@ -97,11 +97,11 @@ $("#category_name").on("change", function () {
 })
 
 
-// thanks to https://stackoverflow.com/questions/10873363/how-to-get-the-href-of-selected-active-tab-using-jquery
+// thanks to https://stackoverflow.com/questions/15975586/jquery-change-href-when-image-slider-changes
 /* Changes the link to the carousel button so 
 that the user is taken to the correct recipe when 
 clicking the carousel's view recipe button */
 function changeLink() { 
-    link = $(".carousel-item.active a").prop("href");
-    $("#carousel-button").prop("href", link);
+    link = $(".carousel-item.active a").attr("href");
+    $("#carousel-button").attr("href", link);
 }

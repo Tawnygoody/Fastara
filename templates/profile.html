@@ -5,16 +5,16 @@
         <!--Profile Card -->
         <div class="row card hoverable">
             <div class="col s12 m4">
-                <img class="recipe-image" src="{{ username.profile_image }}" alt="Profile Image">
+                <img class="recipe-image" src="{{ profile_image }}" alt="Profile Image">
             </div>
             <div class="col s12 m8">
-                <h4 class="headings-dark center capitalize">{{ username.firstname }}'s Profile</h4>
+                <h4 class="headings-dark center capitalize">{{ firstname }}'s Profile</h4>
                 <hr class="headings-underline center">
                 <table class="content-dark left centered profile-table">
                     <tr>
                         <td><i class="fas fa-user-cog recipe-icons"></i></td>
                         <td>Username:</td>
-                        <td>{{ username.username }}</td>
+                        <td>{{ username }}</td>
                     </tr>
                     <tr>
                         <td><i class="fas fa-utensils recipe-icons"></i></td>
@@ -38,7 +38,7 @@
         <!--User's Recipes -->
         <div class="row">
             <div class="col s12">
-                <h4 class="headings-dark capitalize">{{ username.firstname}}'s Recipes</h4>
+                <h4 class="headings-dark capitalize">{{ firstname }}'s Recipes</h4>
                 <hr class="headings-underline left">
             </div>
         </div>

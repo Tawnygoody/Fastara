@@ -224,7 +224,7 @@ compatibility section.
 | 01 | Recipe Name Field | Recipe name must be between 5-50 characters. Feedback provided if criteria not met | Pass |
 | 02 | Recipe Description Field | Recipe description must be between 10-180 characters. Tooltipped to aid the user | Pass |
 | 03 | Meal Type dropdown | User has option to select between 3 meal types. If none are selected an alert will display when the add recipe button is clicked | Pass |
-| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user. 
+| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user | Pass |
 | 05 | Vegan / Vegetarian Switches | User can choose whether a recipe is vegetarian only or vegetarian & vegan by setting the switches to "yes" | Pass |
 | 06 | Servings Field | User can use the arrows to click up and down to select servings or type the number of servings. Only numbers can be accepted between 1-20 | Pass |
 | 07 | Calories Field | Calories field will only accept numbers between 1-9999 | Pass |
@@ -353,3 +353,25 @@ available, and are common enough devices to merit review.
     are that the recipes fields will be auto-populated on the edit-recipe page, and there 
     is a cancel, and edit recipe buttons at the bottom of the page. 
 8. [Dashboard Page: Google Dev](documentation/testing/responsiveness/dashboard.png)
+
+# Security Testing 
+
+# Solved Bugs 
+
+|  #  |  Bug  |  Description  |  Fix  |
+|:---:|------| ---------------- |----------------|
+| 01 | Large white margin on scroll | Whilst testing the responsiveness on smaller devices, a large margin would display when scrolling to the right. I believe this was due to an element exceeding 100% of the page width due to padding or margins | Inspected all elements on Google Dev tools to identify the element(s) causing the issue. I was unable to locate which element was causing the issue and found a solution on Stack Overflow (see credit section) to ensure any overflow was hidden on HTML & Body elements. |
+| 02 | Delete ingredient / method on edit recipe form | I was unable to remove any ingredient / method step by clicking the trash icon, without first adding a new ingredient / method step | When creating the functions to add an ingredient / method on the add recipe page the remove ingredient/method function is inside the same function as the add ingredient / method step function. This meant that on the edit recipe page the add ingredient / method function has to be called first before an ingredient /method can be deleted. By placing an additional delete ingredient / method function outside these functions they can be called immediately |
+| 03 | Carousel item background image | I wanted the background image for each carousel item to be an image of one of the admin recipes. However I was unable to loop through the images in the separate CSS file | By adding an inline style to the HTML element i was able to use jinja templating to set each carousel item to the recipe image stored in the database |
+| 04 | Links to the correct carousel recipe | When clicking the view recipe button on the carousel item, it would only take the user to one recipe page. It wouldn't change the href of the active tab | After some research this appeared to be an issue for other developers. With the aid of Stack Overflow (see credit section) I was able to get the href of the active item and set it to the href of the recipe button outside the for loop for admin recipes |
+| 05 | Dropdown Validation | I was encouraged to used the validation for Materialize dropdowns from the Task Manager App tutorial, however when I implemented this into my project, two dropdowns for the same field would appear. Selecting either worked however in terms of user experience and the aesthetics of the site I felt this had a negative impact | I have used the classInvalid and classValid variables from the Task Manager App. classValid is applied on change to the dropdown, and classInavlid is applied when no dropdown option has been selected and the recipe add button is clicked. Once a dropdown selection has been selected the default (Choose your meal) cannot then be re-selected. There is one minor issue using this method covered in known issues |
+| 06 | Key Error | When a user logs out from their profile and then hits the back button a Key Error message was displaying, where id expect my 500.html to display | Once I turned the debug mode to false, my error page displays to the user allowing them to go back to the home page. |
+| 07 | Back button to go to unathorised pages | When a user logs out of their profile from the dashboard, add recipe and edit recipe pages, and goes back in the browser this will redirect them to this page, when these pages should not be visible to a user that is not logged in | By adding "if session["user"]" before rendering each of these templates it means only user's in session can be directed to these pages. When a user now tries to go back in the browser after logging out the 500 internal error page will display where the user can redirect back to the home page |
+
+
+# Known Issues 
+
+|  #  |  Bug  |  Description  | 
+|:---:|------| ---------------- |
+| 01 | Dropdown Validation | As mentioned in solved bugs there is one minor issue using the validation method chosen. When the user clicks the dropdown option and clicks away without selecting a meal type, there is no invalid colour validation displayed to the user. However when the user tries to add the recipe this invalid validation colour is applied and an alert message displays clearly indicating to the user what they must update. 
+| 02 | Saving recipes on search | When a user uses the search function to look for specific recipes, the plus icon will not show on the recipe cards, therefore unable to save the recipe directly here. I have removed the save icon as I was getting an error displayed here whenever the user tried to save the recipe, and was unable to resolve this. I'm happy to accept this as a small drawback as users can save the recipes from anywhere else on the site, and they are still able to look at the individual recipe and save it to their profile using the save button at the bottom of the recipe. 

@@ -19,12 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-def get_recipes_paginate(offset=0, per_page=10):
+def get_recipes_paginate(offset=0, per_page=6):
     recipes = list(mongo.db.recipes.find())
     return recipes[offset: offset + per_page]
 
 
-def filter_recipes_paginate(category, offset=0, per_page=10):
+def filter_recipes_paginate(category, offset=0, per_page=6):
     if category == "Breakfast":
         recipes = list(mongo.db.recipes.find({"category_name": "Breakfast"}))
     elif category == "Lunch":
@@ -122,9 +122,14 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
-        {"username": session["user"]})
+        {"username": session["user"]})["username"]
+    profile_image = mongo.db.users.find_one(
+        {"username": session["user"]})["profile_image"]
+    firstname = mongo.db.users.find_one(
+        {"username": session["user"]})["firstname"]
     recipes = list(mongo.db.recipes.find({"created_by": session['user']}))
-    saved = username["saved_recipes"]
+    saved = mongo.db.users.find_one(
+        {"username": session["user"]})["saved_recipes"]
     saved_recipe = []
 
     for recipe_id in saved:
@@ -135,6 +140,8 @@ def profile(username):
         return render_template(
             "profile.html",
             username=username,
+            profile_image=profile_image,
+            firstname=firstname,
             recipes=recipes,
             saved_recipe=saved_recipe)
 
@@ -242,9 +249,12 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
-
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipe.html", categories=categories)
+
+    if session["user"]:
+        return render_template("add_recipe.html", categories=categories)
+    else:
+        return redirect(url_for("login"))
 
 
 # ---------- Edit an existing recipe ----------
@@ -273,10 +283,13 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated")
         return redirect(url_for("get_recipes"))
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories)
+
+    if session["user"]:
+        return render_template(
+            "edit_recipe.html", recipe=recipe, categories=categories)
+    else:
+        return redirect(url_for("login"))
 
 
 # ---------- Delete an Existing Recipe ----------
@@ -334,24 +347,27 @@ def profile_image():
 # ---------- Dashboard Page ----------
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+    if session["user"]:
+        return render_template("dashboard.html")
+    else:
+        return redirect(url_for("login"))
 
 
 # ---------- Error Handing Pages ----------
 @app.errorhandler(404)
-def resource_not_found(error):
+def resource_not_found(e):
     '''
     thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
     '''
-    return render_template("404.html")
+    return (render_template("404.html"), 404)
 
 
 @app.errorhandler(500)
-def internal_server_error(error):
+def internal_server_error(e):
     '''
     thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
     '''
-    return render_template("500.html")
+    return render_template("500.html"), 500
 
 
 # The correct running of the app file
