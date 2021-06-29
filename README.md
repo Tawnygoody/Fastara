@@ -267,6 +267,11 @@ daily allowance.
 could sort all recipes by calorie count for example. I have included charts on the dashboard to illustrate 
 recipes with the lowest calorie count and quickest cook time, however a dropdown to sort recipes would 
 be more beneficial to the user. 
+- I would like some form of image URL validation, so that not just any URL can be inputted into the 
+edit profile picture, and recipe image fields, and would remove the need for "onerror" image URL. 
+- I would like to be able to upload images from a file rather than an image URL. For the purposes of this project 
+I am happy to accept image uploads from a URL. 
+
 
 
 ## Skeleton 
