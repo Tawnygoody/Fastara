@@ -60,6 +60,8 @@ providing much personal information.
     - User's can register via the register link in the navbar, where they are taken to a 
     register form, and asked for firstname, username, and password. 
 
+    ![register](documentation/testing/functionality/login-register/register.gif)
+
 
 ## Returning User 
 
@@ -69,12 +71,16 @@ providing much personal information.
     - If a user clicks on the register link they can see a message below the register button - 
     "Already Registered? Log In", with a link to take the user to the log in page. 
 
+    ![log in](documentation/testing/functionality/login-register/login.gif)
+
 
 2. As a returning visitor, I want to be able to logout out of my account. 
     - When a user is logged in, a log out link in the navbar will open a modal confirming 
     whether the user wishes to log out of their account. 
     - A user can also log out from their profile, which will open the same modal confirming 
-    whther the user wishes to log out of their account. 
+    whether the user wishes to log out of their account. 
+
+    ![log out](documentation/testing/user-stories/logout.gif)
 
 
 3. As a returning visitor, I want to be able to view my profile. 
@@ -83,12 +89,15 @@ providing much personal information.
     - A profile link in the navbar allows the user to return to their profile from any page, once
     they are logged in. 
 
+    ![profile](documentation/testing/user-stories/profile.gif)
+
 
 4. As a returning visitor, I want to be able to delete my account should I wish. 
-    - From a user's prfofile page, the user can click the delete button, which will open a 
+    - From a user's profile page, the user can click the delete button, which will open a 
     modal confirming whether the user wishes to delete their account or not. A message is left 
     to confirm that any recipes the user has uploaded will not be removed from the site. 
 
+    ![delete profile](documentation/testing/user-stories/delete-profile.gif)
 
 5. As a returning visitor, I want to be able to save other user's recipes to my profile, 
 for easy viewing on future visits to the site. 
@@ -97,7 +106,9 @@ for easy viewing on future visits to the site.
     display on the user's profile, under any recipes that have been uploaded by the session user. 
     - When a user views an individual recipe that has not been uploaded by the session user, 
     a save recipe button will show at the bottom of the recipe allowing the user to save the recipe 
-    to their profile. 
+    to their profile.
+
+    ![save-recipe](documentation/testing/functionality/profile/view-save.gif) 
 
 
 6. As a returning visitor, I want to be able to remove saved recipe's from my profile should
@@ -107,12 +118,16 @@ I no longer require them.
     from their profile. A flash message displays indicating the recipe has been removed from their 
     profile. 
 
+    ![profile-save](documentation/testing/functionality/profile/profile-save.gif)
+
 7. As a returning visitor, I want to to be able to access recipe information such as the ingedients 
 and method.
     - Once a user has registered and logged in, when viewing individual recipes, rather than 
     a message asking whether they wish to log in or register to view the full recipe, the ingredients 
     and method are shown in two clear setions to the user, so they have all the information they need 
     to make the recipe. 
+
+    ![full-recipe](documentation/testing/functionality/recipe-page/full-recipe.gif)
 
 
 ## Frequent User
@@ -124,6 +139,8 @@ any recipes I have uploaded on my profile.
     - A user can upload their own recipes using the add recipe link in the navbar, which will take 
     the user to a straightforward pre-defined form to fill in. 
 
+    ![add recipe](documentation/testing/functionality/profile/profile-add.gif)
+
 
 2. As a frequent visitor, I want to be able to edit and recipe I have created. 
     - When viewing uploaded recipes on a user's profile then an edit icon will show on the recipe card, 
@@ -133,6 +150,8 @@ any recipes I have uploaded on my profile.
     recipe button will show at the bottom of the page, which will take the user to the same 
     edit recipe form. 
 
+    ![Edit recipe](documentation/testing/functionality/profile/profile-edit.gif)
+
 
 3. As a frequent visitor, I want to be able to delete any recipe I have created.
     - When a user views a recipe that they have created a delete button will show at the bottom 
@@ -140,11 +159,15 @@ any recipes I have uploaded on my profile.
     - Note: A delete icon could have been added to the recipe card, but I decided against this, as I 
     feel this would have made the recipe cards to cluttered. 
 
+    ![Delete recipe](documentation/testing/functionality/recipe-page/delete-button.gif)
+
 
 4. As a frequent visitor, I want to be able to search recipes containing certain 
 ingredients, or by a recipe name. 
     - On the recipes page there is a search function available to the user. Recipes will return 
     providing what the user searches for matches words in the Recipe Title, Description, or Ingredients. 
+
+    ![Search](documentation/testing/functionality/recipes/search.gif)
 
 
 5. As a frequent visitor, I would like some information, showing which recipes contain 
@@ -152,6 +175,8 @@ the least calories and which recipes take the least amount of time.
     - When a user is logged in a dashboard link is available in the navbar. The charts here 
     show the user which recipes have the lowest caloies, and which recipes are the quickest to 
     prepare and cook. 
+
+    ![Search](documentation/testing/functionality/dashboard/dashboard.gif)
 
 
 ## Admin Goals
@@ -261,7 +286,7 @@ a red underline if they are invalid. If valid a green underline will be displaye
 | 03 | Delete Modal Delete button | Clicking the delete modal button will remove the recipe from the database and a flash message displays to inform the user the recipe has been sucessfully deleted | [View](documentation/testing/functionality/delete-recipe/delete-recipe.gif) |
 
 ## User Profile 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
 | 01 | Profile Information | First Name (profile), profile image, Recipes created & recipes saved display at the top of the page | [View](documentation/testing/functionality/profile/information.png) |
 | 02 | Edit Profile Button | Triggers Edit Profile Modal | see test 03 |
@@ -309,7 +334,7 @@ Removing saved recipes from a user's profile already covered in profile function
 
 ## Dashboard 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
 | 01 | Charts & Maps | Various recipe / user information renders correctly from MongoDB Charts | [View](documentation/testing/functionality/dashboard/dashboard.gif) |
 
