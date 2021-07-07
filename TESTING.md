@@ -246,72 +246,72 @@ a red underline if they are invalid. If valid a green underline will be displaye
 |  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
 | 01 | Edit Recipe Form | Edit recipe form should has the same fields available as the add a recipe form | see test 02 |
-| 02 | Pre-populated fields | Each field should be pre-populated with the information already stored in the database | Pass |
-| 03 | Field Editing | Any field that is edited displays with a green underline for valid inputs, and red for invalid inputs | Pass |
-| 04 | Dropdown Selection | Ensure that the default option ("Choose Your Meal")is NOT clickable on dropdown field | Pass |
-| 05 | Cancel Edit |  Clicking the cancel button redirects the user to the recipes page | Pass |
-| 06 | Edit Recipe Button | Clicking the edit recipe button updates the recipe information in the database, and a flash message displays to inform the user that the recipe has been sucessfully updated | Pass |
+| 02 | Pre-populated fields | Each field should be pre-populated with the information already stored in the database | [View](documentation/testing/functionality/edit-recipe/pre-pop.png) |
+| 03 | Field Editing | Any field that is edited displays with a green underline for valid inputs, and red for invalid inputs | [View](documentation/testing/functionality/edit-recipe/field-edit.gif) |
+| 04 | Dropdown Selection | Ensure that the default option ("Choose Your Meal")is NOT clickable on dropdown field | [View](documentation/testing/functionality/edit-recipe/dropdown.gif) |
+| 05 | Cancel Edit |  Clicking the cancel button redirects the user to the recipes page | [View](documentation/testing/functionality/edit-recipe/cancel-edit.gif) |
+| 06 | Edit Recipe Button | Clicking the edit recipe button updates the recipe information in the database, and a flash message displays to inform the user that the recipe has been sucessfully updated | [View](documentation/testing/functionality/edit-recipe/edit.gif) |
 
 ## Deleting A Recipe 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Delete Button | Delete button is only available when the user has uploaded the recipe and to the admin user. Delete button on the recipe page will trigger a modal | Pass |
-| 02 | Delete Modal Close button | Clicking outside the modal or the close button will close the modal avoiding unwanted deletions | Pass |
-| 03 | Delete Modal Delete button | Clicking the delete modal button will remove the recipe from the database and a flash message displays to inform the user the recipe has been sucessfully deleted | Pass |
+| 01 | Delete Button | Delete button is only available when the user has uploaded the recipe and to the admin user. Delete button on the recipe page will trigger a modal | see test 03 |
+| 02 | Delete Modal Close button | Clicking outside the modal or the close button will close the modal avoiding unwanted deletions | see test 03 |
+| 03 | Delete Modal Delete button | Clicking the delete modal button will remove the recipe from the database and a flash message displays to inform the user the recipe has been sucessfully deleted | [View](documentation/testing/functionality/delete-recipe/delete-recipe.gif) |
 
 ## User Profile 
 |  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Profile Information | First Name (profile), profile image, Recipes created & recipes saved display at the top of the page | Pass |
-| 02 | Edit Profile Button | Triggers Edit Profile Modal | Pass |
-| 03 | Edit Profile Modal | User can update there image URL by entering the URL into the field provided and clicking update. Clicking close will close the edit profile modal | Pass |
-| 04 | Log Out Button | Triggers the log out modal seen in navigaion section | Pass |
-| 05 | Delete Profile Button | Triggers the delete profile modal | Pass |
-| 06 | Delete Profile Modal | User is asked to confirm whether they wish to delete there profile, and a warning to let the user know any recipes they have uploaded will not be deleted along with their profile is displayed. Clicking delete will remove the user from the database | Pass |
-| 07 | Add Recipe Button | When a user has not uploaded any recipes, a button prompting the user to upload their own recipes redirects the user to the add a recipe page | Pass |
-| 08 | User's/Saved Recipe Cards (View Recipe) | Clicking the recipe image or eye icon takes the user to that recipe page | Pass |
-| 09 | User's Recipe Cards (Edit Recipe) | Clicking the edit icon will redirect the user to the edit recipe page for that recipe | Pass |
-| 10 | Saved Recipe Cards | When a user has saved recipes to their profile they will display under the user's recipes. Clicking the minus icon will remove the recipe from their saved recipes and a flash message will display to confirm it has been removed from their profile | Pass |
+| 01 | Profile Information | First Name (profile), profile image, Recipes created & recipes saved display at the top of the page | [View](documentation/testing/functionality/profile/information.png) |
+| 02 | Edit Profile Button | Triggers Edit Profile Modal | see test 03 |
+| 03 | Edit Profile Modal | User can update there image URL by entering the URL into the field provided and clicking update. Clicking close will close the edit profile modal | [View](documentation/testing/functionality/profile/profile-image.gif) |
+| 04 | Log Out Button | Triggers the log out modal seen in navigaion section | see Navigation test 09 |
+| 05 | Delete Profile Button | Triggers the delete profile modal | see test 06 |
+| 06 | Delete Profile Modal | User is asked to confirm whether they wish to delete there profile, and a warning to let the user know any recipes they have uploaded will not be deleted along with their profile is displayed. Clicking delete will remove the user from the database | [View](documentation/testing/functionality/profile/delete-profile.gif) |
+| 07 | Add Recipe Button | When a user has not uploaded any recipes, a button prompting the user to upload their own recipes redirects the user to the add a recipe page | [View](documentation/testing/functionality/profile/profile-add.gif) |
+| 08 | User's/Saved Recipe Cards (View Recipe) | Clicking the recipe image or eye icon takes the user to that recipe page | [View](documentation/testing/functionality/profile/profile-view.gif) |
+| 09 | User's Recipe Cards (Edit Recipe) | Clicking the edit icon will redirect the user to the edit recipe page for that recipe | [View](documentation/testing/functionality/profile/profile-edit.gif) |
+| 10 | Saved Recipe Cards | When a user has saved recipes to their profile they will display under the user's recipes. Clicking the minus icon will remove the recipe from their saved recipes and a flash message will display to confirm it has been removed from their profile | [View](documentation/testing/functionality/profile/profile-save.gif) |
 
 ## Saving a recipe to profile 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Plus Icon on Recipes Cards | For recipes which have not been uploaded by the session user a plus icon will appear on all recipe cards. Clicking this will save the recipe to the user's profile and a flash message appears to confirm it has been saved to the user's profile | Pass |
-| 02 | Recipes already saved to user profile | For recipes which have already been saved to the users profile, a flash message displays informing the user the recipe is already saved to the users profile, when the plus icon is clicked | Pass |
-| 03 | Save Button on recipe page | Saves the recipe to the users profile, provided it is not already saved. Only displays on recipes not uploaded by the user, and when the user is logged in | Pass |
+| 01 | Plus Icon on Recipes Cards | For recipes which have not been uploaded by the session user a plus icon will appear on all recipe cards. Clicking this will save the recipe to the user's profile and a flash message appears to confirm it has been saved to the user's profile | see user profile test 10 |
+| 02 | Recipes already saved to user profile | For recipes which have already been saved to the users profile, a flash message displays informing the user the recipe is already saved to the users profile, when the plus icon is clicked | [View](documentation/testing/functionality/profile/already-saved.gif) |
+| 03 | Save Button on recipe page | Saves the recipe to the users profile, provided it is not already saved. Only displays on recipes not uploaded by the user, and when the user is logged in | [View](documentation/testing/functionality/profile/view-save.gif) |
 
 Removing saved recipes from a user's profile already covered in profile functionality. 
 
 ## Recipes Search & View
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Recipe Shuffle | Recipes are shuffled everytime each time the page is re-loaded | Pass |
-| 02 | Recipe Filter | The recipe filter buttons will return recipes which match the category selected | Pass |
-| 03 | Recipe Search | Returns recipes based on the user text input | Pass |
-| 04 | Search Reset | Clears any filters or searches based on user text input and displays all recipes to the user | Pass |
-| 05 | Pagination Display | Recipes are limited to 6 recipes per page when viewing all recipes or using the filter buttons. This has not been implemented with search functionality, as the number of recipes returned with specific queries will likely be quite low to begin with. As more recipes are added this may need to be implemented | Pass |
-| 06 | Pagination Links | Next and previous arrows take the user to the next/previous page. Clicking the page numbers takes the user to the correct corresponding page | Pass |
+| 01 | Recipe Shuffle | Recipes are shuffled everytime each time the page is re-loaded | [View](documentation/testing/functionality/recipes/reload.gif) |
+| 02 | Recipe Filter | The recipe filter buttons will return recipes which match the category selected | [View](documentation/testing/functionality/recipes/filter.gif) |
+| 03 | Recipe Search | Returns recipes based on the user text input | [View](documentation/testing/functionality/recipes/search.gif) |
+| 04 | Search Reset | Clears any filters or searches based on user text input and displays all recipes to the user | [View](documentation/testing/functionality/recipes/reset.gif) |
+| 05 | Pagination Display | Recipes are limited to 6 recipes per page when viewing all recipes or using the filter buttons. This has not been implemented with search functionality, as the number of recipes returned with specific queries will likely be quite low to begin with. As more recipes are added this may need to be implemented | [View](documentation/testing/functionality/recipes/pagination.gif) |
+| 06 | Pagination Links | Next and previous arrows take the user to the next/previous page. Clicking the page numbers takes the user to the correct corresponding page | See test 05 |
 
 ## Recipe Page 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Recipe information (Not logged in / registered) | Basic recipe information displays to the user (Recipe image, servings, prep-time, cook-time & calories) | Pass |
-| 02 | Register / Log In Links (Not logged in / registered) | Register account and log in links redirect the user to the respective pages | Pass |
-| 03 | Recipe information (Logged in) | Remaining recipe information is displayed to the user (ingredients, method, description, created by) | Pass |
-| 04 | Recipes button | Displays to all users which redirects the user back to all recipes | Pass |
-| 05 | Save Button | See saving a recipe to profile | Pass |
-| 06 | Edit Button | Edit button will only be displayed to users who have uploaded the recipe and to the admin user, and will redirect the user to the edit recipe page | Pass |
-| 07 | Delete Button | Edit button will only be displayed to users who have uploaded the recipe and to the admin user, and open the delete recipe modal | Pass |
+| 01 | Recipe information (Not logged in / registered) | Basic recipe information displays to the user (Recipe image, servings, prep-time, cook-time & calories) | see test 02 |
+| 02 | Register / Log In Links (Not logged in / registered) | Register account and log in links redirect the user to the respective pages | [View](documentation/testing/functionality/recipe-page/links.gif) |
+| 03 | Recipe information (Logged in) | Remaining recipe information is displayed to the user (ingredients, method, description, created by) | [View](documentation/testing/functionality/recipe-page/full-recipe.gif) |
+| 04 | Recipes button | Displays to all users which redirects the user back to all recipes | [View](documentation/testing/functionality/recipe-page/recipes-button.gif) |
+| 05 | Save Button | See saving a recipe to profile | see saving a recipe to profile test 03 |
+| 06 | Edit Button | Edit button will only be displayed to users who have uploaded the recipe and to the admin user, and will redirect the user to the edit recipe page | [View](documentation/testing/functionality/recipe-page/edit-button.gif) |
+| 07 | Delete Button | Edit button will only be displayed to users who have uploaded the recipe and to the admin user, and open the delete recipe modal | [View](documentation/testing/functionality/recipe-page/delete-button.gif) |
 
 ## Dashboard 
 
 |  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Charts & Maps | Various recipe / user information renders correctly from MongoDB Charts | Pass |
+| 01 | Charts & Maps | Various recipe / user information renders correctly from MongoDB Charts | [View](documentation/testing/functionality/dashboard/dashboard.gif) |
 
 
 # Responsive Design 
