@@ -174,77 +174,78 @@ compatibility section.
 
 ## Navigation 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Home link in navbar | Takes the user to the home page | Pass |
-| 02 | Logo in navbar | When clicked takes the user to the home page| Pass |
-| 03 | Recipes link in navbar | Takes user to the recipes page | Pass |
-| 04 | Log In link in navbar | Takes user to the log in page form | Pass |
-| 05 | Register link in navbar | Takes user to the register page form | Pass |
-| 06 | Add Recipe link in navbar (when user logged in) | Takes user to the add recipe page form | Pass |
-| 07 | Profile link in navbar (when user logged in) | Takes user to their profile page | Pass |
-| 08 | Dashboard link in navbar (when user logged in) | Takes user to the dashboard page | Pass |
-| 09 | Log out link in navbar (when user logged in) | Opens a modal confirming whether the user wishes to log out - confirming logs user out, and redirects them to the login page  | Pass |
-| 10 | GitHub icon in footer | Opens github repository in a new tab | Pass |
-| 11 | LinkedIn icon in footer | Opens developers linkedIn pafe in a new tab | Pass |
-| 12 | Pinterest icon in footer | Open pinterest in a new tab | Pass |
-| 13 | Twitter icon in footer | Opens twitter in a new tab | Pass |
+| 01 | Home link in navbar | Takes the user to the home page | N/A |
+| 02 | Logo in navbar | When clicked takes the user to the home page| N/A |
+| 03 | Recipes link in navbar | Takes user to the recipes page | N/A |
+| 04 | Log In link in navbar | Takes user to the log in page form | N/A |
+| 05 | Register link in navbar | Takes user to the register page form | N/A |
+| 06 | Add Recipe link in navbar (when user logged in) | Takes user to the add recipe page form | N/A |
+| 07 | Profile link in navbar (when user logged in) | Takes user to their profile page | N/A |
+| 08 | Dashboard link in navbar (when user logged in) | Takes user to the dashboard page | N/A |
+| 09 | Log out link in navbar (when user logged in) | Opens a modal confirming whether the user wishes to log out - confirming logs user out, and redirects them to the login page  | [View](documentation/testing/functionality/navigation/logout.png) |
+| 10 | GitHub icon in footer | Opens github repository in a new tab | N/A |
+| 11 | LinkedIn icon in footer | Opens developers linkedIn pafe in a new tab | N/A |
+| 12 | Pinterest icon in footer | Open pinterest in a new tab | N/A |
+| 13 | Twitter icon in footer | Opens twitter in a new tab | N/A |
 
 ## Home Page
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Carousel Autoplay | Carousel should display six random recipes uploaded by admin and should automatically move to the next recipe after five seconds | Pass |
-| 02 | Carousel Recipe link | View recipe button takes the user to the recipe page of the image shown | Pass |
-| 03 | Animations on scroll | When a user scrolls down a page different sections fade in / flip up | Pass |
-| 04 | Find out more button | The find out more button opens a link in a seperate tab, offering the user the option to purchase the book feature | Pass |
-| 05 | More Breakfast Button | Takes the user to the recipes page and filters the recipes for breakfast recipes | Pass |
-| 06 | More Lunch Button | Takes the user to the recipes page and filters the recipes for lunch recipes | Pass |
-| 07 | More Dinner Button | Takes the user to the recipes page and filters the recipes for dinner recipes | Pass |
-| 08 | Recipe Cards | Clicking the recipe image or the eye icon takes the user to that recipe page | Pass |
-| 09 | Recipe Cards (when logged in) | Clicking the plus icon (when not uploaded by the session user) saves the recipe to their profile | Pass |
+| 01 | Carousel Autoplay | Carousel should display six random recipes uploaded by admin and should automatically move to the next recipe after five seconds | [View](documentation/testing/functionality/home/autoplay.gif) |
+| 02 | Carousel Recipe link | View recipe button takes the user to the recipe page of the image shown | [View](documentation/testing/functionality/home/recipe-button.gif) |
+| 03 | Animations on scroll | When a user scrolls down a page different sections fade in / flip up | [View](documentation/testing/functionality/home/aos.gif) |
+| 04 | Find out more button | The find out more button opens a link in a seperate tab, offering the user the option to purchase the book feature | N/A |
+| 05 | More Breakfast Button | Takes the user to the recipes page and filters the recipes for breakfast recipes | [View](documentation/testing/functionality/home/breakfast.gif) |
+| 06 | More Lunch Button | Takes the user to the recipes page and filters the recipes for lunch recipes | [View](documentation/testing/functionality/home/lunch.gif) |
+| 07 | More Dinner Button | Takes the user to the recipes page and filters the recipes for dinner recipes | [View](documentation/testing/functionality/home/dinner.gif) |
+| 08 | Recipe Cards | Clicking the recipe image or the eye icon takes the user to that recipe page | [View](documentation/testing/functionality/home/view.gif) |
+| 09 | Recipe Cards (when logged in) | Clicking the plus icon (when not uploaded by the session user) saves the recipe to their profile | [View](documentation/testing/functionality/home/save.gif) |
 
 ## Registration and Log In 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Log In link | Yellow log in link under the register button redirects the user to the log in page | Pass |
-| 02 | First Name validation | First name (a-z, A-Z, between 2-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | Pass |
-| 03 | User Name validation | User name (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | Pass |
-| 04 | Password validation | Password (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | Pass |
-| 05 | Username Duplicates | Flash message indicates to the user than the username already exists, and redirects them to the register page | Pass |
-| 06 | Sucessful Registration | Flash message indicates to the user that their registration has been sucessful and redirects them to the user's profile page | Pass |
-| 07 | Incorrect Username / Password | Flash message indicates to the user that their username or password is incorrect and redirects them to the log in page | Pass |
-| 08 | Sucessful Log In | Flash message welcomes the user and the user is redirected to their profile page | Pass |
+| 01 | Log In link | Yellow log in link under the register button redirects the user to the log in page | [View](documentation/testing/functionality/login-register/login-link.gif) |
+| 02 | Register link | Yellow register link under the Log In button redirects the user to the registration page | [View](documentation/testing/functionality/login-register/register-link.gif) |
+| 03 | First Name validation | First name (a-z, A-Z, between 2-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/firstname.gif) |
+| 04 | User Name validation | User name (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/username.gif) |
+| 05 | Password validation | Password (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/password.gif) |
+| 06 | Username Duplicates | Flash message indicates to the user than the username already exists, and redirects them to the register page | [View](documentation/testing/functionality/login-register/username.gif) |
+| 07 | Sucessful Registration | Flash message indicates to the user that their registration has been sucessful and redirects them to the user's profile page | [View](documentation/testing/functionality/login-register/register.gif) |
+| 08 | Incorrect Username / Password | Flash message indicates to the user that their username or password is incorrect and redirects them to the log in page | [View](documentation/testing/functionality/login-register/login-fail.gif) |
+| 09 | Sucessful Log In | Flash message welcomes the user and the user is redirected to their profile page | [View](documentation/testing/functionality/login-register/login.gif) |
 
 ## Adding a recipe 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Recipe Name Field | Recipe name must be between 5-50 characters. Feedback provided if criteria not met | Pass |
-| 02 | Recipe Description Field | Recipe description must be between 10-180 characters. Tooltipped to aid the user | Pass |
-| 03 | Meal Type dropdown | User has option to select between 3 meal types. If none are selected an alert will display when the add recipe button is clicked | Pass |
-| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user | Pass |
-| 05 | Vegan / Vegetarian Switches | User can choose whether a recipe is vegetarian only or vegetarian & vegan by setting the switches to "yes" | Pass |
-| 06 | Servings Field | User can use the arrows to click up and down to select servings or type the number of servings. Only numbers can be accepted between 1-20 | Pass |
-| 07 | Calories Field | Calories field will only accept numbers between 1-9999 | Pass |
-| 08 | Preparation Time field | Prep time field will only accept numbers between 1-999 | Pass |
-| 09 | Cooking time field | Cooking time field will only accept numbers between 1-999 | Pass |
-| 10 | Image URL | Image URL must have a minimum length of 5 | Pass |
-| 11 | Ingredients Field | Recipe ingredients must be between 2-100 characters. Tooltipped to aid the user of format wanted | Pass |
-| 12 | Method Field | Method field must be between 10-500 characters | Pass |
-| 13 | Add Ingredient / Step buttons | Add an additional ingredient / method input for separate ingredients / method steps | Pass |
-| 14 | Remove Ingredient / step icon | Clicking the red trash icon will remove that ingredient / step | Pass |
-| 15 | Add Recipe Button | Provided all fields meet the correct format, when submitted the user will be redirected to the recipes page and a flash message will display informing the user their recipe has been sucessfully added | Pass | 
+| 01 | Recipe Name Field | Recipe name must be between 5-50 characters. Feedback provided if criteria not met | [View](documentation/testing/functionality/add-recipe/recipe-name.gif) |
+| 02 | Recipe Description Field | Recipe description must be between 10-180 characters. Tooltipped to aid the user | [View](documentation/testing/functionality/add-recipe/description.gif) |
+| 03 | Meal Type dropdown | User has option to select between 3 meal types. If none are selected an alert will display when the add recipe button is clicked | [View](documentation/testing/functionality/add-recipe/meal-type.gif) |
+| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user | [View](documentation/testing/functionality/add-recipe/origin.gif) |
+| 05 | Vegan / Vegetarian Switches | User can choose whether a recipe is vegetarian only or vegetarian & vegan by setting the switches to "yes" | [View](documentation/testing/functionality/add-recipe/switches.gif) |
+| 06 | Servings Field | User can use the arrows to click up and down to select servings or type the number of servings. Only numbers can be accepted between 1-20 | [View](documentation/testing/functionality/add-recipe/servings.gif) |
+| 07 | Calories Field | Calories field will only accept numbers between 1-9999 | [View](documentation/testing/functionality/add-recipe/calories.gif) |
+| 08 | Preparation Time field | Prep time field will only accept numbers between 1-999 | [View](documentation/testing/functionality/add-recipe/prep.gif) |
+| 09 | Cooking time field | Cooking time field will only accept numbers between 1-999 | [View](documentation/testing/functionality/add-recipe/cook.gif) |
+| 10 | Image URL | Image URL must fit an URL format | [View](documentation/testing/functionality/add-recipe/url.gif) |
+| 11 | Ingredients Field | Recipe ingredients must be between 2-100 characters. Tooltipped to aid the user of format wanted | [View](documentation/testing/functionality/add-recipe/ingredient.gif) |
+| 12 | Method Field | Method field must be between 10-500 characters | [View](documentation/testing/functionality/add-recipe/method.gif) |
+| 13 | Add Ingredient / Step buttons | Add an additional ingredient / method input for separate ingredients / method steps | [View](documentation/testing/functionality/add-recipe/add-buttons.gif) |
+| 14 | Remove Ingredient / step icon | Clicking the red trash icon will remove that ingredient / step | [View](documentation/testing/functionality/add-recipe/delete-buttons.gif) |
+| 15 | Add Recipe Button | Provided all fields meet the correct format, when submitted the user will be redirected to the recipes page and a flash message will display informing the user their recipe has been sucessfully added | [View](documentation/testing/functionality/add-recipe/success.gif) | 
 
 All input fields, with the exception of the vegetarian / vegan switches, will display 
 a red underline if they are invalid. If valid a green underline will be displayed. 
 
 ## Edit A Recipe 
 
-|  Test  |  Purpose  |  Expected Result  |  Pass / Fail  |
+|  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Edit Recipe Form | Edit recipe form should has the same fields available as the add a recipe form | Pass |
+| 01 | Edit Recipe Form | Edit recipe form should has the same fields available as the add a recipe form | see test 02 |
 | 02 | Pre-populated fields | Each field should be pre-populated with the information already stored in the database | Pass |
 | 03 | Field Editing | Any field that is edited displays with a green underline for valid inputs, and red for invalid inputs | Pass |
 | 04 | Dropdown Selection | Ensure that the default option ("Choose Your Meal")is NOT clickable on dropdown field | Pass |
