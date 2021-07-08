@@ -67,7 +67,7 @@ providing much personal information.
     - User's can register via the register link in the navbar, where they are taken to a 
     register form, and asked for firstname, username, and password. 
 
-    ![register](documentation/testing/functionality/login-register/register.gif)
+    ![register](documentation/testing/functionality/login-register/registerc.gif)
 
 
 ## Returning User 
@@ -78,7 +78,7 @@ providing much personal information.
     - If a user clicks on the register link they can see a message below the register button - 
     "Already Registered? Log In", with a link to take the user to the log in page. 
 
-    ![log in](documentation/testing/functionality/login-register/login.gif)
+    ![log in](documentation/testing/functionality/login-register/loginc.gif)
 
 
 2. As a returning visitor, I want to be able to logout out of my account. 
@@ -411,7 +411,7 @@ available, and are common enough devices to merit review.
 | 06 | Key Error | When a user logs out from their profile and then hits the back button a Key Error message was displaying, where id expect my 500.html to display | Once I turned the debug mode to false, my error page displays to the user allowing them to go back to the home page. |
 | 07 | Back button to go to unathorised pages | When a user logs out of their profile from the dashboard, add recipe and edit recipe pages, and goes back in the browser this will redirect them to this page, when these pages should not be visible to a user that is not logged in | By adding "if session["user"]" before rendering each of these templates it means only user's in session can be directed to these pages. When a user now tries to go back in the browser after logging out the 500 internal error page will display where the user can redirect back to the home page |
 | 08 | Invalid Image URL's | Although the input field for the image URL will only be valid if a URL is provided, it does not determine whether it is a valid image. Any URL can be typed in and accepted, which means an image will not render | I have tried to validate this further using regular expressions, but this was "hit and miss" to what it would or would not accept. I have included an onerror attribute which will render a default image for any image URL that is not valid, so there should be no image errors. I'm happy to accept this as a temporary solution for now but would prefer image validation in future releases - as noted in the future features section |
-| 09 | Failed deployment to Heroku | The app was failing to build by Heroku. After reviewing the build log on heroku I discovered my compliled slug size was too large. | I have compressed a lot of the files, specifically GIF's for user stories, and functionality testing so I do not exceed the maximum slug size. |
+| 09 | Failed deployment to Heroku | The app was failing to build by Heroku. After reviewing the build log on heroku I discovered my compliled slug size was too large. | I originally began by compressing the file size of the GIF's, however after further research I have added a .slugignore file, so that heroku ignores everything in the documentation folder, as this is for the README.md & TESTING.md and not required to run the app. |
 
 
 # Known Issues 
