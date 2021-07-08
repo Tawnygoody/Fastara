@@ -37,6 +37,8 @@ glance, to establish whether I want to explore the site further.
     - Below the carousel is a brief introduction explaining what Fastara is and offers. I 
     have kept this introduction relatively short so the user does not lose interest. 
 
+    ![introduction](documentation/testing/user-stories/introduction.gif)
+
 
 2. As a first time visitor, I want to be able to see recipes, to establish whether
 I wish to register, to see full recipes. 
@@ -46,6 +48,8 @@ I wish to register, to see full recipes.
     - Before a user is registered / logged in, they can view individual recipes, which shows 
     some limited recipe information and an image of the recipe. 
 
+    ![full recipes](documentation/testing/user-stories/full-recipe.gif)
+
 
 3. As a first time visitor, I want to be able to click through different meal types
 at the touch of a button.
@@ -53,6 +57,8 @@ at the touch of a button.
     the link to take the user to view more recipes of the same category. 
     - On the recipes page, the user can click one of the category filter buttons to show them 
     all the recipes in that category. 
+
+    ![filter](documentation/testing/functionality/recipes/filter.gif)
 
 
 4. As a first time visitor, I want to be able to register an account easily, without
@@ -118,7 +124,7 @@ I no longer require them.
     from their profile. A flash message displays indicating the recipe has been removed from their 
     profile. 
 
-    ![profile-save](documentation/testing/functionality/profile/profile-save.gif)
+    ![delete-recipe](documentation/testing/functionality/profile/profile-save.gif)
 
 7. As a returning visitor, I want to to be able to access recipe information such as the ingedients 
 and method.
@@ -176,7 +182,7 @@ the least calories and which recipes take the least amount of time.
     show the user which recipes have the lowest caloies, and which recipes are the quickest to 
     prepare and cook. 
 
-    ![Search](documentation/testing/functionality/dashboard/dashboard.gif)
+    ![dashboard](documentation/testing/functionality/dashboard/dashboard.gif)
 
 
 ## Admin Goals
@@ -186,6 +192,8 @@ that are not deemed suitable for the website.
     - When the user's username is "admin", then at the bottom of every recipe, the edit 
     and delete buttons will show. This is achieved using Jinja templating, and as there 
     can only be one "admin" username, this means only the admin user has access to this. 
+
+    ![admin](documentation/testing/user-stories/admin.gif)
 
 
 # Code Validation 
