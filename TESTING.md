@@ -390,6 +390,14 @@ available, and are common enough devices to merit review.
 
 # Security Testing 
 
+|  #  |  Purpose  |  Expected Result  |  Example  |
+|:---:|---------| ---------------- |-----|
+| 01 | Duplicate Usernames | When new users first register they cannot choose a username that already exists. Doing so will display a flash message letting the user know that the username already exists, and reloads the page. | [View](documentation/testing/security/username.gif) |
+| 02 | Password Security | Using Werkzeug Security the password the user enters is hashed, so it does not show in the database. The password displays in the database as a unique set of characters. | [View](documentation/testing/security/password.png) |
+| 03 | Logged in pages without session cookie | If a user tries to copy and paste a URL from a "logged-in" page, when they are not logged in themselves this will result in a 500 Internal error page, where the user can then redirect themselves back to the home page. | [View](documentation/testing/security/500.png) |
+| 04 | Browser back button | Similarly to test 03 when a user logs out from a "logged-in" page, if they try to go back using the browser button this will result in a 500 Internal Error page, where the user can redirect themselves back to the home page. | [View](documentation/testing/security/browser.gif) | 
+| 05 | Invalid URL | If a user enters an invalid URL for the site then a 404 error page will be displayed, where the user can redirect themselves back to the home page | [View](documentation/testing/security/404.gif) | 
+
 # Solved Bugs 
 
 |  #  |  Bug  |  Description  |  Fix  |
