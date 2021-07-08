@@ -34,21 +34,32 @@ def filter_recipes_paginate(category, offset=0, per_page=6):
     return recipes[offset: offset + per_page]
 
 
-# ---------- Home Page ----------
 @app.route("/")
 def home():
+    """
+    Renders the home page and lists recipes for
+    admin, breakfast, lunch & dinner
+    """
+    # lists recipes created by admin and shuffles
     admin_recipes = list(
         mongo.db.recipes.find({"created_by": "admin"}))
     random.shuffle(admin_recipes)
+
+    # lists recipes in breakfast category and shuffles
     breakfast_recipes = list(
         mongo.db.recipes.find({"category_name": "Breakfast"}))
     random.shuffle(breakfast_recipes)
+
+    #lists recipes in lunch category and shuffles
     lunch_recipes = list(
         mongo.db.recipes.find({"category_name": "Lunch"}))
     random.shuffle(lunch_recipes)
+
+    #lists recipes in dinner category and shuffles
     dinner_recipes = list(
         mongo.db.recipes.find({"category_name": "Dinner"}))
     random.shuffle(dinner_recipes)
+
     return render_template(
         "home.html",
         admin_recipes=admin_recipes,
@@ -58,19 +69,25 @@ def home():
         )
 
 
-# ---------- Register Page ----------
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Registers a new user and adds them to the
+    database if the username is valid and NOT
+    a duplicate
+    """
     if request.method == "POST":
-        
+
         # check if the username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # if username already exists: flash message
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
 
+        # update mongoDB users collection
         register = {
             "firstname": request.form.get("firstname").lower(),
             "username": request.form.get("username").lower(),
@@ -85,12 +102,17 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
-# ---------- Login Page ----------
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Logs the user in if the username and password
+    match what is held in the database
+    """
+
     if request.method == "POST":
 
         # Check if username exists in the db
@@ -118,24 +140,42 @@ def login():
     return render_template("login.html")
 
 
-# ---------- Profile Page ----------
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    """
+    Renders the user profile template and displays
+    user information, recipes created by the user
+    and users saved recipes
+    """
+
+    # stores the user's username in variable
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+
+    # stores the user's profile image in variable
     profile_image = mongo.db.users.find_one(
         {"username": session["user"]})["profile_image"]
+
+    # stores the user's profile image in variable
     firstname = mongo.db.users.find_one(
         {"username": session["user"]})["firstname"]
+
+    # stores the recipes crated by the user in variable
     recipes = list(mongo.db.recipes.find({"created_by": session['user']}))
+
+    # stores the recipes saved by the user in variable
     saved = mongo.db.users.find_one(
         {"username": session["user"]})["saved_recipes"]
+
+    # creates an empty array
     saved_recipe = []
 
+    # Each of the users saved recipes is appended to the empty array
     for recipe_id in saved:
         recipe_id = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         saved_recipe.append(recipe_id)
 
+    # Profile template rendered when there's a session user
     if session["user"]:
         return render_template(
             "profile.html",
@@ -145,31 +185,47 @@ def profile(username):
             recipes=recipes,
             saved_recipe=saved_recipe)
 
+    # if no user in session redirects to login page
     return redirect(url_for("login"))
 
 
-# ---------- Delete Profile ----------
 @app.route("/remove_profile")
 def remove_profile():
+    """
+    Deletes the user's account from the database
+    """
+
+    # removes the session user from the database
     mongo.db.users.remove({"username": session["user"]})
+
+    # removes the user from the session
     session.pop("user")
     flash("Your profile has been succesfully deleted")
     return redirect(url_for("register"))
 
 
-# ---------- Log Out ----------
 @app.route("/logout")
 def logout():
-    # Remove user from session cookies
+    """
+    Removes the user from the session and redirects
+    the user to the login page
+    """
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
 
-# ---------- Get all Recipes ----------
 @app.route("/get_recipes")
 def get_recipes():
+    """
+    Returns a list of all the recipes in the database,
+    returns the recipes.html & pagination is applied
+    """
+
+    # lists all recipes in the database
     recipes = list(mongo.db.recipes.find())
+
+    # pagination adapted from mozillazg (credited in README)
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
     per_page = 6
@@ -187,16 +243,26 @@ def get_recipes():
         )
 
 
-# ---------- Filter Buttons ----------
 @app.route("/get_recipes/<category>")
 def categories(category):
+    """
+    Filters the recipes by breakfast, lunch & dinner
+    and renders them to the recipes.html template
+    """
+
+    # returns a list of all recipes in breakfast category
     if category == "Breakfast":
         recipes = list(mongo.db.recipes.find({"category_name": "Breakfast"}))
+
+    # returns a list of all recipes in lunch category
     elif category == "Lunch":
         recipes = list(mongo.db.recipes.find({"category_name": "Lunch"}))
+
+    # returns a list of all recipes in dinner category
     else:
         recipes = list(mongo.db.recipes.find({"category_name": "Dinner"}))
 
+    # pagination adapted from mozillazg (credited in README)
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
     per_page = 6
@@ -214,10 +280,17 @@ def categories(category):
         )
 
 
-# ---------- Recipes Text Search ----------
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Searches the recipes collection and returns results
+    matching Recipe name, description and ingredients
+    """
+
+    # stores user input in variable
     query = request.form.get("query")
+
+    # list all recipes matching user query
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template(
         "search.html",
