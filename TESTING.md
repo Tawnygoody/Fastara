@@ -1,6 +1,5 @@
 # Testing
 
-test
 
 # Contents
 1. [Testing User Stories](testing-user-stories)
@@ -39,7 +38,7 @@ glance, to establish whether I want to explore the site further.
     - Below the carousel is a brief introduction explaining what Fastara is and offers. I 
     have kept this introduction relatively short so the user does not lose interest. 
 
-    ![introduction](documentation/testing/user-stories/introduction.gif)
+    ![introduction](documentation/testing/user-stories/introductionc.gif)
 
 
 2. As a first time visitor, I want to be able to see recipes, to establish whether
@@ -50,7 +49,7 @@ I wish to register, to see full recipes.
     - Before a user is registered / logged in, they can view individual recipes, which shows 
     some limited recipe information and an image of the recipe. 
 
-    ![full recipes](documentation/testing/user-stories/full-recipe.gif)
+    ![full recipes](documentation/testing/user-stories/full-recipec.gif)
 
 
 3. As a first time visitor, I want to be able to click through different meal types
@@ -88,7 +87,7 @@ providing much personal information.
     - A user can also log out from their profile, which will open the same modal confirming 
     whether the user wishes to log out of their account. 
 
-    ![log out](documentation/testing/user-stories/logout.gif)
+    ![log out](documentation/testing/user-stories/logoutc.gif)
 
 
 3. As a returning visitor, I want to be able to view my profile. 
@@ -97,7 +96,7 @@ providing much personal information.
     - A profile link in the navbar allows the user to return to their profile from any page, once
     they are logged in. 
 
-    ![profile](documentation/testing/user-stories/profile.gif)
+    ![profile](documentation/testing/user-stories/profilec.gif)
 
 
 4. As a returning visitor, I want to be able to delete my account should I wish. 
@@ -105,7 +104,7 @@ providing much personal information.
     modal confirming whether the user wishes to delete their account or not. A message is left 
     to confirm that any recipes the user has uploaded will not be removed from the site. 
 
-    ![delete profile](documentation/testing/user-stories/delete-profile.gif)
+    ![delete profile](documentation/testing/user-stories/delete-profilec.gif)
 
 5. As a returning visitor, I want to be able to save other user's recipes to my profile, 
 for easy viewing on future visits to the site. 
@@ -195,7 +194,7 @@ that are not deemed suitable for the website.
     and delete buttons will show. This is achieved using Jinja templating, and as there 
     can only be one "admin" username, this means only the admin user has access to this. 
 
-    ![admin](documentation/testing/user-stories/admin.gif)
+    ![admin](documentation/testing/user-stories/adminc.gif)
 
 
 # Code Validation 
@@ -229,49 +228,49 @@ compatibility section.
 
 |  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Carousel Autoplay | Carousel should display six random recipes uploaded by admin and should automatically move to the next recipe after five seconds | [View](documentation/testing/functionality/home/autoplay.gif) |
-| 02 | Carousel Recipe link | View recipe button takes the user to the recipe page of the image shown | [View](documentation/testing/functionality/home/recipe-button.gif) |
-| 03 | Animations on scroll | When a user scrolls down a page different sections fade in / flip up | [View](documentation/testing/functionality/home/aos.gif) |
+| 01 | Carousel Autoplay | Carousel should display six random recipes uploaded by admin and should automatically move to the next recipe after five seconds | [View](documentation/testing/functionality/home/autoplayc.gif) |
+| 02 | Carousel Recipe link | View recipe button takes the user to the recipe page of the image shown | [View](documentation/testing/functionality/home/recipe-buttonc.gif) |
+| 03 | Animations on scroll | When a user scrolls down a page different sections fade in / flip up | [View](documentation/testing/functionality/home/aosc.gif) |
 | 04 | Find out more button | The find out more button opens a link in a seperate tab, offering the user the option to purchase the book feature | N/A |
-| 05 | More Breakfast Button | Takes the user to the recipes page and filters the recipes for breakfast recipes | [View](documentation/testing/functionality/home/breakfast.gif) |
-| 06 | More Lunch Button | Takes the user to the recipes page and filters the recipes for lunch recipes | [View](documentation/testing/functionality/home/lunch.gif) |
-| 07 | More Dinner Button | Takes the user to the recipes page and filters the recipes for dinner recipes | [View](documentation/testing/functionality/home/dinner.gif) |
-| 08 | Recipe Cards | Clicking the recipe image or the eye icon takes the user to that recipe page | [View](documentation/testing/functionality/home/view.gif) |
-| 09 | Recipe Cards (when logged in) | Clicking the plus icon (when not uploaded by the session user) saves the recipe to their profile | [View](documentation/testing/functionality/home/save.gif) |
+| 05 | More Breakfast Button | Takes the user to the recipes page and filters the recipes for breakfast recipes | [View](documentation/testing/functionality/home/breakfastc.gif) |
+| 06 | More Lunch Button | Takes the user to the recipes page and filters the recipes for lunch recipes | [View](documentation/testing/functionality/home/lunchc.gif) |
+| 07 | More Dinner Button | Takes the user to the recipes page and filters the recipes for dinner recipes | [View](documentation/testing/functionality/home/dinnerc.gif) |
+| 08 | Recipe Cards | Clicking the recipe image or the eye icon takes the user to that recipe page | [View](documentation/testing/functionality/home/viewc.gif) |
+| 09 | Recipe Cards (when logged in) | Clicking the plus icon (when not uploaded by the session user) saves the recipe to their profile | [View](documentation/testing/functionality/home/savec.gif) |
 
 ## Registration and Log In 
 
 |  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Log In link | Yellow log in link under the register button redirects the user to the log in page | [View](documentation/testing/functionality/login-register/login-link.gif) |
-| 02 | Register link | Yellow register link under the Log In button redirects the user to the registration page | [View](documentation/testing/functionality/login-register/register-link.gif) |
-| 03 | First Name validation | First name (a-z, A-Z, between 2-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/firstname.gif) |
-| 04 | User Name validation | User name (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/username.gif) |
-| 05 | Password validation | Password (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/password.gif) |
-| 06 | Username Duplicates | Flash message indicates to the user than the username already exists, and redirects them to the register page | [View](documentation/testing/functionality/login-register/username.gif) |
-| 07 | Sucessful Registration | Flash message indicates to the user that their registration has been sucessful and redirects them to the user's profile page | [View](documentation/testing/functionality/login-register/register.gif) |
-| 08 | Incorrect Username / Password | Flash message indicates to the user that their username or password is incorrect and redirects them to the log in page | [View](documentation/testing/functionality/login-register/login-fail.gif) |
-| 09 | Sucessful Log In | Flash message welcomes the user and the user is redirected to their profile page | [View](documentation/testing/functionality/login-register/login.gif) |
+| 01 | Log In link | Yellow log in link under the register button redirects the user to the log in page | [View](documentation/testing/functionality/login-register/login-linkc.gif) |
+| 02 | Register link | Yellow register link under the Log In button redirects the user to the registration page | [View](documentation/testing/functionality/login-register/register-linkc.gif) |
+| 03 | First Name validation | First name (a-z, A-Z, between 2-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/firstnamec.gif) |
+| 04 | User Name validation | User name (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/usernamec.gif) |
+| 05 | Password validation | Password (a-z, A-Z, 0-9 between 5-20 characters). Input field tooltipped to provide user feedback. If invalid input turns red and feedback provided | [View](documentation/testing/functionality/login-register/passwordc.gif) |
+| 06 | Username Duplicates | Flash message indicates to the user than the username already exists, and redirects them to the register page | [View](documentation/testing/functionality/login-register/usernamec.gif) |
+| 07 | Sucessful Registration | Flash message indicates to the user that their registration has been sucessful and redirects them to the user's profile page | [View](documentation/testing/functionality/login-register/registerc.gif) |
+| 08 | Incorrect Username / Password | Flash message indicates to the user that their username or password is incorrect and redirects them to the log in page | [View](documentation/testing/functionality/login-register/login-failc.gif) |
+| 09 | Sucessful Log In | Flash message welcomes the user and the user is redirected to their profile page | [View](documentation/testing/functionality/login-register/loginc.gif) |
 
 ## Adding a recipe 
 
 |  Test  |  Purpose  |  Expected Result  |  Example  |
 |:---:|-----------------| ---------------- |:-----:|
-| 01 | Recipe Name Field | Recipe name must be between 5-50 characters. Feedback provided if criteria not met | [View](documentation/testing/functionality/add-recipe/recipe-name.gif) |
-| 02 | Recipe Description Field | Recipe description must be between 10-180 characters. Tooltipped to aid the user | [View](documentation/testing/functionality/add-recipe/description.gif) |
-| 03 | Meal Type dropdown | User has option to select between 3 meal types. If none are selected an alert will display when the add recipe button is clicked | [View](documentation/testing/functionality/add-recipe/meal-type.gif) |
-| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user | [View](documentation/testing/functionality/add-recipe/origin.gif) |
-| 05 | Vegan / Vegetarian Switches | User can choose whether a recipe is vegetarian only or vegetarian & vegan by setting the switches to "yes" | [View](documentation/testing/functionality/add-recipe/switches.gif) |
-| 06 | Servings Field | User can use the arrows to click up and down to select servings or type the number of servings. Only numbers can be accepted between 1-20 | [View](documentation/testing/functionality/add-recipe/servings.gif) |
-| 07 | Calories Field | Calories field will only accept numbers between 1-9999 | [View](documentation/testing/functionality/add-recipe/calories.gif) |
-| 08 | Preparation Time field | Prep time field will only accept numbers between 1-999 | [View](documentation/testing/functionality/add-recipe/prep.gif) |
-| 09 | Cooking time field | Cooking time field will only accept numbers between 1-999 | [View](documentation/testing/functionality/add-recipe/cook.gif) |
+| 01 | Recipe Name Field | Recipe name must be between 5-50 characters. Feedback provided if criteria not met | [View](documentation/testing/functionality/add-recipe/recipe-namec.gif) |
+| 02 | Recipe Description Field | Recipe description must be between 10-180 characters. Tooltipped to aid the user | [View](documentation/testing/functionality/add-recipe/descriptionc.gif) |
+| 03 | Meal Type dropdown | User has option to select between 3 meal types. If none are selected an alert will display when the add recipe button is clicked | [View](documentation/testing/functionality/add-recipe/meal-typec.gif) |
+| 04 | Country of Origin Field | Country of origin field between 2-25 characters. Tooltipped to aid the user | [View](documentation/testing/functionality/add-recipe/originc.gif) |
+| 05 | Vegan / Vegetarian Switches | User can choose whether a recipe is vegetarian only or vegetarian & vegan by setting the switches to "yes" | [View](documentation/testing/functionality/add-recipe/switchesc.gif) |
+| 06 | Servings Field | User can use the arrows to click up and down to select servings or type the number of servings. Only numbers can be accepted between 1-20 | [View](documentation/testing/functionality/add-recipe/servingsc.gif) |
+| 07 | Calories Field | Calories field will only accept numbers between 1-9999 | [View](documentation/testing/functionality/add-recipe/caloriesc.gif) |
+| 08 | Preparation Time field | Prep time field will only accept numbers between 1-999 | [View](documentation/testing/functionality/add-recipe/prepc.gif) |
+| 09 | Cooking time field | Cooking time field will only accept numbers between 1-999 | [View](documentation/testing/functionality/add-recipe/cookc.gif) |
 | 10 | Image URL | Image URL must fit an URL format | [View](documentation/testing/functionality/add-recipe/url.gif) |
-| 11 | Ingredients Field | Recipe ingredients must be between 2-100 characters. Tooltipped to aid the user of format wanted | [View](documentation/testing/functionality/add-recipe/ingredient.gif) |
-| 12 | Method Field | Method field must be between 10-500 characters | [View](documentation/testing/functionality/add-recipe/method.gif) |
-| 13 | Add Ingredient / Step buttons | Add an additional ingredient / method input for separate ingredients / method steps | [View](documentation/testing/functionality/add-recipe/add-buttons.gif) |
-| 14 | Remove Ingredient / step icon | Clicking the red trash icon will remove that ingredient / step | [View](documentation/testing/functionality/add-recipe/delete-buttons.gif) |
-| 15 | Add Recipe Button | Provided all fields meet the correct format, when submitted the user will be redirected to the recipes page and a flash message will display informing the user their recipe has been sucessfully added | [View](documentation/testing/functionality/add-recipe/success.gif) | 
+| 11 | Ingredients Field | Recipe ingredients must be between 2-100 characters. Tooltipped to aid the user of format wanted | [View](documentation/testing/functionality/add-recipe/ingredientc.gif) |
+| 12 | Method Field | Method field must be between 10-500 characters | [View](documentation/testing/functionality/add-recipe/methodc.gif) |
+| 13 | Add Ingredient / Step buttons | Add an additional ingredient / method input for separate ingredients / method steps | [View](documentation/testing/functionality/add-recipe/add-buttonsc.gif) |
+| 14 | Remove Ingredient / step icon | Clicking the red trash icon will remove that ingredient / step | [View](documentation/testing/functionality/add-recipe/delete-buttonsc.gif) |
+| 15 | Add Recipe Button | Provided all fields meet the correct format, when submitted the user will be redirected to the recipes page and a flash message will display informing the user their recipe has been sucessfully added | [View](documentation/testing/functionality/add-recipe/successc.gif) | 
 
 All input fields, with the exception of the vegetarian / vegan switches, will display 
 a red underline if they are invalid. If valid a green underline will be displayed. 
@@ -394,11 +393,11 @@ available, and are common enough devices to merit review.
 
 |  #  |  Purpose  |  Expected Result  |  Example  |
 |:---:|---------| ---------------- |-----|
-| 01 | Duplicate Usernames | When new users first register they cannot choose a username that already exists. Doing so will display a flash message letting the user know that the username already exists, and reloads the page. | [View](documentation/testing/security/username.gif) |
+| 01 | Duplicate Usernames | When new users first register they cannot choose a username that already exists. Doing so will display a flash message letting the user know that the username already exists, and reloads the page. | [View](documentation/testing/security/usernamec.gif) |
 | 02 | Password Security | Using Werkzeug Security the password the user enters is hashed, so it does not show in the database. The password displays in the database as a unique set of characters. | [View](documentation/testing/security/password.png) |
 | 03 | Logged in pages without session cookie | If a user tries to copy and paste a URL from a "logged-in" page, when they are not logged in themselves this will result in a 500 Internal error page, where the user can then redirect themselves back to the home page. | [View](documentation/testing/security/500.png) |
-| 04 | Browser back button | Similarly to test 03 when a user logs out from a "logged-in" page, if they try to go back using the browser button this will result in a 500 Internal Error page, where the user can redirect themselves back to the home page. | [View](documentation/testing/security/browser.gif) | 
-| 05 | Invalid URL | If a user enters an invalid URL for the site then a 404 error page will be displayed, where the user can redirect themselves back to the home page | [View](documentation/testing/security/404.gif) | 
+| 04 | Browser back button | Similarly to test 03 when a user logs out from a "logged-in" page, if they try to go back using the browser button this will result in a 500 Internal Error page, where the user can redirect themselves back to the home page. | [View](documentation/testing/security/browserc.gif) | 
+| 05 | Invalid URL | If a user enters an invalid URL for the site then a 404 error page will be displayed, where the user can redirect themselves back to the home page | [View](documentation/testing/security/404c.gif) | 
 
 # Solved Bugs 
 
@@ -412,6 +411,7 @@ available, and are common enough devices to merit review.
 | 06 | Key Error | When a user logs out from their profile and then hits the back button a Key Error message was displaying, where id expect my 500.html to display | Once I turned the debug mode to false, my error page displays to the user allowing them to go back to the home page. |
 | 07 | Back button to go to unathorised pages | When a user logs out of their profile from the dashboard, add recipe and edit recipe pages, and goes back in the browser this will redirect them to this page, when these pages should not be visible to a user that is not logged in | By adding "if session["user"]" before rendering each of these templates it means only user's in session can be directed to these pages. When a user now tries to go back in the browser after logging out the 500 internal error page will display where the user can redirect back to the home page |
 | 08 | Invalid Image URL's | Although the input field for the image URL will only be valid if a URL is provided, it does not determine whether it is a valid image. Any URL can be typed in and accepted, which means an image will not render | I have tried to validate this further using regular expressions, but this was "hit and miss" to what it would or would not accept. I have included an onerror attribute which will render a default image for any image URL that is not valid, so there should be no image errors. I'm happy to accept this as a temporary solution for now but would prefer image validation in future releases - as noted in the future features section |
+| 09 | Failed deployment to Heroku | The app was failing to build by Heroku. After reviewing the build log on heroku I discovered my compliled slug size was too large. | I have compressed a lot of the files, specifically GIF's for user stories, and functionality testing so I do not exceed the maximum slug size. |
 
 
 # Known Issues 
