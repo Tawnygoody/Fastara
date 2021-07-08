@@ -201,6 +201,24 @@ that are not deemed suitable for the website.
 
 # Browser Compatibility
 
+LambdaTest has been used to test the website across different browsers:
+
+## Laptop / Desktop
+
+The website has been developed on Google Chrome so browser testing has been compared against Google Chrome. 
+
+|  Page  |  Safari 12 |  Firefox 86  |  Opera 74  |
+|:---:|------------| ------------ |:------------:|
+| Home | No difference | No difference | No difference | 
+| Recipes | Whilst testing safari didnt seem to be picking up some of the recipe image and the default image was displayed - [View](documentation/testing/browser/recipe-image.png). Safari has been manually tested on iPhone / iPad and there is no issue here | No difference | No difference |
+| Log In | No difference | No difference | No difference |
+| Resgiter | No difference | No difference | No difference |
+| Profile | No difference | No difference | No difference |
+| Dashboard | No difference | No difference | No difference |
+| Individual Recipe | No difference | No difference | No difference |
+| Add Recipe | Slight difference in the appearance of the number selectors -[View](documentation/testing/browser/dropdown-safari.png) | Slight difference in the appearance of the number selectors -[View](documentation/testing/browser/dropdown.png) | No difference |
+| Edit Recipe | Same difference as add recipe | Same difference as add recipe | No difference |
+
 # Functionality Testing
 
 Functionality testing has been carried out on all browsers listed in the browser 
