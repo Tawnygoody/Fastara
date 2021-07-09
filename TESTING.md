@@ -219,6 +219,18 @@ The website has been developed on Google Chrome so browser testing has been comp
 | Add Recipe | Slight difference in the appearance of the number selectors -[View](documentation/testing/browser/dropdown-safari.png) | Slight difference in the appearance of the number selectors -[View](documentation/testing/browser/dropdown.png) | No difference |
 | Edit Recipe | Same difference as add recipe | Same difference as add recipe | No difference |
 
+## iPhone 8
+
+- Google Chrome - No issues
+- Safari - No issues
+
+## iPad 8th Generation
+
+- Google Chrome - No issues
+- Safari - No issues
+
+
+
 # Functionality Testing
 
 Functionality testing has been carried out on all browsers listed in the browser 
@@ -366,6 +378,11 @@ Removing saved recipes from a user's profile already covered in profile function
 | 01 | Charts & Maps | Various recipe / user information renders correctly from MongoDB Charts | [View](documentation/testing/functionality/dashboard/dashboard.gif) |
 
 
+## Device
+
+[view](documentation/testing/functionality/device/ipad.mp4)
+
+
 # Responsive Design 
 
 Responsinator and Google Developer tools have been used to test the responsiveness. This tools have 
@@ -437,4 +454,6 @@ available, and are common enough devices to merit review.
 |  #  |  Bug  |  Description  | 
 |:---:|------| ---------------- |
 | 01 | Dropdown Validation | As mentioned in solved bugs there is one minor issue using the validation method chosen. When the user clicks the dropdown option and clicks away without selecting a meal type, there is no invalid colour validation displayed to the user. However when the user tries to add the recipe this invalid validation colour is applied and an alert message displays clearly indicating to the user what they must update. 
-| 02 | Saving recipes on search | When a user uses the search function to look for specific recipes, the plus icon will not show on the recipe cards, therefore unable to save the recipe directly here. I have removed the save icon as I was getting an error displayed here whenever the user tried to save the recipe, and was unable to resolve this. I'm happy to accept this as a small drawback as users can save the recipes from anywhere else on the site, and they are still able to look at the individual recipe and save it to their profile using the save button at the bottom of the recipe. 
+| 02 | Saving recipes on search | When a user uses the search function to look for specific recipes, the plus icon will not show on the recipe cards, therefore unable to save the recipe directly here. I have removed the save icon as I was getting an error displayed here whenever the user tried to save the recipe, and was unable to resolve this. I'm happy to accept this as a small drawback as users can save the recipes from anywhere else on the site, and they are still able to look at the individual recipe and save it to their profile using the save button at the bottom of the recipe. |
+| 03 | Touchscreen hover effect | As there is no cursor on touchscreen devices (i.e. iPad & iPhone) there is no hover effect on the cards meaning that when a recipe image is clicked it will take the user directly to the recipe, rather than displaying the overlay recipe title. The overlay text is visible if user scrolls from one of the recipe card images directly. I'm happy to accept this is a known limitation. |
+| 04 | iPhone / iPad browser back button | Whilst testing the site on iPhone / Ipad when a user logs out and hits the back button in the browser it will take the user back to the page they were on previously rather than displaying the 500 internal error page. However if the user tries to redirect to a page only available when logged in then the 500 internal error page will display. I'm happy to accept this, as the user is still unable to alter anything when logged out. |
