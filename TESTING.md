@@ -380,7 +380,7 @@ Removing saved recipes from a user's profile already covered in profile function
 
 ## Device
 
-[view](documentation/testing/functionality/device/ipad.mp4)
+[view](documentation/testing/functionality/device/iphonec.mp4)
 
 
 # Responsive Design 
