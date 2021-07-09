@@ -199,11 +199,30 @@ that are not deemed suitable for the website.
 
 # Code Validation 
 
+|  Test  | Programme | Result |  Noting Points  | 
+|-----| ------ | -------| ------------ |
+| style.css | [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) | No errors: [View](documentation/testing/code-validation/css.png) | Warning message with regards to unknown vendor extension (-o-, -webkit-, -ms-) |
+| base.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| home.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| recipes.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| login.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| register.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| profile.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| dashboard.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| add_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| edit_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| search.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| view_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| 404.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| 500.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| script.js | [JSHint](https://jshint.com/) |  |  |
+| app.py | [PEP8 online](http://pep8online.com/) | No errors: [View](documentation/testing/code-validation/app.png) | N/A |
+
 # Browser Compatibility
 
 LambdaTest has been used to test the website across different browsers:
 
-## Laptop / Desktop
+### Laptop / Desktop
 
 The website has been developed on Google Chrome so browser testing has been compared against Google Chrome. 
 
@@ -219,7 +238,7 @@ The website has been developed on Google Chrome so browser testing has been comp
 | Add Recipe | Slight difference in the appearance of the number selectors -[View](documentation/testing/browser/dropdown-safari.png) | Slight difference in the appearance of the number selectors -[View](documentation/testing/browser/dropdown.png) | No difference |
 | Edit Recipe | Same difference as add recipe | Same difference as add recipe | No difference |
 
-## iPhone 8
+### iPhone 8
 
 - Google Chrome - No issues
 - Safari - No issues

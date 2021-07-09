@@ -50,12 +50,12 @@ def home():
         mongo.db.recipes.find({"category_name": "Breakfast"}))
     random.shuffle(breakfast_recipes)
 
-    #lists recipes in lunch category and shuffles
+    # lists recipes in lunch category and shuffles
     lunch_recipes = list(
         mongo.db.recipes.find({"category_name": "Lunch"}))
     random.shuffle(lunch_recipes)
 
-    #lists recipes in dinner category and shuffles
+    # lists recipes in dinner category and shuffles
     dinner_recipes = list(
         mongo.db.recipes.find({"category_name": "Dinner"}))
     random.shuffle(dinner_recipes)
@@ -93,7 +93,7 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "saved_recipes": [],
-            "profile_image": 
+            "profile_image":
             "https://images.unsplash.com/photo-1528216142275-f64d7a59d8d5"
         }
         mongo.db.users.insert_one(register)
@@ -120,17 +120,18 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
+
             # Ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+            if check_password_hash(existing_user['password'],
+                                   request.form.get('password')):
+                session['user'] = request.form.get('username').lower()
+                flash('Welcome, {}'.format(request.form.get('username')))
+                return redirect(url_for('profile',
+                                username=session['user']))
             else:
                 # Invalid Password Match
-                flash("Incorrect Username and/or Password")
-                return redirect(url_for("login"))
+                flash('Incorrect Username and/or Password')
+                return redirect(url_for('login'))
 
         else:
             # Username doesn't exist
@@ -493,7 +494,6 @@ def dashboard():
         return redirect(url_for("login"))
 
 
-
 @app.errorhandler(404)
 def resource_not_found(e):
     '''
@@ -513,7 +513,6 @@ def internal_server_error(e):
 
 
 # The correct running of the app file
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")),
-    debug=False)
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'), port=int(
+        os.environ.get('PORT')), debug=False)
