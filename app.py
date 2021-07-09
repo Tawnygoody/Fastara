@@ -297,10 +297,16 @@ def search():
         recipes=recipes)
 
 
-# ---------- Add a new Recipe ----------
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """
+    Adds a new recipe to the database if all the fields
+    are valid
+    """
+
     if request.method == "POST":
+        # Updates the database with all the recipes fields
+        # from user input
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         vegan = "on" if request.form.get("vegan") else "off"
         recipe = {
@@ -319,21 +325,31 @@ def add_recipe():
             "recipe_method": request.form.getlist("recipe_method"),
             "created_by": session["user"]
         }
+        # Inserts a new recipe to the database
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
+
+    # sorts all categories and sorts alphabetically
     categories = mongo.db.categories.find().sort("category_name", 1)
 
+    # if there is a session user add_recipe template renders
     if session["user"]:
         return render_template("add_recipe.html", categories=categories)
+    # if no session user redirects to login page
     else:
         return redirect(url_for("login"))
 
 
-# ---------- Edit an existing recipe ----------
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """
+    Edits and updates an existing recipe in the database
+    """
+
     if request.method == "POST":
+        # Updates the database with all the recipes fields
+        # from user input
         vegetarian = "on" if request.form.get("vegetarian") else "off"
         vegan = "on" if request.form.get("vegan") else "off"
         edit = {
@@ -352,55 +368,97 @@ def edit_recipe(recipe_id):
             "recipe_method": request.form.getlist("recipe_method"),
             "created_by": session["user"]
         }
+
+        # updates an existing recipe in the database
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
         flash("Recipe Successfully Updated")
         return redirect(url_for("get_recipes"))
+
+    # finds the recipe by id
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # sorts all categories and sorts alphabetically
     categories = mongo.db.categories.find().sort("category_name", 1)
 
+    # if there is a session user add_recipe template renders
     if session["user"]:
         return render_template(
             "edit_recipe.html", recipe=recipe, categories=categories)
+    # if no session user redirects to login page
     else:
         return redirect(url_for("login"))
 
 
-# ---------- Delete an Existing Recipe ----------
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    """
+    Deletes a recipe from the database. Loops through
+    all the users saved recipes, and removes the deleted
+    recipe from each of the users saved_recipes arrays.
+    """
+
+    # stores the recipe id in recipe variable
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # Lists all the users with the recipe_id
+    saved_recipes = list(mongo.db.users.find(
+        {"saved_recipes": ObjectId(recipe_id)}))
+
+    # loops through all users saved recipes
+    for recipes in saved_recipes:
+        # Removes the deleted recipe from all users saved recipes array
+        mongo.db.users.update_many(
+            recipes, {"$pull": {recipe}})
+
+    # Deletes recipe from the database
+    mongo.db.recipes.remove(recipe)
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
 
 
-# ---------- View individual Recipes ----------
 @app.route("/view_recipe/<recipe_id>")
 def view_recipe(recipe_id):
+    """
+    Returns the recipe page for a specific recipe id
+    """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template(
         "view_recipe.html",
         recipe=recipe)
 
 
-# ---------- Save a recipe to profile ----------
 @app.route("/save/<recipe_id>", methods=["POST"])
 def save_recipe(recipe_id):
+    """
+    Saves a recipe to the user saved_recipes array
+    which can then be viewed on the users profile
+    """
     username = mongo.db.users.find_one({"username": session["user"]})
     saved = username["saved_recipes"]
 
+    # checks if the recipe is already in the users
+    # saved_recipes array
     if ObjectId(recipe_id) in saved:
         flash("Recipe Already Saved to Profile")
         return redirect(request.referrer)
+
+    # adds the recipe to the users saved_recipes array
     mongo.db.users.update_one(
         username, {"$push": {"saved_recipes": ObjectId(recipe_id)}})
     flash("Recipe Saved to Profile")
     return redirect(request.referrer)
 
 
-# ---------- Remove a saved recipe from profile ----------
 @app.route("/remove/<recipe_id>", methods=["POST"])
 def delete_saved_recipe(recipe_id):
+    """
+    Removes a saved recipe from the users saved_recipes array
+    """
+
+    # sets the session user to username variable
     username = mongo.db.users.find_one({"username": session["user"]})
+
+    # removes recipes from users saved_recipes array
     mongo.db.users.update_one(
         username, {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
     flash("Recipe Removed from Profile")
@@ -409,7 +467,14 @@ def delete_saved_recipe(recipe_id):
 
 @app.route("/profile_image", methods=["POST"])
 def profile_image():
+    """
+    Allows the user to update there profile picture.
+    """
+
+    # sets the session user to username variable
     username = mongo.db.users.find_one({"username": session["user"]})
+
+    # updates the session users profile_image
     mongo.db.users.update_one(
         username, {"$set": {
             "profile_image": request.form.get("profile_image")}})
@@ -417,19 +482,22 @@ def profile_image():
     return redirect(request.referrer)
 
 
-# ---------- Dashboard Page ----------
 @app.route("/dashboard")
 def dashboard():
+    """
+    Renders the dashboard is there is a session user
+    """
     if session["user"]:
         return render_template("dashboard.html")
     else:
         return redirect(url_for("login"))
 
 
-# ---------- Error Handing Pages ----------
+
 @app.errorhandler(404)
 def resource_not_found(e):
     '''
+    404 error handling page
     thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
     '''
     return (render_template("404.html"), 404)
@@ -438,6 +506,7 @@ def resource_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
     '''
+    500 error handling page
     thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
     '''
     return render_template("500.html"), 500

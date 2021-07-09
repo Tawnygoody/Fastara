@@ -378,11 +378,6 @@ Removing saved recipes from a user's profile already covered in profile function
 | 01 | Charts & Maps | Various recipe / user information renders correctly from MongoDB Charts | [View](documentation/testing/functionality/dashboard/dashboard.gif) |
 
 
-## Device
-
-[view](documentation/testing/functionality/device/iphonec.mp4)
-
-
 # Responsive Design 
 
 Responsinator and Google Developer tools have been used to test the responsiveness. This tools have 
@@ -446,7 +441,8 @@ available, and are common enough devices to merit review.
 | 06 | Key Error | When a user logs out from their profile and then hits the back button a Key Error message was displaying, where id expect my 500.html to display | Once I turned the debug mode to false, my error page displays to the user allowing them to go back to the home page. |
 | 07 | Back button to go to unathorised pages | When a user logs out of their profile from the dashboard, add recipe and edit recipe pages, and goes back in the browser this will redirect them to this page, when these pages should not be visible to a user that is not logged in | By adding "if session["user"]" before rendering each of these templates it means only user's in session can be directed to these pages. When a user now tries to go back in the browser after logging out the 500 internal error page will display where the user can redirect back to the home page |
 | 08 | Invalid Image URL's | Although the input field for the image URL will only be valid if a URL is provided, it does not determine whether it is a valid image. Any URL can be typed in and accepted, which means an image will not render | I have tried to validate this further using regular expressions, but this was "hit and miss" to what it would or would not accept. I have included an onerror attribute which will render a default image for any image URL that is not valid, so there should be no image errors. I'm happy to accept this as a temporary solution for now but would prefer image validation in future releases - as noted in the future features section |
-| 09 | Failed deployment to Heroku | The app was failing to build by Heroku. After reviewing the build log on heroku I discovered my compliled slug size was too large. | I originally began by compressing the file size of the GIF's, however after further research I have added a .slugignore file, so that heroku ignores everything in the documentation folder, as this is for the README.md & TESTING.md and not required to run the app. |
+| 09 | Saved recipes error after deletion | When a recipe is deleted - if another user has that recipe saved to their profile, it does not get removed from their profile. The user is then unable to remove that recipe from their profile, any attempt to do so will result in a 404 error. | Added a for a loop to the delete_recipe function so that when a recipe is deleted, all users saved_recipes are looped through to remove the deleted recipe. |
+| 10 | Failed deployment to Heroku | The app was failing to build by Heroku. After reviewing the build log on heroku I discovered my compliled slug size was too large. | I originally began by compressing the file size of the GIF's, however after further research I have added a .slugignore file, so that heroku ignores everything in the documentation folder, as this is for the README.md & TESTING.md and not required to run the app. |
 
 
 # Known Issues 
