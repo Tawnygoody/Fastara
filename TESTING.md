@@ -2,14 +2,14 @@
 
 
 # Contents
-1. [Testing User Stories](testing-user-stories)
+- [Testing User Stories](testing-user-stories)
     - [First Time User](first-time-user)
     - [Returning User](returning-user)
     - [Frequent User](frequent-user)
     - [Admin Goals](admin-goals)
-2. [Code Validation](code-validation)
-3. [Browser Compatibility](browser-compatibility)
-4. [Functionality Testing](funcitonality-testing)
+- [Code Validation](code-validation)
+- [Browser Compatibility](browser-compatibility)
+- [Functionality Testing](functionality-testing)
     - [Navigation](navigation)
     - [Home Page](home-page)
     - [Registration & Log In](registration-and-log-in)
@@ -21,11 +21,11 @@
     - [Recipes Search & View](recipes-search-and-view)
     - [Recipe Page](recipe-page)
     - [Dashboard](dashboard)
-5. [Responsive Design](responsive-design)
-6. [Security Testing](security-testing)
-7. [Solved Bugs](solved-bugs)
-8. [Known Issues](known-issues)
-9. [Lighthouse](lighthouse)
+- [Responsive Design](responsive-design)
+- [Security Testing](security-testing)
+- [Solved Bugs](solved-bugs)
+- [Known Issues](known-issues)
+- [Lighthouse](lighthouse)
 
 # Testing User Stories
 
@@ -212,9 +212,9 @@ that are not deemed suitable for the website.
 | edit_recipe.html | [W3C Markup Validator](https://validator.w3.org/) | Duplicate ID error messages: [View](documentation/testing/code-validation/edit.png) | This is a result of multiple ingredients and method steps involved in the recipe, therefore is jusitified use. |
 | search.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/search.png) | N/A |
 | view_recipe.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/view-recipe.png) | Checked when user is logged in & logged out - no issues. |
-| 404.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/add.png) |  |
-| 500.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| script.js | [JSHint](https://jshint.com/) | No errors: [View](documentation/testing/code-validation/js.png) |  |
+| 404.html | [W3C Markup Validator](https://validator.w3.org/) | No errors: [View](documentation/testing/code-validation/404.png) | N/A |
+| 500.html | [W3C Markup Validator](https://validator.w3.org/) | No errors: [View](documentation/testing/code-validation/404.png) | N/A |
+| script.js | [JSHint](https://jshint.com/) | No errors: [View](documentation/testing/code-validation/js.png) | N/A |
 | app.py | [PEP8 online](http://pep8online.com/) | No errors: [View](documentation/testing/code-validation/app.png) | N/A |
 
 # Browser Compatibility
