@@ -106,3 +106,9 @@ function changeLink() {
     link = $(".carousel-item.active a").attr("href");
     $("#carousel-button").attr("href", link);
 }
+
+$(document).click(function(){
+    $('li[id^="select-options"]').on('touchend', function (e) {
+        e.stopPropagation();
+    });
+});
