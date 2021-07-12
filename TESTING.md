@@ -202,18 +202,17 @@ that are not deemed suitable for the website.
 |  Test  | Programme | Result |  Noting Points  | 
 |-----| ------ | -------| ------------ |
 | style.css | [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) | No errors: [View](documentation/testing/code-validation/css.png) | Warning message with regards to unknown vendor extension (-o-, -webkit-, -ms-) |
-| base.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| home.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| recipes.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| login.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| register.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| profile.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| dashboard.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| add_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| edit_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| search.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| view_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| 404.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
+| home.html | [W3C Markup Validator](https://validator.w3.org/) | 1 Warning: [View](documentation/testing/code-validation/home.png) | Section lacks heading h2-h6. Heading is only displayed when flash messages are displayed therefore no issue. Warning will show on all pages as this extends from the base template. |
+| recipes.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/recipes.png) | N/A |
+| login.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/login.png) | N/A |
+| register.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/login.png) | N/A |
+| profile.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/profile.png) | N/A |
+| dashboard.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/dashboard.png) | N/A |
+| add_recipe.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/add.png) | N/A |
+| edit_recipe.html | [W3C Markup Validator](https://validator.w3.org/) | Duplicate ID error messages: [View](documentation/testing/code-validation/edit.png) | This is a result of multiple ingredients and method steps involved in the recipe, therefore is jusitified use. |
+| search.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/search.png) | N/A |
+| view_recipe.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/view-recipe.png) | Checked when user is logged in & logged out - no issues. |
+| 404.html | [W3C Markup Validator](https://validator.w3.org/) | No errors or additional warnings: [View](documentation/testing/code-validation/add.png) |  |
 | 500.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
 | script.js | [JSHint](https://jshint.com/) | No errors: [View](documentation/testing/code-validation/js.png) |  |
 | app.py | [PEP8 online](http://pep8online.com/) | No errors: [View](documentation/testing/code-validation/app.png) | N/A |

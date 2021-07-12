@@ -23,7 +23,7 @@
                         <!--Category Name-->
                         <div class="input-field">
                             <i class="fas fa-utensils prefix icons"></i>
-                            <select id="category_name" name="category_name" class="content-light validate" required>
+                            <select id="category_name" name="category_name" class="content-light validate">
                                 <option value="" disabled>Choose your meal</option>
                                 {% for category in categories%}
                                     {% if category.category_name == recipe.category_name %}
@@ -104,7 +104,7 @@
                         <!--Recipe Image-->
                         <div class="input-field">
                             <i class="fas fa-camera prefix icons"></i>
-                            <input id="recipe_image" name="recipe_image" minlength="5" type="url" value="{{ recipe.recipe_image }}"class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
+                            <input id="recipe_image" name="recipe_image" minlength="5" type="url" value="{{ recipe.recipe_image }}" class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
                             <label class="headings-light label-margin" for="recipe_image">Image URL</label>
                         </div>
                     </div>

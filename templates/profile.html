@@ -133,23 +133,6 @@
         {% endif %}
     </div>
 
-    <!--Log Out Modal -->
-    <div id="logout-modal" class="modal dark-background">
-        <div class="modal-content center-align headings-light">
-            <h4>Are you sure you wish to Log Out?</h4>
-        </div>
-        <div class="modal-footer dark-background">
-            <div class="row">
-                <div class="col s6 right-align">
-                    <a class="btn yellow lighten-1 content-dark modal-close">Close</a>
-                </div>
-                <div class="col s6 left-align">
-                    <a href="{{ url_for('logout') }}" class="btn red darken-4 content-light">Log Out</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--Delete Profile Modal -->
     <div id="delete-profile" class="modal dark-background">
         <div class="modal-content center-align headings-light">
@@ -179,7 +162,7 @@
                     <form action="{{ url_for('profile_image') }}" method="POST">
                         <div class="input-field">
                             <i class="fas fa-camera prefix icons"></i>
-                            <input id="profile_image" name="profile_image" min-length="5" type="url" class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
+                            <input id="profile_image" name="profile_image" minlength="5" type="url" class="validate content-light tooltipped" data-position="bottom" data-tooltip="URL ending in JPG or PNG" required>
                             <label class="headings-light label-margin" for="profile_image">Image URL</label>
                         </div>
                         <div class="col s12">
