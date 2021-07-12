@@ -93,8 +93,10 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
             "saved_recipes": [],
-            "profile_image":
-            "https://images.unsplash.com/photo-1528216142275-f64d7a59d8d5"
+            "profile_image": "https://images.unsplash.com/photo-1512621"
+            "776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx"
+            "8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit="
+            "crop&w=1950&q=80"
         }
         mongo.db.users.insert_one(register)
 

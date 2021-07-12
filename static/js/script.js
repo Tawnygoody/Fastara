@@ -77,7 +77,6 @@ $("#add-step").on("click", function() {
     
 });
 
-
 $("#recipe-submit").click(function() {
     let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
     let category_name = document.getElementById("category_name").value;

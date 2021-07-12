@@ -472,3 +472,18 @@ available, and are common enough devices to merit review.
 | 02 | Saving recipes on search | When a user uses the search function to look for specific recipes, the plus icon will not show on the recipe cards, therefore unable to save the recipe directly here. I have removed the save icon as I was getting an error displayed here whenever the user tried to save the recipe, and was unable to resolve this. I'm happy to accept this as a small drawback as users can save the recipes from anywhere else on the site, and they are still able to look at the individual recipe and save it to their profile using the save button at the bottom of the recipe. |
 | 03 | Touchscreen hover effect | As there is no cursor on touchscreen devices (i.e. iPad & iPhone) there is no hover effect on the cards meaning that when a recipe image is clicked it will take the user directly to the recipe, rather than displaying the overlay recipe title. The overlay text is visible if user scrolls from one of the recipe card images directly. I'm happy to accept this is a known limitation. |
 | 04 | iPhone / iPad browser back button | Whilst testing the site on iPhone / Ipad when a user logs out and hits the back button in the browser it will take the user back to the page they were on previously rather than displaying the 500 internal error page. However if the user tries to redirect to a page only available when logged in then the 500 internal error page will display. I'm happy to accept this, as the user is still unable to alter anything when logged out. |
+
+
+# Lighthouse
+
+|  Page  |  Performance  |  Accessibility  |  Best Practices  | SEO | Comments |
+|:---:| ---- | ---- | ---- | ---- |
+| Home | 68 | 92 | 100 | 100 | Suggestions is to resize images to improve performance. As images are taken from URL's I am unable to reduce the image file size to increase performance |
+| Recipes | 80 | 97 | 100 | 90 | Reduction in SEO comes from non crawlable links from pagination. As these are generated from flask paginate I am unable to make them crawlable |
+| Log In | 88 | 94 | 100 | 100 | To improve accessibility - heading elements are no in a sequentially-descending order. Not necessary for the aethetics of the site. |
+| Register | 87 | 94 | 100 | 100 | To improve accessibility - heading elements are not in a sequentially-descending order. Not necessary for the aethetics of the site. |
+| Profile |  |  |  |  |
+| Dashboard |  |  |  |  |
+| Add Recipe |  |  |  |  |
+| Edit Recipe |  |  |  |  |
+| View Recipe |  |  |  |  |

@@ -58,7 +58,7 @@
                                 <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
                                 <ul class="list-inline">
                                     <li>
-                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" aria-label="View Recipe">
                                             <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
                                         </a>
                                     </li>
@@ -67,7 +67,7 @@
                                         {% else %}
                                             <li>
                                                 <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
-                                                    <button class="save-button">
+                                                    <button class="save-button" aria-label="Save Recipe">
                                                         <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
                                                     </button>
                                                 </form>

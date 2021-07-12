@@ -40,7 +40,7 @@
                 </p>
             </div>
             <div class="col s12 m6 pull-m6 center" data-aos="fade-left" data-aos-duration="1500">
-                <img src="static/images/home-page-image1.png" alt="Avacado on toast" class="circle home-image-circle">
+                <img src="static/images/home-page-image1.jpg" alt="Avacado on toast" class="circle home-image-circle">
             </div>
         </div>
         <br>
@@ -60,7 +60,7 @@
                 </p>
             </div>
             <div class="col s12 m6 center hide-on-small-only" data-aos="fade-right" data-aos-duration="1500">
-                <img src="static/images/home-page-image2.png" alt="Cauliflower Rice Bowl" class="circle home-image-circle">
+                <img src="static/images/home-page-image2.jpg" alt="Cauliflower Rice Bowl" class="circle home-image-circle">
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@
                 <p class="content-dark">Dr Michael Mosley, the medical journalist who first alerted the world to the Intermittent Fasting phenomenon, 
                     presents the fascinating science behind the 5:2 diet. Mimi Spencer, award-winning food and fashion writer, explains the practicalities 
                     of how to go about it.</p>
-                <a href="https://www.amazon.co.uk/Fast-Diet-Healthy-Revised-Updated/dp/1780722370/ref=sr_1_1?dchild=1&keywords=the+fast+diet&qid=1621520090&sr=8-1" target="_blank" class="btn grey darken-4 content-light book-button">Find out more</a>
+                <a href="https://www.amazon.co.uk/Fast-Diet-Healthy-Revised-Updated/dp/1780722370/ref=sr_1_1?dchild=1&keywords=the+fast+diet&qid=1621520090&sr=8-1" target="_blank" rel="noreferrer" class="btn grey darken-4 content-light book-button">Find out more</a>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
                                 <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.png'" alt="{{recipe.title}}">
+                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.jpg'" alt="{{recipe.title}}">
                                     <div class="card-overlay">
                                         <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
                                     </div>
@@ -125,7 +125,7 @@
                                         {% else %}
                                             <li>
                                                 <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
-                                                    <button class="save-button">
+                                                    <button class="save-button" aria-label="Save Recipe">
                                                         <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
                                                     </button>
                                                 </form>
@@ -160,7 +160,7 @@
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
                                 <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.png'" alt="{{recipe.title}}">
+                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.jpg'" alt="{{recipe.title}}">
                                     <div class="card-overlay">
                                         <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
                                     </div>
@@ -183,7 +183,7 @@
                                         {% else %}
                                             <li>
                                                 <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
-                                                    <button class="save-button">
+                                                    <button class="save-button" aria-label="Save">
                                                         <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
                                                     </button>
                                                 </form>
@@ -218,7 +218,7 @@
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
                                 <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.png'" alt="{{recipe.title}}">
+                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.jpg'" alt="{{recipe.title}}">
                                     <div class="card-overlay">
                                         <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
                                     </div>
@@ -241,7 +241,7 @@
                                         {% else %}
                                             <li>
                                                 <form method="POST" action="{{ url_for('save_recipe', recipe_id=recipe._id) }}">
-                                                    <button class="save-button">
+                                                    <button class="save-button" aria-label="Save">
                                                         <i class="fas fa-plus-circle card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Save Recipe"></i>
                                                     </button>
                                                 </form>

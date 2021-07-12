@@ -61,12 +61,12 @@
                                 <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
                                 <ul class="list-inline">
                                     <li>
-                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" aria-label="View Recipe">
                                             <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left" data-tooltip="View Recipe"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" aria-label="Save Recipe">
                                             <i class="fas fa-edit card-icons blue-grey-text text-darken-3 tooltipped" data-position="right" data-tooltip="Edit Recipe"></i>
                                         </a>
                                     </li>
@@ -111,14 +111,14 @@
                                 <p class="content-dark left-align card-content-description">{{ recipe.description }}</p>
                                 <ul class="list-inline">
                                     <li>
-                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
+                                        <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" aria-label="View Recipe">
                                             <i class="fas fa-eye card-icons amber-text text-darken-3 tooltipped" data-position="left"
                                                 data-tooltip="View Recipe"></i>
                                         </a>
                                     </li>
                                     <li>
                                         <form method="POST" action="{{ url_for('delete_saved_recipe', recipe_id=recipe._id) }}">
-                                            <button class="save-button">
+                                            <button class="save-button" aria-label="Remove Recipe">
                                                 <i class="fas fa-minus-circle card-icons red-text tooltipped" data-position="right"
                                                     data-tooltip="Remove from profile"></i>
                                             </button>
@@ -142,7 +142,7 @@
         <div class="modal-footer dark-background">
             <div class="row">
                 <div class="col s6 right-align">
-                    <a class="btn yellow lighten-1 content-dark modal-close">Close</a>
+                    <button class="btn yellow lighten-1 content-dark modal-close">Close</button>
                 </div>
                 <div class="col s6 left-align">
                     <a href="{{ url_for('remove_profile') }}" class="btn red darken-4 content-light">Delete</a>
@@ -166,7 +166,7 @@
                             <label class="headings-light label-margin" for="profile_image">Image URL</label>
                         </div>
                         <div class="col s12">
-                            <a class="btn yellow lighten-1 content-dark modal-close">Close</a>
+                            <button class="btn yellow lighten-1 content-dark modal-close">Close</button>
                             <button class="btn blue-grey darken-3 content-light">Update</button>
                         </div>
                     </form>
