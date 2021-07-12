@@ -107,6 +107,11 @@ function changeLink() {
     $("#carousel-button").attr("href", link);
 }
 
+
+// thanks to https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item
+/* Prevents touch events from selecting the wrong
+option when selecting categories on add recipe and 
+edit recipe pages */
 $(document).click(function(){
     $('li[id^="select-options"]').on('touchend', function (e) {
         e.stopPropagation();
