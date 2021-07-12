@@ -215,7 +215,7 @@ that are not deemed suitable for the website.
 | view_recipe.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
 | 404.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
 | 500.html | [W3C Markup Validator](https://validator.w3.org/) |  |  |
-| script.js | [JSHint](https://jshint.com/) |  |  |
+| script.js | [JSHint](https://jshint.com/) | No errors: [View](documentation/testing/code-validation/js.png) |  |
 | app.py | [PEP8 online](http://pep8online.com/) | No errors: [View](documentation/testing/code-validation/app.png) | N/A |
 
 # Browser Compatibility
