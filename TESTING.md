@@ -477,7 +477,7 @@ available, and are common enough devices to merit review.
 # Lighthouse
 
 |  Page  |  Performance  |  Accessibility  |  Best Practices  | SEO | Comments |
-|:---:| ---- | ---- | ---- | ---- |
+|----| :----: | :----: | :----: | :----: | ---------- |
 | Home | 68 | 92 | 100 | 100 | Suggestions is to resize images to improve performance. As images are taken from URL's I am unable to reduce the image file size to increase performance |
 | Recipes | 80 | 97 | 100 | 90 | Reduction in SEO comes from non crawlable links from pagination. As these are generated from flask paginate I am unable to make them crawlable |
 | Log In | 88 | 94 | 100 | 100 | To improve accessibility - heading elements are no in a sequentially-descending order. Not necessary for the aethetics of the site. |
