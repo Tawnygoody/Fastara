@@ -1,5 +1,7 @@
 <h1 align="center">Fastara</h1>
 
+![Mock-Up](documentation/wireframes/mock-up.png)
+
 View the repository in GitHub [here](https://github.com/Tawnygoody/Fastara)
 
 View the live project [here](https://fastara.herokuapp.com/)
