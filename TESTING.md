@@ -476,14 +476,18 @@ available, and are common enough devices to merit review.
 
 # Lighthouse
 
+The website's performance has been tested using Google Lighthouse.
+
+## Desktop
+
 |  Page  |  Performance  |  Accessibility  |  Best Practices  | SEO | Comments |
 |----| :----: | :----: | :----: | :----: | ---------- |
 | Home | 68 | 92 | 100 | 100 | Suggestions is to resize images to improve performance. As images are taken from URL's I am unable to reduce the image file size to increase performance |
 | Recipes | 80 | 97 | 100 | 90 | Reduction in SEO comes from non crawlable links from pagination. As these are generated from flask paginate I am unable to make them crawlable |
-| Log In | 88 | 94 | 100 | 100 | To improve accessibility - heading elements are no in a sequentially-descending order. Not necessary for the aethetics of the site. |
-| Register | 87 | 94 | 100 | 100 | To improve accessibility - heading elements are not in a sequentially-descending order. Not necessary for the aethetics of the site. |
-| Profile |  |  |  |  |
-| Dashboard |  |  |  |  |
-| Add Recipe |  |  |  |  |
-| Edit Recipe |  |  |  |  |
-| View Recipe |  |  |  |  |
+| Log In | 88 | 97 | 100 | 100 | To improve accessibility - heading elements are not in a sequentially-descending order. Not necessary for the aethetics of the site. |
+| Register | 87 | 97 | 100 | 100 | To improve accessibility - heading elements are not in a sequentially-descending order. Not necessary for the aethetics of the site. |
+| Profile | 86 | 100 | 100 | 100 | N/A |
+| Dashboard | 90 | 97 | 93 | 100 | To improve accessibility - heading elements are not in a sequentially-descending order. Not necessary for the aethetics of the site. |
+| Add Recipe | 84 | 87 | 100 | 100 | To improve accessibility - Form element do not have associated labels. This stems from the dropdown select, which does have a label, therefore unable to resolve at this stage |
+| Edit Recipe | 84 | 87 | 100 | 100 | To improve accessibility - Form element do not have associated labels. This stems from the dropdown select, which does have a label, therefore unable to resolve at this stage |
+| View Recipe | 93 | 100 | 100 | 100 | N/A |

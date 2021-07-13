@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 });
 
-// Help with autoplay for carousel taken from https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay
+// Help with autoplay for carousel taken from Stack Overflow (credited in README)
 /* Autoplay function means carousel items rotate
 at 5 second intervals */
 function autoplay() {
@@ -90,14 +90,14 @@ $("#recipe-submit").click(function() {
 })
 
 
-// thanks to https://stackoverflow.com/questions/35786433/how-to-listen-on-select-change-events-in-materialize-css
+// thanks to Stack Overflow (Credited in README)
 $("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
     $(".select-wrapper").children("input").css(classValid);
 })
 
 
-// thanks to https://stackoverflow.com/questions/15975586/jquery-change-href-when-image-slider-changes
+// thanks to Stack Overflow (Credited in README)
 /* Changes the link to the carousel button so 
 that the user is taken to the correct recipe when 
 clicking the carousel's view recipe button */
@@ -107,7 +107,7 @@ function changeLink() {
 }
 
 
-// thanks to https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item
+// thanks to Stack Overflow (Credited in README)
 /* Prevents touch events from selecting the wrong
 option when selecting categories on add recipe and 
 edit recipe pages */

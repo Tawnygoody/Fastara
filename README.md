@@ -464,5 +464,31 @@ All testing carried out on the website can be found in the following file:
 
 ## [TESTING.md](TESTING.md)
 
+# Database Creation
+
+# Deployment
+
+# Credits
+
+## Code 
+
+|  #  |  Source  |  Description  |
+|:---:|---------| ---------------- |
+| 01 | [Code Institute Task Manager App](https://codeinstitute.net/) | Code institutes task manager app provided the building blocks for Fastara |
+| 02 | [Mozillazg](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) | Aided with setting up flask paginate |
+| 03 | [Smoodydev](https://github.com/smoodydev/flaskpaginate) | Further aided flask paginate and helped reduce the number of items per page |
+| 04 | [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) | Helped with setting up the error pages | 
+| 05 | [Stack Overflow](https://stackoverflow.com/questions/36581504/materialize-carousel-slider-autoplay) | Code to allow the home page carousel to autoplay, so that recipes slide to the next after 5 seconds |
+| 06 | [Stack Overflow](https://stackoverflow.com/questions/35786433/how-to-listen-on-select-change-events-in-materialize-css) | Helped with listening to onchange events for materialize dropdown validation | 
+| 07 | [Stack Overflow](https://stackoverflow.com/questions/15975586/jquery-change-href-when-image-slider-changes) | Helped change the links for the recipes in the carousel on the home page, to redirect the user to the correct page |
+| 08 | [Stack Overflow](https://stackoverflow.com/questions/52850091/materialize-select-and-dropdown-touch-event-selecting-wrong-item) | Code to prevent materialize select from selecting the wrong item on touchscreen devices | 
+| 09 | [Stack Overflow](https://stackoverflow.com/questions/46012482/unwanted-white-space-on-right-side-in-mobile-view) | Code to prevent white space on home screen when scrolling sideways on mobile devices |
+| 10 | [W3Bits](https://w3bits.com/css-image-hover-zoom/) | Aided with zooming in on card images on hover. |
+| 11 | [W3Schools](https://www.w3schools.com/howto/howto_css_image_overlay_title.asp) | Aided with displaying the card image overlay for the recipe title. |
+| 12 | [w3schools](https://www.w3schools.com/howto/howto_css_bullet_color.asp) | Code to change the colour of the bullet points for the ingredients list. |
+
+## Media 
+
+
 
 
