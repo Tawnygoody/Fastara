@@ -531,10 +531,10 @@ The Procfile is what Heroku looks for to know which file runs the app, and how t
 | MONGO_DBNAME | Unique MongoDB Database Name |
 
 13. To get the MONGO_URI, on MongoDB click the "Overview" tab followed by the "Connect" button. 
-14. Select "Connect Your Application"
-15. Ensure "Python" is selected for the "Driver" and choose the appropriate version. 
-16. Copy the connection string and substitute in your own database name and password in the angle brackets placeholder.
-17. Click the "Deploy" tab and "Enable Automatic Deployment"
+- Select "Connect Your Application"
+- Ensure "Python" is selected for the "Driver" and choose the appropriate version. 
+- Copy the connection string and substitute in your own database name and password in the angle brackets placeholder.
+14. Click the "Deploy" tab and "Enable Automatic Deployment"
 
 # Credits
 
