@@ -575,6 +575,12 @@ table {
 
 /** --- Media Queries ---**/
 
+@media screen and (max-width: 1200px) {
+    .hide-div {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #fastara-logo {
         height: 52px;
