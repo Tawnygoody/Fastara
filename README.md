@@ -521,13 +521,15 @@ The Procfile is what Heroku looks for to know which file runs the app, and how t
 10. Click "Connect" to the correct repository. 
 11. Click the "Settings" tab and then click "Reveal Config Vars". 
 12. Here we can securely tell Heroku which variable are required. These can be found in the "env.py" file, and are as follows: 
+
 | Key | Value |
-| ---- | ---- |
+| :----: | :----: |
 | IP | 0.0.0.0 |
 | PORT | 5000 |
 | SECRET_KEY | Randomly Generated from [RandomKeygen](https://randomkeygen.com/) |
 | MONGO_URI | Unique MongoDB URI |
 | MONGO_DBNAME | Unique MongoDB Database Name |
+
 13. To get the MONGO_URI, on MongoDB click the "Overview" tab followed by the "Connect" button. 
 14. Select "Connect Your Application"
 15. Ensure "Python" is selected for the "Driver" and choose the appropriate version. 
