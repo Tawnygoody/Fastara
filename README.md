@@ -466,7 +466,44 @@ All testing carried out on the website can be found in the following file:
 
 # Database Creation
 
+Fastara is connected to a MongoDB database in the cloud. The following steps were used to create the database. 
+
+1. Log in or create an account with [MongoDB](https://mongodb.com)
+2. Create a new shared cluster (if using free cluster)
+3. Select a Cloud provider. Amazon Web Services (AWS) is a recommended service. 
+4. Select a region (whichever region is closest).
+5. Select Cluster Tier (M0 Sandbox selected for the purposes of this project). 
+6. Add a Cluster Name. 
+7. Click "Create Cluster" button. 
+8. Click on the "Database Access" in order to create the database user credentials. 
+9. Click "Add New Database User". 
+10. Set up a "username" & "password" and ensure User Privileges are set to "Read and write to any database". 
+11. Click "Add User" button. 
+12. Click on "Network Access" in order to whitelist our IP address and make sure it has access to the database.
+13. Click "Add IP Address"
+14. For the purposes of this project select "Allow access from anywhere". (Not recommended for full production apps). 
+15. Click on "Clusters" followed by the "Collections" button. 
+16. Click "Add my own data" button, and add a "Database Name" and "Collection Name". 
+17. Clicking "Create" will create the database with a collection inside that database. 
+
+
 # Deployment
+
+## Forking the GitHub Repository: 
+
+By forking the GitHub Repository to make a copy of the original repository, we can make changes without it affecting the original repository, by following these steps: 
+
+1. Log into GitHub and locate the [repository](https://github.com/Tawnygoody/Fastara) you wish to fork. 
+2. At the top-right of the repository underneath the navbar, click the "Fork" button. 
+3. You should now have a copy of the original repository in your account. 
+
+## Making a Local Clone
+
+1. Log into GitHub and locate the [repository](https://github.com/Tawnygoody/Fastara) you wish to clone. 
+2. Click the dropdown labelled "Code" to the left of the green "Gitpod" button and copy the link shown. 
+3. Open Git Bash. 
+4. Change to the location where you want the cloned directory to be made. 
+5. Type "gitclone" and then paste the URL you coped in step 2. 
 
 # Credits
 
