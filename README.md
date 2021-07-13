@@ -488,7 +488,12 @@ All testing carried out on the website can be found in the following file:
 | 12 | [w3schools](https://www.w3schools.com/howto/howto_css_bullet_color.asp) | Code to change the colour of the bullet points for the ingredients list. |
 
 ## Media 
-
-
+|  Image  |  Source  |
+|:------:|---------|
+| Home Page Circular Image 1 | [Unsplash](https://unsplash.com/photos/V9LP6-y8e5w) |
+| Home Page Circular Image 2 | [Unsplash](https://unsplash.com/photos/KPDbRyFOTnE) |
+| Default Profile Image | [Unsplash](https://unsplash.com/photos/IGfIGP5ONV0) |
+| Background Image | [Unsplash](https://unsplash.com/photos/08bOYnH_r_E) |
+| Home Page Book | [Snazel](https://www.snazal.com/uk-buy-online-the-fast-diet-revised-and-updated--lose-weight-sta--DEALMAN-U46-FastDietRU-2375.html?gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8DqCjrf5QQe6azv8UJr4i2W2AJCoU1AZkQTIx870bRp4j8lx2_elIMaAs-3EALw_wcB) |
 
 
