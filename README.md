@@ -505,6 +505,35 @@ By forking the GitHub Repository to make a copy of the original repository, we c
 4. Change to the location where you want the cloned directory to be made. 
 5. Type "gitclone" and then paste the URL you coped in step 2. 
 
+## Heroku App
+
+1. Log in or sign up to [Heroku](https://heroku.com).
+2. From the Heroku Dashboard click "Create New App" button.
+3. Give the app a name (this must be unique and Heroku will let you know if this available)
+4. Set the most appropriate region and click "Create App", which will take the user to the "App Dashboard".
+5. Within our project, to install Heroku type: "npm install -g heroku" in the terminal. 
+We then need to tell Heroku which applications an dependencies are required to run the app. 
+6. Enter the following into the terminal: "pip3 freeze --local > requirements.txt". 
+The Procfile is what Heroku looks for to know which file runs the app, and how to run it. 
+7. Enter the following into the terminal: "echo web: python app.py > Procfile". 
+8. Set up automatic deployment by clicking the deploy tab and lciking GitHub as the deployment method. 
+9. Ensure your GitHub profile is displayed, then add the name of the repository, and click search. 
+10. Click "Connect" to the correct repository. 
+11. Click the "Settings" tab and then click "Reveal Config Vars". 
+12. Here we can securely tell Heroku which variable are required. These can be found in the "env.py" file, and are as follows: 
+| Key | Value |
+| ---- | ---- |
+| IP | 0.0.0.0 |
+| PORT | 5000 |
+| SECRET_KEY | Randomly Generated from [RandomKeygen](https://randomkeygen.com/) |
+| MONGO_URI | Unique MongoDB URI |
+| MONGO_DBNAME | Unique MongoDB Database Name |
+13. To get the MONGO_URI, on MongoDB click the "Overview" tab followed by the "Connect" button. 
+14. Select "Connect Your Application"
+15. Ensure "Python" is selected for the "Driver" and choose the appropriate version. 
+16. Copy the connection string and substitute in your own database name and password in the angle brackets placeholder.
+17. Click the "Deploy" tab and "Enable Automatic Deployment"
+
 # Credits
 
 ## Code 

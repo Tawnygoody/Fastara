@@ -500,7 +500,7 @@ def dashboard():
 def resource_not_found(e):
     '''
     404 error handling page
-    thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+    thanks to Flask Documentation (credited in README)
     '''
     return (render_template("404.html"), 404)
 
@@ -509,7 +509,7 @@ def resource_not_found(e):
 def internal_server_error(e):
     '''
     500 error handling page
-    thanks to https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+    thanks to Flask Documentation (credited in README)
     '''
     return render_template("500.html"), 500
 
