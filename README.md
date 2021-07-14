@@ -37,7 +37,7 @@ Healthy Doesn't Mean Boring!!
 
 Fastara is a recipe website aimed at user's looking for low calorie recipes or who are on
 or looking to explore an intermittent fasting diet such as "5:2" diet. Visitors are 
-encouraged to upload and share their own creations with the community. 
+encouraged to upload and share their creations with the community. 
 
 ### User Stories
 
@@ -52,7 +52,7 @@ encouraged to upload and share their own creations with the community.
     providing much personal information. 
 
 - Returning Visitor Goals
-    1. As a returning visitor, I want to be able to login into my account, without re-registering.
+    1. As a returning visitor, I want to be able to login into my account without re-registering.
     2. As a returning visitor, I want to be able to logout out of my account. 
     3. As a returning visitor, I want to be able to view my profile. 
     4. As a returning visitor, I want to be able to delete my account should I wish. 
@@ -60,43 +60,43 @@ encouraged to upload and share their own creations with the community.
     for easy viewing on future visits to the site. 
     6. As a returning visitor, I want to be able to remove saved recipe's from my profile should
     I no longer require them. 
-    7. As a returning visitor, I want to to be able to access recipe information such as the ingedients 
+    7. As a returning visitor, I want to be able to access recipe information such as the ingredients 
     and method.
 
 - Frequent User Goals
-    1. As a frequent visitor, I want to be able to upload recipes to the website, and have access to 
+    1. As a frequent visitor, I want to be able to upload recipes to the website and have access to 
     any recipes I have uploaded on my profile. 
-    2. As a frequent visitor, I want to be able to edit and recipe I have created. 
+    2. As a frequent visitor, I want to be able to edit a recipe I have created. 
     3. As a frequent visitor, I want to be able to delete any recipe I have created. 
     4. As a frequent visitor, I want to be able to search recipes containing certain 
     ingredients, or by a recipe name. 
-    5. As a frequent visitor, I would like some information, showing which recipes contain 
+    5. As a frequent visitor, I would like some information showing which recipes contain 
     the least calories and which recipes take the least amount of time. 
 
 - Admin Goals
-    1. As an admin user, I need to ensure some access control, to allow me to edit and delete recipes 
+    1. As an admin user, I need to ensure some access control allowing me to edit and delete recipes 
     that are not deemed suitable for the website. 
 
 ## Scope
 
-Fastara is centered around CRUD (Create, Read, Update Delete) functionality and interacts 
-with a MongoDB Atlas cloud database managements system. This is the key feature to allow the 
+Fastara is centred around CRUD (Create, Read, Update Delete) functionality and interacts 
+with a MongoDB Atlas cloud database management system. This is the key feature to allow the 
 app to function. 
-- Create - Recipes can be saved to the database, using a form on the site. 
+- Create - Recipes can be saved to the database using a form on the site. 
 - Read - View all of the recipes saved in the database:
     - Recipes can be filtered by meal type. 
     - Search bar functionality allows the user to search for recipes using keywords. 
-- Update - Users can edit their own recipes, which changes the stored content within the 
+- Update - Users can edit their recipes, which changes the stored content within the 
 database (provided they are allowed to do so).
-- Delete - Users can delete any recipes they have uploaded, or can delete their profile 
+- Delete - Users can delete any recipes they have uploaded or can delete their profile 
 should they wish. 
 
-To prevent unwanted editing or deletions, the website has been designed in a way that these 
-functions are only available to the uploader of the specific recipe or to the admin user. 
+To prevent unwanted editing or deletions the website has been designed in a way that these 
+functions are only available to the uploader of the specific recipe or the admin user. 
 Full CRUD functionality is only authorised to registered users. 
 
 For any site user: 
-- Home Page, with attractive imagery, and some information about the site. 
+- Home Page, with attractive imagery and some information about the site. 
 - Recipes Page, showing all the recipes that have been uploaded to the site. 
 - Recipe Page, showing limited information about an individual recipe. 
 - Login Page
@@ -105,14 +105,15 @@ For any site user:
 
 For registered users:
 - Log Out functionality. 
-- Clear profile page displaying any recipes the user has uploaded or saved, and 
+- Profile page displaying any recipes the user has uploaded or saved and 
 some basic user information. 
 - Recipe Page, shows all information about an individual recipe. 
 - Add a recipe page, allowing users to upload there own recipes. 
-- Dashboard page, allowing users to allow users to compare recipes. 
+- Edit recipe page, allowing users to edit their existing recipes.
+- Dashboard page, allowing users to compare recipes. 
 
 For site admin: 
-- CRUD functionality for all recipes, regardless of who uploaded them. 
+- CRUD functionality for all recipes regardless of who uploaded them. 
 
 ## Structure
 
@@ -120,53 +121,53 @@ For site admin:
 
 - Base Page:
     - Navbar (Desktop) - The navbar has a centralised Fastara Logo. Links to the 
-    pages are then aligned either side of the logo. I feel this gives the site a 
-    contemporary feel, and works well having even number of links either side when 
+    pages are aligned on either side of the logo. I feel this gives the site a 
+    contemporary feel and works well having an even number of links on either side when 
     a user is either logged in or logged out. The dark background contrasts well with 
-    the logo color. Links have been given an off-white color, as to not detract from
+    the logo colour. Links have been given an off-white colour, as to not detract from
     the logo.
-    - Navbar (Mobile) - A simple collapsible side nav replaces the links either side 
+    - Navbar (Mobile) - A simple collapsible side nav replaces the links on either side 
     of the logo when viewing the site on smaller screen sizes. This is triggered by the 
-    hamburger icon, and has the the same dark background as the navbar. An additional logo
+    hamburger icon and has the same dark background as the navbar. An additional logo
     can be seen at the top of the collapsible navbar. 
     - Flash Messages - Imported from Flask, the "flash" feature provides helpful user feedback
     after interaction with the site. 
-    - Footer - Footer contains social media links and a github link which open in seperate
+    - Footer - Footer contains social media links and a GitHub link which open in separate
     tabs allowing the user to remain on Fastara. Email information for the company is also available
-    should a user have any query. 
+    should a user have any queries. 
 
 - Home Page: 
     - A carousel image display with autoplay featuring recipes which have been uploaded by admin. 
-    Images are randomised and will show 6 recipes all of which have buttons to take them to that 
+    Images are randomised and will show six recipes all of which have buttons to take them to that 
     recipe page. 
     - A section briefly explaining what Fastara offers, what intermittent fasting
     involves and its relevance to the site. These fade in on scrolling providing a nice
     user interaction to keep the user's attention. 
-    - A book promotion section providing a deeper insight into intermittent fasting, which opens
+    - A book promotion section providing a deeper insight into intermittent fasting which opens
     in a separate link. 
     - A category section displaying a few recipes for each of the different meal types, with links 
-    to take the user to view more of the same category. These recipes are randonmised so the 
+    to take the user to view more of the same category. These recipes are randomised so the 
     same recipes do not appear on the home page every time it is refreshed/visited. The recipe cards 
     scale in on scroll, which is particularly satisfying on smaller devices. 
 - Log In Page
     - A striking yet simple background image can be seen to keep the user interested. 
     - A simple dark background form, which is partially opaque, allows the background
     image to be seen whilst the content is still clearly visible. 
-    - Fontawesome icons have been used to provide futher user engagement, with a large 
+    - Fontawesome icons have been used to provide further user engagement, with a large 
     login button. 
     - If a user does not already have an account, a link below the login button will take
     them to the register page. 
 - Register Page
     - This has mostly the same features as the login page with some minor differences:
-        - First name field rather than email or fullname, gives a informal tone, 
+        - First name field rather than email or full name, gives an informal tone, 
         - If a user already has an account, a link below the register button will take them 
         to the login page. 
 - Recipes Page
-    - At the top of the page there is a search bar, allowing the user to search for recipes using 
+    - At the top of the page, there is a search bar, allowing the user to search for recipes using 
     keywords of their choice. This will filter results from the Recipe Title, Description & ingredients,
     and display only recipes matching that criteria. If no results are returned then a message stating
     No results found displays. The reset button allows the user to display a list of all the recipes. 
-    - Filter buttons below the search bar allows the user to filter the recipes they see 
+    - Filter buttons below the search bar allow the user to filter the recipes they see 
     by meal type. 
     - Recipe cards display an image of the recipe, which when hovered over, or clicked on smaller devices, 
     scale in and show an overlay with the name of the recipe. This is a subtle interaction to entice the user. 
@@ -180,11 +181,11 @@ For site admin:
 - View Recipe Page (When not logged in / registered)
     - Below the title of the recipe is a card with an image of the recipe with some information 
     relating to the recipe (calories, cook time, prep time, servings and whether it is vegetarian/
-    vegan). Image of the recipe is crucial - saying goes "people eat with their eyes" - this is definately
-    relevant when coming to recipe websites. The images are styled so they do not stretch, and should 
+    vegan). Image of the recipe is crucial - saying goes "people eat with their eyes" - this is definitely
+    relevant when coming to recipe websites. The images are styled so they do not stretch and should 
     look appealing on all device sizes. 
-    - Below the recipe card is section to encourage the user to register / log in. If the ingredients / methods
-    fields were shown to an un-registered user, there may be no incentive for a user to register. Un-regisered users
+    - Below the recipe card is a section to encourage the user to register / log in. If the ingredients / methods
+    fields were shown to an unregistered user, there may be no incentive for a user to register. Unregisered users
     have the basic information they need to determine whether recipes appeal to them. 
     - At the bottom of the page is a button to take the user back to the recipes page. 
 - View Recipe Page (When user is logged in)
@@ -193,7 +194,7 @@ For site admin:
     in italics, with a yellow background. This is to further engage the user. 
     - The ingredients and method columns are split unevenly, with the method column being wider 
     on larger devices, as this tends to have more content than the ingredients column. The dark 
-    background of the ingredients column provides a nice contrast and clearly separates the 
+    background of the ingredients column provides a nice contrast and separates the 
     ingredients from the method. 
     - At the bottom of the page is a variety of buttons. Which buttons are shown varies according 
     to the user and which user uploaded the recipe:
@@ -209,54 +210,54 @@ For site admin:
 - Profile Page
     - The profile page will only be displayed to users that are logged in. 
     - The card at the top of the page is similar in appearance to the card on the view recipes page, with the 
-    main difference in appearance that the profile image is a smaller on larger devices. Profile information 
-    such as username, recipes created and recipes saved can be viewed here. Below this the user can choose to
+    main difference in appearance that the profile image is smaller on larger devices. Profile information 
+    such as username, recipes created and recipes saved can be viewed here. Below this, the user can choose to
     edit their profile image, log out, and delete their profile. The log out button and delete profile 
     buttons will trigger modals, to reduce the chance of unwanted deletion / logging out. 
     - When a user has not uploaded any recipes an upload recipe button will be shown to encourage the user
     to upload their own recipes. 
-    - When a user has uploaded there own recipes, the upload recipe button will be removed, and the recipe card
+    - When a user has uploaded their own recipes, the upload recipe button will be removed, and the recipe card
     will be displayed here. These will appear as they do on the recipes page. Again the plus icon will not show 
-    as the recipe has been uploaded by the user and already appears on the users profile, therefore there is no 
+    as the recipe has been uploaded by the user and already appears on the user's profile, therefore there is no 
     requirement to save the recipe to their profile. 
-    - If a user has saved no recipes to there profile then no section will display below the created recipes section. 
-    Once a user has saved a recipe, the saved recipes title will show, with the recipe cards shown in this section. 
+    - If a user has saved no recipes to their profile then no section will display below the created recipes section. 
+    Once a user has saved a recipe, the saved recipe's title will show, with the recipe cards shown in this section. 
     Next to the eye icon to view the recipe, a tooltipped minus icon will display should the user wish to remove the 
     recipe from the saved recipes section. 
 - Dashboard 
-    - By utilising MongoDB Charts this provides a visualization of the data stored in MongoDB. This can provide, useful
+    - Utilising MongoDB Charts provides a visualization of the data stored in MongoDB. This can provide, useful
     information to the user and actionable insight. 
     - Whilst I could choose to do a whole variety of charts, this could be deemed tedious to a user. I have therefore chosen 
-    4 charts which provides the most relevant information to the user: 
+    4 charts that provides the most relevant information to the user: 
         - A heat map showing where the recipes come from around the globe. 
         - A chart showing which user has uploaded the most recipes. 
         - A chart showing which recipes take the least amount of time to prep and cook. 
         - A chart showing which recipes have the lowest amount of calories. 
     - The first 2 charts are just for the general interest of the user. The second 2 charts 
-    provide the user with actionable insight. Most people after a full days work want dinner to 
+    provide the user with actionable insight. Most people after a full day's work want dinner to 
     be full of flavour and take the least amount of time. The chart showing recipes with the least 
     calories is especially helpful to users who are on an intermittent fasting diet plan, as they have 
     a restrictive amount of calories they can consume on fast days. 
     - Charts are set to refresh every 30mins. 
 - Add Recipe Page
     - The same background image as the log in page and register page has been used. 
-    - There are various fields for the use to fill in. Relevant fields have been tooltipped 
-    to provide users with the requirements they need in order to create the recipe. A dropdown 
+    - There are various fields for the user to fill in. Relevant fields have been tooltipped 
+    to provide users with the requirements they need to create the recipe. A dropdown 
     field has been used to select the recipe category, and switches have been used to indicate 
     whether a recipe is vegan or vegetarian. 
     - Ingredients and method fields have an add ingredient/method button, allowing the user to 
-    seperate each ingredient / method. When each new step is added, a red bin appears allowing the user 
+    separate each ingredient / method. When each new step is added, a red bin appears allowing the user 
     to delete an ingredient / method. 
     - The add recipe button at the bottom will add the recipe to the database and display the recipe 
-    card on recipes and the users profile. Only when the required fields have been completed, and meet the 
+    card on recipes and the user's profile. Only when the required fields have been completed, and meet the 
     stated criteria will this be achievable. 
 - Edit Recipe Page 
-    - The edit recipe page can be accessed from the "View Recipe" page, which are available on the recipes 
-    page and the users profile page. 
-    - The edit recipe is much the same as the add recipe page, however the page is pre-populated 
+    - The edit recipe page can be accessed from the "View Recipe" page, which is available on the recipes 
+    page and the user's profile page. 
+    - The edit recipe is much the same as the add recipe page, however, the page is pre-populated 
     with the recipe data. 
-    - At the bottom of the page there is cancel button which will cancel any changes made and take the user 
-    back to the recipes page and an edit button which update the changes in the database and take the user 
+    - At the bottom of the page, there is a cancel button which will cancel any changes made and take the user 
+    back to the recipes page and an edit button that update the changes in the database and take the user 
     back to the recipes page. 
 
 ### Future Features
@@ -269,21 +270,21 @@ daily allowance.
 could sort all recipes by calorie count for example. I have included charts on the dashboard to illustrate 
 recipes with the lowest calorie count and quickest cook time, however a dropdown to sort recipes would 
 be more beneficial to the user. 
-- I would like some form of image URL validation, so that not just any URL can be inputted into the 
+- I would like some form of image URL validation so that not just any URL can be inputted into the 
 edit profile picture, and recipe image fields, and would remove the need for "onerror" image URL. 
-- I would like to be able to upload images from a file rather than an image URL. For the purposes of this project 
+- I would like to be able to upload images from a file rather than an image URL. For the purposes of this project, 
 I am happy to accept image uploads from a URL. 
 
 
 
 ## Skeleton 
 
-Below you can find links for my wireframes, showing how I would like the pages to be strcutured, 
+Below you can find links for my wireframes, showing how I would like the pages to be structured, 
 and how the site would appear on different device sizes. 
 
 ### Wireframes 
 
-The wireframes have been created using Balsamiq, and show for desktop, iPad and iPhone. 
+The wireframes have been created using Balsamiq and show for desktop, iPad and iPhone. 
 
 - Home Page
     - [Desktop](documentation/wireframes/home-desktop.png)
@@ -327,7 +328,7 @@ The wireframes have been created using Balsamiq, and show for desktop, iPad and 
 - I have taken inspiration from [Canva's](https://www.canva.com/learn/website-color-schemes/)
 professional and modern colour scheme and [Assiko's Fireworks](https://www.awwwards.com/sites/assiko), described
 by [Visme](https://visme.co/blog/website-color-schemes/) as Innovative and audacious, seen below. Both 
-color schemes have dark greys, yellows, and lighter grays which were the main colorsI have chosen to include 
+colour schemes have dark greys, yellows, and lighter greys which were the main colours I have chosen to include 
 in my site. 
 
 ##### Assiko Colour Scheme
@@ -345,43 +346,43 @@ in my site.
 - Very dark Grey (#101010) has been used for the navbar and the footer, and dark text.     
 - Bright Yellow (#ffe400) has been used for headings underlines, in the logo, and to provide 
 text contrast against dark buttons / links. 
-- Ligher yellow (#ffee58), has been used to highlight nav links, and on buttons to take the user 
+- Lighter yellow (#ffee58), has been used to highlight nav links, and on buttons to take the user 
 to different pages on the site. 
 - Very light grey (#eae7dc) has been used for the nav links, so they do not detract from the Logo 
 text, as this is White, and light text on dark backgrounds.
 - Off white (#f1f1f1) has been used for overlay text to provide more contrast with the images behind 
 than the very light grey would offer. 
 
-- Additional colors have been used to signify, saving recipes, editing recipes, and any deletion's/
+- Additional colours have been used to signify, saving recipes, editing recipes, and any deletion's/
 Log out. 
 
 #### Typography 
 
 - Typography is just as crucial design aspect as other design aspects. I wanted the main 
 font to be elegant, such that you would find on a high end restaurant website. I wanted to steer 
-clear of script fonts, which are sometimes considered elegant, however can reduce readability. 
+clear of script fonts, which are sometimes considered elegant, however, can reduce readability. 
 
     - After playing around on Canva designing the logo, and experimenting with different fonts, I 
     settled on "Cinzel" as the main font. I like that the font works with capital letters, which is 
     ideal for titles, headings and subheadings. The font also feels contemporary which is 
-    in-keeping with the websites colour scheme. 
+    in keeping with the websites colour scheme. 
 
     ![Cinzel](documentation/color-schemes/cinzel.png)
 
     - "Montserrat" was recommended as a good pair for "Cinzel" on [Google Fonts](https://fonts.google.com/).
-    I have used this font for the page content, which has solid readability and is in-keeping with the 
+    I have used this font for the page content, which has solid readability and is in keeping with the 
     theme of the website. 
 
     ![Montserrat](documentation/color-schemes/montserrat-font.png)
 
 #### Imagery 
 
-The majority of the imagery for the site comes from the recipe uploads. I have chosen 
+The majority of the imagery for the site comes from recipe uploads. I have chosen 
 2 stock photos for the home page which show clean, colourful, healthy food in keeping 
 with the theme of the site. 
 
 On the Log In, Register, Add Recipe and Edit Recipe pages, I have used a subtle healthy 
-food related image. This is a a nice aesthetic making the page more interesting, whilst not 
+food-related image. This is a nice aesthetic making the page more interesting, whilst not 
 distracting from the main purpose of each of the pages. 
 
 # Database Schema 
@@ -392,23 +393,23 @@ below.
 
 ![Database Schema](documentation/database-schema/schema.png)
 
-The collection contains 3 collections which in turn hold multiple documents:
+The collection contains three collections which in turn hold multiple documents:
 
-- Users: This collection stores the user data. When the user registers, the firstname, username 
-and password are populated from the register form. An empty saved recipes array is created, which is 
-populated with individual recipe id's when a user save's recipes to their profile. The profile_image is 
+- Users: This collection stores the user data. When the user registers, the first name, username 
+and password are populated from the registration form. An empty saved recipes array is created, which is 
+populated with individual recipes id's when a user saves recipes to their profile. The profile_image is 
 set with a default image. When the user is logged in they can choose to edit this image and upload their 
 own image URL. 
 
-- Recipes: The recipes collection contains the largest documents in the database. With the exception of the 
-created_by field all fields are populated by the user on the Add Recipe form. After researching 
-other recipe sites I have selected fields which I deem necessary to provide the user with the 
-essential information they require in order to make each recipe. Recipe ingredients and method are formatted 
+- Recipes: The recipes collection contains the largest documents in the database. Except for 
+created_by field, all fields are populated by the user on the Add Recipe form. After researching 
+other recipe sites I have selected fields that I deem necessary to provide the user with the 
+essential information they require to make each recipe. Recipe ingredients and methods are formatted 
 into an array using "request.form.getlist". This can then be looped through using Jinja templating to display 
 each ingredient / method to the user. 
 
 - Categories: The categories collection contains small documents for each meal type 
-(category_name), in this case Breakfast, Lunch & Dinner, and allows the user to select 
+(category_name), in this case, Breakfast, Lunch & Dinner, and allows the user to select 
 which category the recipe falls under. 
 
 # Technologies used
@@ -514,15 +515,15 @@ By forking the GitHub Repository to make a copy of the original repository, we c
 3. Give the app a name (this must be unique and Heroku will let you know if this available)
 4. Set the most appropriate region and click "Create App", which will take the user to the "App Dashboard".
 5. Within our project, to install Heroku type: "npm install -g heroku" in the terminal. 
-We then need to tell Heroku which applications an dependencies are required to run the app. 
+We then need to tell Heroku which applications and dependencies are required to run the app. 
 6. Enter the following into the terminal: "pip3 freeze --local > requirements.txt". 
-The Procfile is what Heroku looks for to know which file runs the app, and how to run it. 
+The Procfile is what Heroku looks for to know which file runs the app and how to run it. 
 7. Enter the following into the terminal: "echo web: python app.py > Procfile". 
-8. Set up automatic deployment by clicking the deploy tab and lciking GitHub as the deployment method. 
-9. Ensure your GitHub profile is displayed, then add the name of the repository, and click search. 
+8. Set up automatic deployment by clicking the deploy tab and clicking GitHub as the deployment method. 
+9. Ensure your GitHub profile is displayed, then add the name of the repository and click search. 
 10. Click "Connect" to the correct repository. 
 11. Click the "Settings" tab and then click "Reveal Config Vars". 
-12. Here we can securely tell Heroku which variable are required. These can be found in the "env.py" file, and are as follows: 
+12. Here we can securely tell Heroku which variables are required. These can be found in the "env.py" file and are as follows: 
 
 | Key | Value |
 | :----: | :----: |
