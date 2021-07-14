@@ -96,7 +96,7 @@
         <div class="row">
             <!--Loop through breakfast recipes-->
             {% for recipe in breakfast_recipes %}
-                <!--Show 3 results-->
+                <!--Show 2 results-->
                 {% if loop.index <= 2 %}
                     <div class="col s12 m6 xl4 center" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="card hoverable recipe-card">
@@ -137,6 +137,7 @@
                         </div>
                     </div>
                 {% endif %}
+                <!--3rd result shown on screen sizes above 1200px-->
                 {% if loop.index == 3 %}
                     <div class="col s12 m6 xl4 center hide-div" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="card hoverable recipe-card">
@@ -235,7 +236,7 @@
                         </div>
                     </div>
                 {% endif %}
-                <!--3rd result shown on screen sizes above 1300px-->
+                <!--3rd result shown on screen sizes above 1200px-->
                 {% if loop.index == 3 %}
                     <div class="col s12 m6 xl4 center hide-div" data-aos="zoom-in" data-aos-duration="1500">
                         <div class="card hoverable recipe-card">
@@ -334,7 +335,7 @@
                         </div>
                     </div>
                 {% endif %}
-                <!--3rd result shown on screen sizes above 1300px-->
+                <!--3rd result shown on screen sizes above 1200px-->
                 {% if loop.index == 3 %}
                 <div class="col s12 m6 xl4 center hide-div" data-aos="zoom-in" data-aos-duration="1500">
                     <div class="card hoverable recipe-card">

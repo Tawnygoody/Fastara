@@ -310,13 +310,13 @@ The wireframes have been created using Balsamiq, and show for desktop, iPad and 
     - [iPad](documentation/wireframes/add-ipad.png)
     - [iPhone](documentation/wireframes/add-iphone.png)
 - View Recipe Page 
-    - [Desktop]()
-    - [iPad]()
-    - [iPhone]()
+    - [Desktop](documentation/wireframes/view-desktop.png)
+    - [iPad](documentation/wireframes/view-ipad.png)
+    - [iPhone](documentation/wireframes/view-iphone.png)
 - Dashboard Page 
-    - [Desktop]()
-    - [iPad]()
-    - [iPhone]()
+    - [Desktop](documentation/wireframes/dashboard-desktop.png)
+    - [iPad](documentation/wireframes/dashboard-ipad.png)
+    - [iPhone](documentation/wireframes/dashboard-iphone.png)
 
 ## Surface 
 
