@@ -27,7 +27,7 @@ View the live project [here](https://fastara.herokuapp.com/)
 7. [Credits](#credits)
     - [Code](#code)
     - [Media](#media)
-8. [Acknowledgements](#acknowledgments)
+8. [Acknowledgements](#acknowledgements)
 
 # User Experience (UX)
 
