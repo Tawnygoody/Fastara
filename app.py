@@ -496,7 +496,7 @@ def profile_image():
 @app.route("/dashboard")
 def dashboard():
     """
-    Renders the dashboard is there is a session user
+    Renders the dashboard if there is a session user
     """
     if session["user"]:
         return render_template("dashboard.html")
