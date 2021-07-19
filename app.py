@@ -20,11 +20,19 @@ mongo = PyMongo(app)
 
 
 def get_recipes_paginate(offset=0, per_page=6):
+    """
+    Sets the parameters for the pagination
+    on the recipes page
+    """
     recipes = list(mongo.db.recipes.find())
     return recipes[offset: offset + per_page]
 
 
 def filter_recipes_paginate(category, offset=0, per_page=6):
+    """
+    Sets the parameters for the pagination
+    when filtering the recipes by categories
+    """
     if category == "Breakfast":
         recipes = list(mongo.db.recipes.find({"category_name": "Breakfast"}))
     elif category == "Lunch":

@@ -27,7 +27,7 @@ View the live project [here](https://fastara.herokuapp.com/)
 7. [Credits](#credits)
     - [Code](#code)
     - [Media](#media)
-8. [Acknowledgments](#acknowledgments)
+8. [Acknowledgements](#acknowledgments)
 
 # User Experience (UX)
 
@@ -171,7 +171,7 @@ For site admin:
     by meal type. 
     - Recipe cards display an image of the recipe, which when hovered over, or clicked on smaller devices, 
     scale in and show an overlay with the name of the recipe. This is a subtle interaction to entice the user. 
-    A calorie count a brief description is also provided on the cards. The orange eye allows the user to view
+    A calorie count and a brief description is also provided on the cards. The orange eye allows the user to view
     the entire recipe. This has been tooltipped to provide helpful guidance to the user. 
     - When a user is logged in a tooltipped plus icon will be visible on the cards, which allows the user 
     to save the recipe to their profile. This icon does not appear when the recipe was uploaded by the session
@@ -460,6 +460,14 @@ which category the recipe falls under.
     - Used to create the database schema illustration.
 - [Google Developer Tools](https://developers.google.com/web/tools)
     - Google developer tools have been used to fix bugs, and test responsiveness and website performance. 
+- [Techsini](https://techsini.com/multi-mockup/)
+    - Techsini has been used to generate mock images on different devices, and help with responsiveness. 
+- [Screencastify](https://www.screencastify.com/)
+    - Screencastify has been used to record and edit the website in action for the README.
+- [Favicon Generator](https://favicon.io/favicon-converter/)
+    - This has been used to generate a favicon image for the website tab.
+- [LambdaTest](https://www.lambdatest.com/)
+    - LambdaTest has been used to test the website on different browsers.
 
 # Testing 
 
@@ -567,4 +575,9 @@ The Procfile is what Heroku looks for to know which file runs the app and how to
 | Background Image | [Unsplash](https://unsplash.com/photos/08bOYnH_r_E) |
 | Home Page Book | [Snazel](https://www.snazal.com/uk-buy-online-the-fast-diet-revised-and-updated--lose-weight-sta--DEALMAN-U46-FastDietRU-2375.html?gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8DqCjrf5QQe6azv8UJr4i2W2AJCoU1AZkQTIx870bRp4j8lx2_elIMaAs-3EALw_wcB) |
 
+# Acknowledgements
+
+- My mentor, Gerard McBride, for continuous helpful feedback and support. 
+- Tim Nelson (Code Institute) - Task Manager App walkthrough project provided the buildings blocks to allow me to build the Fastara App. 
+- Code Institute's tutor support for aiding with minor bug fixes. 
 

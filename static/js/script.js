@@ -77,6 +77,10 @@ $("#add-step").on("click", function() {
     
 });
 
+/* Materialize dropdown validation. If the catergory_name
+is "Choose your meal" when the recipe is submitted the user
+will be alerted to select a category and the input will display
+as red */
 $("#recipe-submit").click(function() {
     let classInvalid = { "border-bottom": "1px solid #f44336", "box-shadow": "0 1px 0 0 #f44336" };
     let category_name = document.getElementById("category_name").value;
@@ -89,13 +93,13 @@ $("#recipe-submit").click(function() {
     return true
 })
 
-
 // thanks to Stack Overflow (Credited in README)
+/* When the user selects a dropdown it will change
+the colour of the input to green. */
 $("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
     $(".select-wrapper").children("input").css(classValid);
 })
-
 
 // thanks to Stack Overflow (Credited in README)
 /* Changes the link to the carousel button so 
@@ -105,7 +109,6 @@ function changeLink() {
     link = $(".carousel-item.active a").attr("href");
     $("#carousel-button").attr("href", link);
 }
-
 
 // thanks to Stack Overflow (Credited in README)
 /* Prevents touch events from selecting the wrong
