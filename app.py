@@ -207,7 +207,7 @@ def remove_profile():
     """
 
     # removes the session user from the database
-    mongo.db.users.remove({"username": session["user"]})
+    mongo.db.users.delete_one({"username": session["user"]})
 
     # removes the user from the session
     session.pop("user")

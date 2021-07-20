@@ -574,6 +574,7 @@ The Procfile is what Heroku looks for to know which file runs the app and how to
 | Default Profile Image | [Unsplash](https://unsplash.com/photos/IGfIGP5ONV0) |
 | Background Image | [Unsplash](https://unsplash.com/photos/08bOYnH_r_E) |
 | Home Page Book | [Snazel](https://www.snazal.com/uk-buy-online-the-fast-diet-revised-and-updated--lose-weight-sta--DEALMAN-U46-FastDietRU-2375.html?gclid=Cj0KCQjwkZiFBhD9ARIsAGxFX8DqCjrf5QQe6azv8UJr4i2W2AJCoU1AZkQTIx870bRp4j8lx2_elIMaAs-3EALw_wcB) |
+| Profile Image | [Unsplash](https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=%22%22crop&w=1950&q=80) |
 
 # Acknowledgements
 

@@ -231,7 +231,7 @@ The website has been developed on Google Chrome so browser testing has been comp
 | Home | No difference | No difference | No difference | 
 | Recipes | Whilst testing safari didn't seem to be picking up some of the recipe images and the default image was displayed - [View](documentation/testing/browser/recipe-image.png). Safari has been manually tested on iPhone / iPad and there is no issue here | No difference | No difference |
 | Log In | No difference | No difference | No difference |
-| Resgiter | No difference | No difference | No difference |
+| Register | No difference | No difference | No difference |
 | Profile | No difference | No difference | No difference |
 | Dashboard | No difference | No difference | No difference |
 | Individual Recipe | No difference | No difference | No difference |
