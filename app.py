@@ -432,7 +432,7 @@ def delete_recipe(recipe_id):
             mongo.db.users.update_many(
                 recipes, {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
 
-        mongo.db.recipes.remove(recipe)
+        mongo.db.recipes.delete_one(recipe)
         flash("Recipe Successfully Deleted")
         return redirect(url_for("get_recipes"))
 
