@@ -89,9 +89,9 @@ $("#recipe-submit").click(function() {
         alert("Please select a category for your recipe.");
         $(".select-wrapper").children("input").css(classInvalid);
         return false;
-    };
-    return true
-})
+    }
+    return true;
+});
 
 // thanks to Stack Overflow (Credited in README)
 /* When the user selects a dropdown it will change
@@ -99,7 +99,7 @@ the colour of the input to green. */
 $("#category_name").on("change", function () {
     let classValid = { "border-bottom": "1px solid #4caf50", "box-shadow": "0 1px 0 0 #4caf50" };
     $(".select-wrapper").children("input").css(classValid);
-})
+});
 
 // thanks to Stack Overflow (Credited in README)
 /* Changes the link to the carousel button so 
