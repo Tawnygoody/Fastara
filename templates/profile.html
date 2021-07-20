@@ -5,7 +5,7 @@
         <!--Profile Card -->
         <div class="row card hoverable">
             <div class="col s12 m4">
-                <img class="recipe-image" src="{{ profile_image }}" onerror="this.src='/static/images/home-page-image1.png'" alt="Profile Image">
+                <img class="recipe-image" src="{{ profile_image }}" onerror="this.src='/static/images/home-page-image1.jpg'" alt="Profile Image">
             </div>
             <div class="col s12 m8">
                 <h4 class="headings-dark center capitalize">{{ firstname }}'s Profile</h4>
@@ -49,7 +49,7 @@
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
                                 <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.png'" alt="{{recipe.title}}">
+                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.jpg'" alt="{{recipe.title}}">
                                     <div class="card-overlay">
                                         <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
                                     </div>
@@ -99,7 +99,7 @@
                         <div class="card hoverable recipe-card">
                             <div class="card-image">
                                 <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">
-                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.png'" alt="{{recipe.title}}">
+                                    <img src="{{recipe.recipe_image}}" onerror="this.src='/static/images/home-page-image1.jpg'" alt="{{recipe.title}}">
                                     <div class="card-overlay">
                                         <h5 class="headings-light capitalize">{{ recipe.title }}</h5>
                                     </div>
