@@ -357,6 +357,11 @@ def edit_recipe(recipe_id):
     """
     Edits and updates an existing recipe in the database
     """
+    # finds the recipe by id
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+    # stores who created the recipe in created_by variable
+    created_by = recipe['created_by']
 
     if request.method == "POST":
         # Updates the database with all the recipes fields
@@ -377,7 +382,7 @@ def edit_recipe(recipe_id):
             "recipe_image": request.form.get("recipe_image"),
             "ingredients": request.form.getlist("ingredients"),
             "recipe_method": request.form.getlist("recipe_method"),
-            "created_by": session["user"]
+            "created_by": created_by
         }
 
         # updates an existing recipe in the database
@@ -385,19 +390,18 @@ def edit_recipe(recipe_id):
         flash("Recipe Successfully Updated")
         return redirect(url_for("get_recipes"))
 
-    # finds the recipe by id
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-
     # sorts all categories and sorts alphabetically
     categories = mongo.db.categories.find().sort("category_name", 1)
 
-    # if there is a session user add_recipe template renders
-    if session["user"]:
+    # If the user is admin OR the recipe was created by the session
+    # user they are able to edit the recipe
+    if session["user"] == "admin" or created_by == session["user"]:
         return render_template(
             "edit_recipe.html", recipe=recipe, categories=categories)
-    # if no session user redirects to login page
+
+    # else a 405 method not allowed page will display
     else:
-        return redirect(url_for("login"))
+        return (render_template("405.html"), 405)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -411,20 +415,30 @@ def delete_recipe(recipe_id):
     # stores the recipe id in recipe variable
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
+    # stores who created the recipe in created_by variable
+    created_by = recipe['created_by']
+
     # Lists all the users with the recipe_id
     saved_recipes = list(mongo.db.users.find(
         {"saved_recipes": ObjectId(recipe_id)}))
 
-    # loops through all users saved recipes
-    for recipes in saved_recipes:
-        # Removes the deleted recipe from all users saved recipes array
-        mongo.db.users.update_many(
-            recipes, {"$pull": {recipe}})
+    # If the user is admin OR the recipe was created by the session
+    # user they are able to delete the recipe
+    if session["user"] == "admin" or created_by == session["user"]:
 
-    # Deletes recipe from the database
-    mongo.db.recipes.remove(recipe)
-    flash("Recipe Successfully Deleted")
-    return redirect(url_for("get_recipes"))
+        # loops through all users saved recipes
+        for recipes in saved_recipes:
+            # Removes the deleted recipe from all users saved recipes array
+            mongo.db.users.update_many(
+                recipes, {"$pull": {"saved_recipes": ObjectId(recipe_id)}})
+
+        mongo.db.recipes.remove(recipe)
+        flash("Recipe Successfully Deleted")
+        return redirect(url_for("get_recipes"))
+
+    # else a 405 method not allowed page will display
+    else:
+        return (render_template("405.html"), 405)
 
 
 @app.route("/view_recipe/<recipe_id>")
@@ -511,6 +525,15 @@ def resource_not_found(e):
     thanks to Flask Documentation (credited in README)
     '''
     return (render_template("404.html"), 404)
+
+
+@app.errorhandler(405)
+def method_not_allowed(e):
+    '''
+    405 error handling page
+    thanks to Flask Documentation (credited in README)
+    '''
+    return (render_template("405.html"), 405)
 
 
 @app.errorhandler(500)

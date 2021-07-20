@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Low calorie recipe website aimed at intermittent fasting">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+    <title>405 Error: Method Not Allowed</title>
+</head>
+<body class="dark-background">
+
+    <div class="container">
+        <div class="row center-align error-row valign-wrapper">
+            <div class="col s12 center-align">
+                <img src="/static/images/logo.png" alt="Fastara logo" class="error-image">
+                <h1 class="headings-light">405</h1>
+                <h6 class="headings-light">Method Not Allowed</h6>
+                <br>
+                <p class="content-light">Authorization failed. The server could not verify that you are authorized to access the documents requested. Please return to the home page.</p>
+                <br>
+                <a href="{{ url_for('home') }}" class="btn btn-large yellow lighten-1 content-dark error-button">Home</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
